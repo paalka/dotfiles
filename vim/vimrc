@@ -1,0 +1,115 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set number
+
+" turn on syntax highlighting
+syntax on
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'christoomey/vim-conflicted'
+Plugin 'wincent/Command-T'
+Plugin 'bling/vim-airline'
+Plugin 'rstacruz/sparkup'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'mhinz/vim-startify'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'L9'
+
+" enable vim airline (bottom command bar)
+let g:airline#extensions#tabline#enabled = 1
+
+let mapleader=","
+
+autocmd StdinReadPre * let s:std_in=1
+
+" use jj to got to command mode
+imap jj <Esc>
+
+" make it possible to go to a other split by using ctrl+hjkl
+nmap <silent> <c-k> :wincmd k<CR>                                                                                                                       
+nmap <silent> <c-j> :wincmd j<CR>                                                                                                                       
+nmap <silent> <c-h> :wincmd h<CR>                                                                                                                       
+nmap <silent> <c-l> :wincmd l<CR>
+
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+call vundle#end()            " required by vundle
+filetype plugin indent on    " required by vundle
+
+set history=1000    " remember more commands and search history
+set undolevels=1000 " use many muchos levels of undo
+
+" auto enable rainbow ()
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
+
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+set title                " change the terminal's title
+" 
+" Default Tabs & spaces
+set tabstop=4     " a tab is four spaces
+set shiftwidth=4  " number of spaces to use for autoindenting
+set softtabstop=4
+set copyindent    " copy the previous indentation on autoindenting
+set expandtab
+set smarttab
+set autoindent
+
+" Ctrl-p
+let g:ctrlp_use_caching = 1 " enable caching
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+set pastetoggle=<F2>
+
+" Gif config
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-s)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
+" remove the vim toolbar
+if has("gui_running")
+  set guioptions=-t
+endif
+

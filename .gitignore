@@ -1,0 +1,13 @@
+.DS_STORE
+.ssh
+*.swp
+*.swo
+*.local
+ssh/
+backup
+vim/bundle/*/*
+oh-my-zsh/*
+!oh-my-zsh/.git
+!vim/bundle/*/.git
+vim/.netrwhist
+*.local
