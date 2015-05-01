@@ -1,7 +1,13 @@
 if [[ -s $HOME/dotfiles/zsh/zprezto/init.zsh ]]; then
 	source $HOME/dotfiles/zsh/zprezto/init.zsh
 fi
+
+if [[ -s $HOME/dotfiles/zsh/zshrc.local ]]; then
+    source $HOME/dotfiles/zsh/zshrc.local
+fi
+
 bindkey -M viins "jj" vi-cmd-mode
+bindkey '^R' history-incremental-pattern-search-backward
 
 
 alias ll='ls -la'
@@ -14,4 +20,4 @@ bindkey "^K" history-search-forward
 alias trondheim='finger 7012@graph.no | grep -v NRK'
 
 export LANG=en_US.UTF-8
-source $HOME/.zshrc.local
+unsetopt CORRECT
