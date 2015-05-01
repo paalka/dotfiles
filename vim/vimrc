@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+color molokai
+
 set number
 
 " turn on syntax highlighting
@@ -34,6 +36,11 @@ autocmd StdinReadPre * let s:std_in=1
 
 " use jj to got to command mode
 imap jj <Esc>
+
+" Handle long lines nicely.
+set wrap
+set textwidth=79
+set formatoptions=qrn1
 
 " make it possible to go to a other split by using ctrl+hjkl
 nmap <silent> <c-k> :wincmd k<CR>                                                                                                                       
