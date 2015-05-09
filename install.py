@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from subprocess import call
-import os
+import os, errno
 
 CWD = os.getcwd()
 HOME_DIR =  os.path.expanduser('~')
@@ -37,7 +37,7 @@ for item in os.listdir(CWD):
                     print path_to_link + " already exists. Skipping."
                 else:
                     print "Creating " + real_file + " -> " + path_to_link
-                    os.symlink(path_to_link, real_file)
+                    os.symlink(real_file, path_to_link)
 
 
 print "Setting up zprezto and setting zsh as the default shell..."
