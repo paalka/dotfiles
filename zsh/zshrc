@@ -1,9 +1,9 @@
-if [[ -s $HOME/dotfiles/zsh/zprezto/init.zsh ]]; then
-	source $HOME/dotfiles/zsh/zprezto/init.zsh
-fi
-
 if [[ -s $HOME/dotfiles/zsh/zshrc.local ]]; then
     source $HOME/dotfiles/zsh/zshrc.local
+fi
+
+if [[ -s $HOME/dotfiles/zsh/zprezto/init.zsh ]]; then
+	source $HOME/dotfiles/zsh/zprezto/init.zsh
 fi
 
 bindkey -M viins "jj" vi-cmd-mode
