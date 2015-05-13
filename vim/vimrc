@@ -17,7 +17,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-conflicted'
-Plugin 'wincent/Command-T'
 Plugin 'bling/vim-airline'
 Plugin 'rstacruz/sparkup'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -120,3 +119,6 @@ if has("gui_running")
   set guioptions=-t
 endif
 
+set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
+" " Always show the statusline
+set laststatus=2
