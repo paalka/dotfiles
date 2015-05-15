@@ -9,16 +9,16 @@ def create_symlink(path_to_link, real_file):
         print path_to_link + " already exists. Skipping."
     else:
         print "Creating " + real_file + " -> " + path_to_link
-        #os.symlink(real_file, path_to_link)
+        os.symlink(real_file, path_to_link)
 
 CWD = os.getcwd()
 HOME_DIR =  os.path.expanduser('~')
 
 print "Initilizing submodules..."
-#call(["git", "submodule", "update", "--init"])
+call(["git", "submodule", "update", "--init"])
 
 print "Updating submodules..."
-#call(["git", "submodule", "foreach", "git", "pull"])
+call(["git", "submodule", "foreach", "git", "pull"])
 
 # Find out which subdirectories to ignore
 to_ignore = []
