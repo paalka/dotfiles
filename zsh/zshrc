@@ -17,7 +17,7 @@ alias tmuxls="tmux list-sessions"
 
 bindkey "^J" history-search-backward
 bindkey "^K" history-search-forward
-alias trondheim='finger 7012@graph.no | grep -v NRK'
+alias trd='finger 7012@graph.no | grep -v NRK'
 
 export LANG=en_US.UTF-8
 unsetopt CORRECT
