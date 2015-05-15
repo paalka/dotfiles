@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-color molokai
+color elflord
 
 set number
 
@@ -86,8 +86,11 @@ set autoindent
 " Ctrl-p
 let g:ctrlp_use_caching = 1 " enable caching
 
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+if v:version < 703
+        finish
+    endif
+        autocmd InsertEnter * :set number
+        autocmd InsertLeave * :set relativenumber
 
 set pastetoggle=<F2>
 
