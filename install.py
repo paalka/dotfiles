@@ -44,8 +44,3 @@ for item in os.listdir(CWD):
                 real_file = os.path.join(CWD, curr_item)
 
                 create_symlink(path_to_link, real_file)
-
-
-
-print "Setting up zprezto and setting zsh as the default shell..."
-call("zsh/zprezto_setup")
