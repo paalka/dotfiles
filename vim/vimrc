@@ -1,7 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-color elflord
+" ======== General settings ======== "
+color spacegray
 
 set number
 
@@ -12,7 +13,6 @@ syntax on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
