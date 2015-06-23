@@ -1,23 +1,14 @@
+ZSH_ROOT=${HOME}/dotfiles/zsh
+
+for ZSH_FILE in aliases bindkeys checks colors completion exports functions \
+                history prompt setopt zsh_hooks; do
+    if [[ -s $ZSH_ROOT/$ZSH_FILE.zsh ]]; then
+        eval source $ZSH_ROOT/$ZSH_FILE.zsh
+    fi
+done
+
+source $ZSH_ROOT/z.sh
+
 if [[ -s $HOME/dotfiles/zsh/zshrc.local ]]; then
     source $HOME/dotfiles/zsh/zshrc.local
 fi
-
-if [[ -s $HOME/dotfiles/zsh/zprezto/init.zsh ]]; then
-	source $HOME/dotfiles/zsh/zprezto/init.zsh
-fi
-
-bindkey -M viins "jj" vi-cmd-mode
-bindkey '^R' history-incremental-pattern-search-backward
-
-
-alias ll='ls -la'
-alias tmuxk="tmux kill-session -t"
-alias tmuxa="tmux attach-session -t"
-alias tmuxls="tmux list-sessions"
-
-bindkey "^J" history-search-backward
-bindkey "^K" history-search-forward
-alias trd='finger 7012@graph.no | grep -v NRK'
-
-export LANG=en_US.UTF-8
-unsetopt CORRECT
