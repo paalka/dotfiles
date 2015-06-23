@@ -13,19 +13,22 @@ alias 'bk=cd $OLDPWD'
 alias lh='ls -d .*' # show hidden files/directories only
 alias lsd='ls -aFhlG'
 alias l='ls -al'
-alias ls='ls -GFh --color' # Colorize output, add file type indicator, and put sizes in human readable format
-alias ll='ls -GFhl --color' # Same as above, but in long listing format
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias 'dus=du -sckx * | sort -nr' # directories sorted by size
 alias 'filecount=find . -type f | wc -l' # number of files (not directories)
 
 # -------------------------------------------------------------------
-# Mac only
+# Platform specific
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
     alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
     alias oo='open .' # open current directory in OS X Finder
     alias 'today=calendar -A 0 -f /usr/share/calendar/calendar.mark | sort'
+    alias ls='ls -GFh' # Colorize output, add file type indicator, and put sizes in human readable format
+    alias ll='ls -GFhl' # Same as above, but in long listing format
+elif [[ $IS_LINUX -eq 1 ]]; then
+    alias ls='ls -GFh --color' # Colorize output, add file type indicator, and put sizes in human readable format
+    alias ll='ls -GFhl --color' # Same as above, but in long listing format
 fi
 
 # -------------------------------------------------------------------

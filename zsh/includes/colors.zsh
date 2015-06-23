@@ -14,7 +14,11 @@ export PR_BOLD_WHITE PR_BOLD_BLACK
 
 # Clear LSCOLORS
 unset LSCOLORS
-
 export CLICOLOR=1
-export LS_COLORS='di=1;34:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=1;36:*.rpm=90:*.tar=1;31'
-#export LS_COLORS=exfxcxdxbxegedabagacad
+
+if [[ $IS_MAC -eq 1 ]]; then
+    export LS_COLORS=exfxcxdxbxegedabagacad
+elif [[ $IS_MAC -eq 1 ]]; then
+    export LS_COLORS='di=1;34:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=1;36:*.rpm=90:*.tar=1;31'
+fi
+ 
