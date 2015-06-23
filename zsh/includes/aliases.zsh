@@ -27,7 +27,6 @@ if [[ $IS_MAC -eq 1 ]]; then
     alias ls='ls -GFh' # Colorize output, add file type indicator, and put sizes in human readable format
     alias ll='ls -GFhl' # Same as above, but in long listing format
 elif [[ $IS_LINUX -eq 1 ]]; then
-    echo "nei"
     alias ls='ls -GFh --color' # Colorize output, add file type indicator, and put sizes in human readable format
     alias ll='ls -GFhl --color' # Same as above, but in long listing format
 fi
