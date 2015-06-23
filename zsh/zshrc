@@ -1,6 +1,6 @@
 ZSH_ROOT=${HOME}/dotfiles/zsh
 
-for ZSH_FILE in aliases bindkeys checks colors completion exports functions \
+for ZSH_FILE in checks aliases bindkeys colors completion exports functions \
                 history prompt setopt zsh_hooks; do
 
     filename=$ZSH_ROOT/includes/$ZSH_FILE.zsh
