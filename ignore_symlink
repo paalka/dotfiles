@@ -3,3 +3,4 @@ vim/colors
 vim/bundle
 zsh/scripts
 zsh/includes
+psql
