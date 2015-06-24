@@ -61,7 +61,7 @@ alias gt='git today'
 alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
 
 # gu shows a list of all developers and the number of commits they've made
-alias gu="git shortlog | grep -E '^[^ ]'"
+alias gu="git shortlog -s -n --all"
 
 # -------------------------------------------------------------------
 # Python virtualenv 
