@@ -57,9 +57,6 @@ alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort
 alias gh='git hist'
 alias gt='git today'
 
-# gsh shows the number of commits for the current repos for all developers
-alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
-
 # gu shows a list of all developers and the number of commits they've made
 alias gu="git shortlog -s -n --all"
 
