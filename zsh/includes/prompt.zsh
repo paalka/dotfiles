@@ -81,8 +81,11 @@ function current_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
+USER_COLOR=${PR_BOLD_BLACK}
+HOST_COLOR=${PR_BOLD_CYAN}
+
 PROMPT='
-${PR_BOLD_BLACK}%n%{$reset_color%} %{$FG[239]%}at%{$reset_color%} ${PR_BOLD_CYAN}$(hostname -s)%{$reset_color%} %{$FG[239]%}in%{$reset_color%} ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)
+${USER_COLOR}%n%{$reset_color%} %{$FG[239]%}at%{$reset_color%} ${HOST_COLOR}$(hostname -s)%{$reset_color%} %{$FG[239]%}in%{$reset_color%} ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)
 $(prompt_char) '
 
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [y, n, a  e]? "
