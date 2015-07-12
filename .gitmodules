@@ -62,3 +62,10 @@
 		path = vim/bundle/vim-easymotion
 		url = https://github.com/Lokaltog/vim-easymotion
 		ignore = dirty
+
+[submodule "vim/bundle/auto-pairs"]
+		path = vim/bundle/auto-pairs
+		url = https://github.com/jiangmiao/auto-pairs
+		ignore = dirty
+
+        

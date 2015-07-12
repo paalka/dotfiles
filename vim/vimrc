@@ -23,6 +23,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'L9'
 
 " enable vim airline (bottom command bar)
