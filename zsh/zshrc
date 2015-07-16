@@ -9,9 +9,12 @@ for ZSH_FILE in checks aliases bindkeys colors completion functions \
     fi
 done
 
-if [[ -s $ZSH_ROOT/scipts/z.sh ]]; then
-    eval source $ZSH_ROOT/scripts/z.sh
-fi
+for ZSH_SCRIPT in z; do
+    filename=$ZSH_ROOT/scripts/$ZSH_SCRIPT.sh
+    if [[ -s $filename ]]; then
+        eval source $filename
+    fi
+done
 
 if [[ -s $ZSH_ROOT/zshrc.local ]]; then
     source $ZSH_ROOT/zshrc.local
