@@ -4,6 +4,7 @@ filetype off                  " required
 " ======== General settings ======== "
 color spacegray
 
+" show line numbers
 set number
 
 " turn on syntax highlighting
