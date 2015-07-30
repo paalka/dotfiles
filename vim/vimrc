@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'fatih/vim-go'
 Plugin 'L9'
 
 " enable vim airline (bottom command bar)
