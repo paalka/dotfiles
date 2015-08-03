@@ -119,11 +119,6 @@ map <Leader>h <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 
-" remove the vim toolbar
-if has("gui_running")
-  set guioptions=-t
-endif
-
 set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
 " " Always show the statusline
 set laststatus=2
