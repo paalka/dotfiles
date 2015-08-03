@@ -44,9 +44,9 @@ set textwidth=79
 set formatoptions=qrn1
 
 " make it possible to go to a other split by using ctrl+hjkl
-nmap <silent> <c-k> :wincmd k<CR>                                                                                                                       
-nmap <silent> <c-j> :wincmd j<CR>                                                                                                                       
-nmap <silent> <c-h> :wincmd h<CR>                                                                                                                       
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 nnoremap <C-S-tab> :tabprevious<CR>
@@ -75,7 +75,7 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 
 set title                " change the terminal's title
-" 
+
 " Default Tabs & spaces
 set tabstop=4     " a tab is four spaces
 set shiftwidth=4  " number of spaces to use for autoindenting
