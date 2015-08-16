@@ -20,7 +20,7 @@
 
 [submodule "vim/bundle/nerdtree"]
 		path = vim/bundle/nerdtree
-		url = https://github.com/scrooloose/nerdtree 
+		url = https://github.com/scrooloose/nerdtree
 		ignore = dirty
 
 [submodule "vim/bundle/rainbow_parentheses.vim"]
@@ -35,9 +35,9 @@
 
 [submodule "vim/bundle/L9"]
 		path = vim/bundle/L9
-		url = https://github.com/vim-scripts/L9 
+		url = https://github.com/vim-scripts/L9
 		ignore = dirty
-		
+
 [submodule "vim/bundle/vim-conflicted"]
 		path = vim/bundle/vim-conflicted
 		url = https://github.com/christoomey/vim-conflicted
@@ -72,5 +72,3 @@
 		path = vim/bundle/vim-go
 		url = https://github.com/fatih/vim-go
 		ignore = dirty
-
-        
