@@ -15,7 +15,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-conflicted'
 Plugin 'bling/vim-airline'
@@ -83,9 +82,6 @@ set copyindent    " copy the previous indentation on autoindenting
 set expandtab
 set smarttab
 set autoindent
-
-" Ctrl-p
-let g:ctrlp_use_caching = 1 " enable caching
 
 if v:version < 703
         finish
