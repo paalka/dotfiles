@@ -91,12 +91,6 @@ if v:version < 703
 
 set pastetoggle=<F2>
 
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>h <Plug>(easymotion-linebackward)
-
 set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
 " " Always show the statusline
 set laststatus=2
