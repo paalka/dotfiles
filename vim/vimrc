@@ -7,8 +7,25 @@ color spacegray
 " show line numbers
 set number
 
+" Don't jump over wrapped lines.
+nnoremap j gj
+nnoremap k gk
+
 " turn on syntax highlighting
 syntax on
+
+" Highlight the current line.
+set cursorline
+
+" Enable a graphical menu for cycling through filenames.
+set wildmenu
+
+" Don't redreaw unless VIM really has to.
+" This enables ex. faster macros.
+set lazyredraw
+
+" Show matching [({})]
+set showmatch
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -94,6 +111,9 @@ set pastetoggle=<F2>
 set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
 " " Always show the statusline
 set laststatus=2
+
+" Clear searches.
+nnoremap <leader><space> :nohlsearch<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
