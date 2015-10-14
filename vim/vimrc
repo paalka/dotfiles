@@ -39,7 +39,6 @@ Plugin 'rstacruz/sparkup'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'fatih/vim-go'
 Plugin 'L9'
 
@@ -109,6 +108,7 @@ if v:version < 703
 set pastetoggle=<F2>
 
 set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
+
 " " Always show the statusline
 set laststatus=2
 
