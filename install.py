@@ -74,7 +74,7 @@ def update_git_submodules():
     """
 
     print "Updating submodules..."
-    call(["git", "submodule", "foreach", "git", "pull"])
+    call(["git", "submodule", "update", "--recursive"])
 
 
 def get_files_to_ignore(ignore_file):
