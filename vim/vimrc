@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " ======== General settings ======== "
-color desert
+color elflord
 
 " show line numbers
 set number
