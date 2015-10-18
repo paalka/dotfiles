@@ -16,6 +16,7 @@ syntax on
 
 " Highlight the current line.
 set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " Enable a graphical menu for cycling through filenames.
 set wildmenu
