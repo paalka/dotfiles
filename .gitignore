@@ -11,3 +11,4 @@ oh-my-zsh/*
 !vim/bundle/*/.git
 vim/.netrwhist
 *.local
+zsh/cache
