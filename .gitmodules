@@ -62,3 +62,8 @@
 		path = vim/bundle/vim-go
 		url = https://github.com/fatih/vim-go
 		ignore = dirty
+
+[submodule "vim/bundle/vim-easymotion"]
+		path = vim/bundle/vim-easymotion
+		url = https://github.com/easymotion/vim-easymotion
+		ignore = dirty
