@@ -146,7 +146,7 @@ bindsym XF86AudioMute exec amixer -D pulse set Master toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-client.focused          #290140 #290140 #FFFFFF #DDDDDD
+client.focused          #4D115C #4D115C #FFFFFF #DDDDDD
 client.focused_inactive #333333 #333333 #888888 #292D2E
 client.unfocused        #333333 #333333 #888888 #292D2E
 client.urgent           #2F343A #900000 #FFFFFF #900000
