@@ -1,7 +1,3 @@
-# i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -132,12 +128,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec --no-startup-id /usr/bin/urxvtd -q -f -o
-exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/xautolock -time 5 -locker /usr/bin/lock &
 
-exec --no-startup-id /usr/bin/xcalib -d :0 /usr/share/color/icm/ThinkPad_X240_FHD_LP125WF2.icm
 exec --no-startup-id /usr/bin/feh --bg-scale ~/.bg/bg_triangular_glow.png
 exec --no-startup-id /usr/bin/setxkbmap -option caps:none
+
+exec --no-startup-id /home/paal/.bin/local_init
 
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
