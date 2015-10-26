@@ -135,8 +135,8 @@ exec --no-startup-id /usr/bin/urxvtd -q -f -o
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/xautolock -time 5 -locker /usr/bin/lock &
 
-exec --no-startup-id /usr/bin/feh --bg-scale ~/Pictures/bg_triangular_glow.png
 exec --no-startup-id /usr/bin/xcalib -d :0 /usr/share/color/icm/ThinkPad_X240_FHD_LP125WF2.icm
+exec --no-startup-id /usr/bin/feh --bg-scale ~/.bg/bg_triangular_glow.png
 exec --no-startup-id /usr/bin/setxkbmap -option caps:none
 
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
