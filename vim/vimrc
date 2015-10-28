@@ -45,6 +45,7 @@ Plugin 'L9'
 
 " enable vim airline (bottom command bar)
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='raven'
 
 let mapleader=","
 
