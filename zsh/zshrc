@@ -19,13 +19,3 @@ done
 if [[ -s $ZSH_ROOT/zshrc.local ]]; then
     source $ZSH_ROOT/zshrc.local
 fi
-
-# Source SSH settings, if applicable
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
