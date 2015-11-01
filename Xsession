@@ -1,0 +1,12 @@
+#!/bin/sh
+[ -f ~/.bin/autostart.local ] && ~/.bin/autostart.local &
+
+/usr/bin/urxvtd -q -f -o &
+/usr/bin/xautolock -time 7 -locker /usr/bin/lock &
+
+BG=~/.bg/bg_triangular_glow.png
+[ -f $BG ] && /usr/bin/feh --bg-scale $BG
+
+/usr/bin/setxkbmap -option caps:none
+
+/usr/bin/i3
