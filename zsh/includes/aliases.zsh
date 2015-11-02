@@ -79,6 +79,7 @@ alias tmuxls="tmux list-sessions"
 # make rm command (potentially) less destructive
 alias 'rm=rm -i'
 alias 'py=python'
+alias 'less=less -R'
 
 # Fetch the weather for Trondheim
 alias trd='finger 7012@graph.no | grep -v NRK'
