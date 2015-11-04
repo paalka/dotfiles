@@ -5,7 +5,7 @@ function virtualenv_info {
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
     hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '○'
+    echo '>'
 }
 
 # http://blog.joshdick.net/2012/12/30/my_git_prompt_for_zsh.html
