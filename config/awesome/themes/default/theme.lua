@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "terminus 8"
+theme.font          = "dejvavu sans 8"
 
 theme.bg_normal     = "#111111"
 theme.bg_focus      = "#222222"
