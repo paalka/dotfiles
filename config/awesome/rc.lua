@@ -106,6 +106,9 @@ mytextclock = awful.widget.textclock({ align = "right" })
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
+spacer = widget({ type = "textbox" })
+spacer.text = "  "
+
 -- Create a wibox for each screen and add it
 mywibox = {}
 mypromptbox = {}
@@ -180,10 +183,15 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
+        spacer,
         s == 1 and mysystray or nil,
+        spacer,
         mytextclock,
+        spacer,
         batterywidget,
+        spacer,
         volume_widget,
+        spacer,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
