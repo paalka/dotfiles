@@ -9,4 +9,4 @@ BG=~/.bg/bg_triangular_glow.png
 
 /usr/bin/setxkbmap -option caps:none
 
-/usr/bin/i3
+/usr/bin/awesome
