@@ -180,10 +180,10 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
+        s == 1 and mysystray or nil,
         mytextclock,
         batterywidget,
         volume_widget,
-        s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
