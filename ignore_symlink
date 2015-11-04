@@ -3,4 +3,7 @@ vim/colors
 vim/bundle
 zsh/scripts
 zsh/includes
+config/awesome/themes
+config/awesome/battery.lua
+config/awesome/volume.lua
 psql
