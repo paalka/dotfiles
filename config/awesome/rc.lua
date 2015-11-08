@@ -268,6 +268,9 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86MonBrightnessDown", function ()
        awful.util.spawn("xbacklight -dec 15") end),
 
+    -- Lock the screen
+    awful.key({ modkey,           }, "y", function () awful.util.spawn_with_shell("~/.bin/lock") end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
