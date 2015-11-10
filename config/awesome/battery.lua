@@ -25,13 +25,11 @@ batterywidgettimer:add_signal("timeout",
   end
 )
 function batteryPercent(battery_name)
-    local adapter_current_file = io.open("/sys/class/power_supply/" .. battery_name .. "/energy_now")
-    local adapter_total_capacity_file = io.open("/sys/class/power_supply/" .. battery_name .. "/energy_full")
-    local adapter_current_capacity = adapter_current_file:read()
-    local adapter_total_capacity = adapter_total_capacity_file:read()
+    local adapter_current_capacity_file = io.open("/sys/class/power_supply/" .. battery_name .. "/capacity")
+    local adapter_current_capacity = adapter_current_capacity_file:read()
 
     -- Return the percentage as an int.
-    return tonumber(math.floor(adapter_current_capacity * 100 / adapter_total_capacity))
+    return tonumber(adapter_current_capacity)
 end
 
 batterywidgettimer:start()
