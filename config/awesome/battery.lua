@@ -4,26 +4,6 @@ ACPI_BATTERY_NAMES = {"Battery 0", "Battery 1"}
 
 battery_warning_shown = false
 
-batterywidget = widget({ type = "textbox" })
-batterywidgettimer = timer({ timeout = 5 })
-batterywidgettimer:add_signal("timeout",
-  function()
-
-    batterywidget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
-
-    if not isCharging() and not battery_warning_shown and getTotalBatteryPercent(BATTERY_NAMES) < 15 then
-        naughty.notify({ title  = "Low battery warning"
-                                , text       = "Less than 15% battery left!"
-                                , timeout    = 5
-                                , position   = "top_right"
-                                , fg         = beautiful.fg_focus
-                                , bg         = beautiful.bg_focus
-                                })
-        battery_warning_shown = true
-    end
-  end
-)
-
 function getBatteryWidgetText(acpi_battery_names)
     widget_text = ""
     for i, acpi_battery_name in ipairs(acpi_battery_names) do
@@ -60,5 +40,27 @@ function getBatteryPercent(battery_name)
 
     return tonumber(adapter_current_capacity)
 end
+
+batterywidgettimer = timer({ timeout = 5 })
+batterywidgettimer:add_signal("timeout",
+  function()
+
+    batterywidget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
+
+    if not isCharging() and not battery_warning_shown and getTotalBatteryPercent(BATTERY_NAMES) < 15 then
+        naughty.notify({ title  = "Low battery warning"
+                                , text       = "Less than 15% battery left!"
+                                , timeout    = 5
+                                , position   = "top_right"
+                                , fg         = beautiful.fg_focus
+                                , bg         = beautiful.bg_focus
+                                })
+        battery_warning_shown = true
+    end
+  end
+)
+
+batterywidget = widget({ type = "textbox" })
+batterywidget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
 
 batterywidgettimer:start()
