@@ -8,7 +8,7 @@ function getBatteryWidgetText(acpi_battery_names)
     if isCharging() then
         widget_text = " ⚡"
     else
-        widget_text = " 🔋"
+        widget_text = "  "
     end
 
     for i, acpi_battery_name in ipairs(acpi_battery_names) do
