@@ -9,8 +9,16 @@ require("naughty")
 
 -- Load Debian menu entries
 require("debian.menu")
-require("volume")
+
+require("local")
+
+if SHOW_BATTERY then
 require("battery")
+end
+
+if SHOW_VOLUME then
+require("volume")
+end
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
