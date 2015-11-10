@@ -5,10 +5,15 @@ ACPI_BATTERY_NAMES = {"Battery 0", "Battery 1"}
 battery_warning_shown = false
 
 function getBatteryWidgetText(acpi_battery_names)
-    widget_text = ""
+    if isCharging() then
+        widget_text = " ⚡"
+    else
+        widget_text = " 🔋"
+    end
+
     for i, acpi_battery_name in ipairs(acpi_battery_names) do
         acpi_battery_status = getACPIBatteryStatus(acpi_battery_name)
-        widget_text = string.format("%s  [ %s ]", widget_text, acpi_battery_status)
+        widget_text = string.format("%s [ %s ] ", widget_text, acpi_battery_status)
     end
     return widget_text
 end
