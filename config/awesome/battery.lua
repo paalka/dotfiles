@@ -2,7 +2,7 @@ POWER_SUPPLY_PATH = "/sys/class/power_supply/"
 BATTERY_NAMES = {"BAT0", "BAT1"}
 ACPI_BATTERY_NAMES = {"Battery 0", "Battery 1"}
 
-battery_warning_shown = false
+should_show_battery_warning = true
 
 function getBatteryWidgetText(acpi_battery_names)
     if isCharging() then
@@ -51,8 +51,9 @@ batterywidgettimer:add_signal("timeout",
   function()
 
     batterywidget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
+    total_battery_percent = getTotalBatteryPercent(BATTERY_NAMES)
 
-    if not isCharging() and not battery_warning_shown and getTotalBatteryPercent(BATTERY_NAMES) < 15 then
+    if not isCharging() and should_show_battery_warning and total_battery_percent < 15 then
         naughty.notify({ title  = "Low battery warning"
                                 , text       = "Less than 15% battery left!"
                                 , timeout    = 10
@@ -60,7 +61,9 @@ batterywidgettimer:add_signal("timeout",
                                 , fg         = beautiful.fg_focus
                                 , bg         = beautiful.bg_urgent
                                 })
-        battery_warning_shown = true
+        should_show_battery_warning = false
+    elseif total_battery_percent > 75 and not should_show_battery_warning then
+        should_show_battery_warning = true
     end
   end
 )
