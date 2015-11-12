@@ -270,6 +270,10 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioMute", function ()
        awful.util.spawn("amixer sset Master toggle") end),
 
+    -- Play/Pause the music when pressing Control + Space
+    awful.key({ "Control" }, "space", function ()
+       awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause") end),
+
     -- Handle screen brightness
     awful.key({ }, "XF86MonBrightnessUp", function ()
        awful.util.spawn("xbacklight -inc 15") end),
