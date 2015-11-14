@@ -48,15 +48,16 @@ def create_symlinks(directory, target_dir, ignore):
 
                 create_symlink(path_to_link, real_folder)
 
-                for item2 in os.listdir(item_path):
-                    if not item2.startswith("."):
-                        curr_item = os.path.join(item, item2)
+                if not item + "/*" in ignore:
+                    for item2 in os.listdir(item_path):
+                        if not item2.startswith("."):
+                            curr_item = os.path.join(item, item2)
 
-                        if curr_item not in ignore:
-                            path_to_link = os.path.join(target_dir, "." + item2)
-                            real_file = os.path.join(directory, curr_item)
+                            if curr_item not in ignore:
+                                path_to_link = os.path.join(target_dir, "." + item2)
+                                real_file = os.path.join(directory, curr_item)
 
-                            create_symlink(path_to_link, real_file)
+                                create_symlink(path_to_link, real_file)
 
 
 def init_git_submodules():
