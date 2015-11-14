@@ -1,4 +1,6 @@
-ssh
+README.md
+install.py
+ignore_symlink
 vim/colors
 vim/bundle
 zsh/scripts

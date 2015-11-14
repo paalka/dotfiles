@@ -42,22 +42,21 @@ def create_symlinks(directory, target_dir, ignore):
         if item not in ignore and not item.startswith("."):
             item_path = os.path.join(directory, item)
 
-            if os.path.isdir(item_path):
-                path_to_link = os.path.join(target_dir, "." + item)
-                real_folder = os.path.join(directory, item)
+            path_to_link = os.path.join(target_dir, "." + item)
+            real_folder = os.path.join(directory, item)
 
-                create_symlink(path_to_link, real_folder)
+            create_symlink(path_to_link, real_folder)
 
-                if not item + "/*" in ignore:
-                    for item2 in os.listdir(item_path):
-                        if not item2.startswith("."):
-                            curr_item = os.path.join(item, item2)
+            if os.path.isdir(item_path) and not item + "/*" in ignore:
+                for item2 in os.listdir(item_path):
+                    if not item2.startswith("."):
+                        curr_item = os.path.join(item, item2)
 
-                            if curr_item not in ignore:
-                                path_to_link = os.path.join(target_dir, "." + item2)
-                                real_file = os.path.join(directory, curr_item)
+                        if curr_item not in ignore:
+                            path_to_link = os.path.join(target_dir, "." + item2)
+                            real_file = os.path.join(directory, curr_item)
 
-                                create_symlink(path_to_link, real_file)
+                            create_symlink(path_to_link, real_file)
 
 
 def init_git_submodules():
