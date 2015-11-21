@@ -1,2 +1,5 @@
 #!/bin/bash
-i3lock -i ~/.bg/bg_triangular_glow.png
+if ! pgrep xscreensaver > /dev/null 2>&1; then
+    xscreensaver &
+fi
+xscreensaver-command --lock > /dev/null 2>&1
