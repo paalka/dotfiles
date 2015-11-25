@@ -34,8 +34,8 @@ URxvt.scrollBar: false
 URxvt.depth: 32
 
 URxvt.perl-lib: /home/paal/.urxvt/urxvt-perls/
-!!URxvt.font: xft:DejaVu Sans Mono:size=8:antialias=true, xft:FontAwesome:pixelsize=10
-URxvt.font: xft:inconsolata:size=10:antialias=true, xft:FontAwesome:pixelsize=10
+URxvt.font: xft:DejaVu Sans Mono:size=8:antialias=true, xft:FontAwesome:pixelsize=10
+!URxvt.font: xft:inconsolata:size=10:antialias=true, xft:FontAwesome:pixelsize=10
 URxvt.letterSpace: -1
 
 Xft.dpi:        96
