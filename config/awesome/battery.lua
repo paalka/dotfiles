@@ -57,7 +57,7 @@ batterywidgettimer:add_signal("timeout",
     if not isCharging() and should_show_battery_warning and total_battery_percent < LOW_BATTERY_THRESHOLD then
         naughty.notify({ title  = "Low battery warning"
                                 , text       = "Less than " .. LOW_BATTERY_THRESHOLD .. "% battery left!"
-                                , timeout    = 10
+                                , timeout    = 300
                                 , position   = "top_right"
                                 , fg         = beautiful.fg_focus
                                 , bg         = beautiful.bg_urgent
