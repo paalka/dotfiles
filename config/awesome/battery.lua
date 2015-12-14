@@ -23,6 +23,10 @@ function getACPIBatteryStatus(acpi_battery_name)
     local battery_status_cmd = assert(io.popen("acpi | grep '" .. acpi_battery_name .. ":' | cut -d, -f 2,3 | xargs", "r"))
     local battery_status = battery_status_cmd:read("*l")
 
+    if battery_status == '' then
+        battery_status = acpi_battery_name .. " missing"
+    end
+
     return battery_status
 end
 
@@ -42,9 +46,14 @@ end
 
 function getBatteryPercent(battery_name)
     local adapter_current_capacity_file = io.open(POWER_SUPPLY_PATH .. battery_name .. "/capacity")
-    local adapter_current_capacity = adapter_current_capacity_file:read()
+    local adapter_current_capacity
+    if adapter_current_capacity_file ~= nil then
+        adapter_current_capacity = adapter_current_capacity_file:read()
+    else
+        adapter_current_capacity = 0
+    end
 
-    return tonumber(adapter_current_capacity)
+    return adapter_current_capacity
 end
 
 batterywidgettimer = timer({ timeout = 5 })
