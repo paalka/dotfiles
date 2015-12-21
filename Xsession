@@ -1,7 +1,7 @@
 #!/bin/sh
 [ -f ~/.bin/autostart.local ] && ~/.bin/autostart.local &
 
-/usr/bin/urxvtd -q -f -o &
+/usr/bin/urxvtd -q -f -o
 /usr/bin/xscreensaver -no-splash &
 
 BG=~/.bg/bg_triangular_glow.png
