@@ -32,16 +32,28 @@ set showmatch
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Handle packages
 Plugin 'gmarik/Vundle.vim'
+
+" Make vimdiff act sanely
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-conflicted'
+
+" Make the statusline more useful
 Plugin 'bling/vim-airline'
+
+" Allow HTML tag expansion
 Plugin 'rstacruz/sparkup'
+
+" Give each level of parentheses a distinct color
 Plugin 'kien/rainbow_parentheses.vim'
+
+" Make it easier to comment out large blocks
 Plugin 'scrooloose/nerdcommenter'
+
+" Give syntactic hints in realtime
 Plugin 'scrooloose/syntastic'
 Plugin 'fatih/vim-go'
-Plugin 'L9'
 
 " enable vim airline (bottom command bar)
 let g:airline#extensions#tabline#enabled = 1
@@ -120,6 +132,7 @@ set laststatus=2
 " Clear searches.
 nnoremap <leader><space> :nohlsearch<CR>
 
+" Higlight whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
