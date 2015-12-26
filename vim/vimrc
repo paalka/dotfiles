@@ -1,22 +1,11 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" ======== General settings ======== "
-color peachpuff
+set nocompatible    " be iMproved, required
+filetype off        " required
 
 " show line numbers
 set number
 
-" Don't jump over wrapped lines.
-nnoremap j gj
-nnoremap k gk
-
 " turn on syntax highlighting
 syntax on
-
-" Highlight the current line.
-set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " Enable a graphical menu for cycling through filenames.
 set wildmenu
@@ -27,6 +16,54 @@ set lazyredraw
 
 " Show matching [({})]
 set showmatch
+
+set hlsearch        " highlight search terms
+set incsearch       " show search matches as you type
+
+set visualbell      " don't beep
+set noerrorbells    " don't beep
+
+set title           " change the terminal's title
+
+set tabstop=4       " a tab is four spaces
+set shiftwidth=4    " number of spaces to use for autoindenting
+set softtabstop=4   " the number of spaces a tab counts as while editing
+set copyindent      " copy the previous indentation on autoindenting
+set expandtab       " Always use spaces rather than tabs
+set smarttab        " Insert spaces based on the shiftwidth
+set autoindent      " Copy the indent from the current line
+
+filetype plugin indent on    " required by vundle
+
+set history=1000
+set undolevels=1000
+
+autocmd StdinReadPre * let s:std_in=1
+
+set textwidth=79
+"
+" When a line is longer than textwidth, show the part longer than textwidth on
+" the next line, instead of scrolling horizontally.
+set wrap
+set formatoptions=qrn1
+
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
+" ======== Visuals ======== "
+
+color peachpuff
+
+set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
+
+" Always show the statusline
+set laststatus=2
+
+" Highlight the current line.
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
+" ======== Plugins ======== "
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -55,27 +92,31 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'fatih/vim-go'
 
-" enable vim airline (bottom command bar)
+call vundle#end()   " required by vundle
+
+" ======== Plugin settings ======== "
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='raven'
 
-let mapleader=","
+" auto enable rainbow ()
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
-autocmd StdinReadPre * let s:std_in=1
+" ======== Keybindings ======== "
 
-" use jj to got to command mode
+" use jj to enter command mode
 imap jj <Esc>
 
-" Handle long lines nicely.
-set wrap
-set textwidth=79
-set formatoptions=qrn1
+let mapleader=","
 
-" make it possible to go to a other split by using ctrl+hjkl
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
+" Don't jump over wrapped lines.
+nnoremap j gj
+nnoremap k gk
+
+nnoremap <leader><space> :nohlsearch<CR>
 
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
@@ -84,53 +125,11 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
-call vundle#end()            " required by vundle
-filetype plugin indent on    " required by vundle
-
-set history=1000    " remember more commands and search history
-set undolevels=1000 " use many muchos levels of undo
-
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
-
-" auto enable rainbow ()
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-set hlsearch      " highlight search terms
-set incsearch     " show search matches as you type
-
-set visualbell           " don't beep
-set noerrorbells         " don't beep
-
-set title                " change the terminal's title
-
-" Default Tabs & spaces
-set tabstop=4     " a tab is four spaces
-set shiftwidth=4  " number of spaces to use for autoindenting
-set softtabstop=4
-set copyindent    " copy the previous indentation on autoindenting
-set expandtab
-set smarttab
-set autoindent
-
-if v:version < 703
-        finish
-    endif
-        autocmd InsertEnter * :set number
-        autocmd InsertLeave * :set relativenumber
-
-set pastetoggle=<F2>
-
-set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
-
-" " Always show the statusline
-set laststatus=2
-
-" Clear searches.
-nnoremap <leader><space> :nohlsearch<CR>
+" make it possible to go to a other split by using ctrl+hjkl
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
 " Higlight whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -139,3 +138,13 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Clear searches
+" Show line numbers relative to the current line when in command mode.
+if v:version < 703
+        finish
+    endif
+        autocmd InsertEnter * :set number
+        autocmd InsertLeave * :set relativenumber
+
+set pastetoggle=<F2>
