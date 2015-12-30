@@ -10,3 +10,4 @@ config/awesome/battery.lua
 config/awesome/volume.lua
 psql
 bg/*
+bin/*
