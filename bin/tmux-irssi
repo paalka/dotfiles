@@ -1,0 +1,5 @@
+#!/bin/sh
+
+tmux new-session -d 'irssi'
+tmux new-window
+tmux rename-session 'a'
