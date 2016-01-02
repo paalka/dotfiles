@@ -63,6 +63,10 @@ set laststatus=2
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
+" Make the background color of the gutter the same as the one defined by the
+" colorscheme.
+highlight clear SignColumn
+
 " ======== Plugins ======== "
 
 " set the runtime path to include Vundle and initialize
