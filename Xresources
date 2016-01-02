@@ -1,3 +1,4 @@
+! === XScreensaver theme ==
 xscreensaver.splash: false
 
 !font settings
@@ -31,3 +32,58 @@ xscreensaver.passwd.thermometer.width:       8
 
 !datestamp format--see the strftime(3) manual page for details
 xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
+
+! === Terminal colors ===
+*background: #121212
+*foreground: #c0c0c0
+*cursorColor: #93a1a1
+
+! black
+URxvt*color0  : #2E3436
+URxvt*color8  : #555753
+! red
+URxvt*color1  : #a31604
+URxvt*color9  : #c60001
+! green
+URxvt*color2  : #447241
+URxvt*color10 : #27a343
+! yellow
+URxvt*color3  : #c1951a
+URxvt*color11 : #d5a30e
+! blue
+URxvt*color4  : #425387
+URxvt*color12 : #4a5a8d
+! magenta
+URxvt*color5  : #965d98
+URxvt*color13 : #893c8c
+! cyan
+URxvt*color6  : #06989A
+URxvt*color14 : #12bccb
+! white
+URxvt*color7  : #D3D7CF
+URxvt*color15 : #EEEEEC
+
+URxvt.scrollBar: false
+URxvt.depth: 32
+
+URxvt.perl-lib: /home/paal/.urxvt/urxvt-perls/
+URxvt.font: xft:DejaVu Sans Mono:size=8:antialias=true, xft:FontAwesome:pixelsize=10
+URxvt.letterSpace: -1
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
+URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,url-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.url-launcher: /usr/bin/chromium-browser
+URxvt.matcher.button: 1
+URxvt*dynamicColors: on
+URxvt.iso14755:      False
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt*shading: 15
+
