@@ -107,6 +107,9 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " ======== Keybindings ======== "
 
+" Easily save a file as root
+cmap w!! w !sudo tee > /dev/null %
+
 " use jj to enter command mode
 imap jj <Esc>
 
