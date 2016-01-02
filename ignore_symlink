@@ -9,5 +9,8 @@ config/awesome/themes
 config/awesome/battery.lua
 config/awesome/volume.lua
 psql
+urxvt
+urxvt/urxvt-perls
+vrapper
 bg/*
 bin/*
