@@ -16,6 +16,8 @@ alias l='ls -al'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias 'dus=du -sckx * | sort -nr' # directories sorted by size
 alias 'filecount=find . -type f | wc -l' # number of files (not directories)
+alias ducks='du -cks * | sort -rn | head' # Get the largest folders
+
 
 # -------------------------------------------------------------------
 # Platform specific
