@@ -1,7 +1,7 @@
 ! === Terminal colors ===
-*background: #121212
-*foreground: #c0c0c0
-*cursorColor: #93a1a1
+URxvt*background: #121212
+URxvt*foreground: #c0c0c0
+URxvt*cursorColor: #93a1a1
 
 ! black
 URxvt*color0  : #2E3436
