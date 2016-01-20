@@ -4,6 +4,7 @@ ACPI_BATTERY_NAMES = {"Battery 0", "Battery 1"}
 LOW_BATTERY_THRESHOLD = 15
 
 should_show_battery_warning = true
+notification = nil
 
 function getBatteryWidgetText(acpi_battery_names)
     if isCharging() then
@@ -64,7 +65,7 @@ batterywidgettimer:add_signal("timeout",
     total_battery_percent = getTotalBatteryPercent(BATTERY_NAMES)
 
     if not isCharging() and should_show_battery_warning and total_battery_percent < LOW_BATTERY_THRESHOLD then
-        naughty.notify({ title  = "Low battery warning"
+        notification = naughty.notify({ title  = "Low battery warning"
                                 , text       = "Less than " .. LOW_BATTERY_THRESHOLD .. "% battery left!"
                                 , timeout    = 300
                                 , position   = "top_right"
@@ -74,6 +75,11 @@ batterywidgettimer:add_signal("timeout",
         should_show_battery_warning = false
     elseif total_battery_percent > 75 and not should_show_battery_warning then
         should_show_battery_warning = true
+    end
+
+    if isCharging() and notification then
+        naughty.destroy(notification)
+        notification = nil
     end
   end
 )
