@@ -1,7 +1,6 @@
 #!/bin/sh
 [ -f ~/.bin/autostart.local ] && ~/.bin/autostart.local &
 
-/usr/bin/urxvtd -q -f -o
 /usr/bin/xscreensaver -no-splash &
 
 BG=~/.bg/bg_triangular_glow.png
@@ -10,3 +9,7 @@ BG=~/.bg/bg_triangular_glow.png
 /usr/bin/setxkbmap -option caps:none
 
 /usr/bin/awesome
+
+if [[ -z $urxvtd ]]; then
+    /usr/bin/urxvtd -f -o -q
+fi
