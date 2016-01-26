@@ -1,5 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 [ -f ~/.bin/autostart.local ] && ~/.bin/autostart.local &
+
+urxvtd=$(pidof urxvtd)
+if [[ -z $urxvtd ]]; then
+    /usr/bin/urxvtd -f -o -q
+fi
 
 /usr/bin/xscreensaver -no-splash &
 
@@ -9,7 +14,3 @@ BG=~/.bg/bg_triangular_glow.png
 /usr/bin/setxkbmap -option caps:none
 
 /usr/bin/awesome
-
-if [[ -z $urxvtd ]]; then
-    /usr/bin/urxvtd -f -o -q
-fi
