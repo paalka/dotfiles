@@ -12,5 +12,6 @@ BG=~/.bg/bg_triangular_glow.png
 [ -f $BG ] && /usr/bin/feh --bg-scale $BG
 
 /usr/bin/setxkbmap -option caps:none
+/usr/bin/setxkbmap -option Caps_Lock:none
 
 /usr/bin/awesome
