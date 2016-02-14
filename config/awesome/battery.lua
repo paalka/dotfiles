@@ -3,9 +3,6 @@ BATTERY_NAMES = {"BAT0", "BAT1"}
 ACPI_BATTERY_NAMES = {"Battery 0", "Battery 1"}
 LOW_BATTERY_THRESHOLD = 15
 
-should_show_battery_warning = true
-notification = nil
-
 function getBatteryWidgetText(acpi_battery_names)
     if isCharging() then
         widget_text = " ⚡"
@@ -61,8 +58,11 @@ batterywidgettimer = timer({ timeout = 5 })
 batterywidgettimer:add_signal("timeout",
   function()
 
+    local should_show_battery_warning = true
+    local notification = nil
+
     batterywidget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
-    total_battery_percent = getTotalBatteryPercent(BATTERY_NAMES)
+    local total_battery_percent = getTotalBatteryPercent(BATTERY_NAMES)
 
     if not isCharging() and should_show_battery_warning and total_battery_percent < LOW_BATTERY_THRESHOLD then
         notification = naughty.notify({ title  = "Low battery warning"
