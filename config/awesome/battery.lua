@@ -3,6 +3,7 @@ BATTERY_NAMES = {"BAT0", "BAT1"}
 ACPI_BATTERY_NAMES = {"Battery 0", "Battery 1"}
 LOW_BATTERY_THRESHOLD = 15
 
+-- Creates the text to be shown on the widget.
 function getBatteryWidgetText(acpi_battery_names)
     if isCharging() then
         widget_text = " ⚡"
@@ -17,6 +18,8 @@ function getBatteryWidgetText(acpi_battery_names)
     return widget_text
 end
 
+-- Returns a string indicating the status of the battery (eg. whether it is
+-- charging, discharging, etc.)
 function getACPIBatteryStatus(acpi_battery_name)
     local battery_status_cmd = assert(io.popen("acpi | grep '" .. acpi_battery_name .. ":' | cut -d, -f 2,3 | xargs", "r"))
     local battery_status = battery_status_cmd:read("*l")
@@ -28,6 +31,7 @@ function getACPIBatteryStatus(acpi_battery_name)
     return battery_status
 end
 
+-- Get the sum of the remaining battery across all batteries.
 function getTotalBatteryPercent(battery_names)
     local total_percent = 0
     for i, battery_name in ipairs(battery_names) do
@@ -36,12 +40,14 @@ function getTotalBatteryPercent(battery_names)
     return total_percent
 end
 
+-- Determine any of the batteries are being charged.
 function isCharging()
     local charging_status_file = io.open(POWER_SUPPLY_PATH .. "AC/online")
     local charging_status = charging_status_file:read()
     return charging_status == "1"
 end
 
+-- Get the percentage of battery left.
 function getBatteryPercent(battery_name)
     local adapter_current_capacity_file = io.open(POWER_SUPPLY_PATH .. battery_name .. "/capacity")
     local adapter_current_capacity
@@ -73,6 +79,9 @@ batterywidgettimer:add_signal("timeout",
                                 , bg         = beautiful.bg_urgent
                                 })
         should_show_battery_warning = false
+    -- If the battery warning has not recently been shown, allow it to be
+    -- displayed again the next time the total battery percentage goes below
+    -- the threshold.
     elseif total_battery_percent > 75 and not should_show_battery_warning then
         should_show_battery_warning = true
     end
@@ -86,5 +95,4 @@ batterywidgettimer:add_signal("timeout",
 
 batterywidget = widget({ type = "textbox" })
 batterywidget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
-
 batterywidgettimer:start()
