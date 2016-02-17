@@ -60,12 +60,13 @@ function getBatteryPercent(battery_name)
     return adapter_current_capacity
 end
 
+should_show_battery_warning = true
+notification = nil
+
 batterywidgettimer = timer({ timeout = 5 })
 batterywidgettimer:add_signal("timeout",
   function()
 
-    local should_show_battery_warning = true
-    local notification = nil
 
     batterywidget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
     local total_battery_percent = getTotalBatteryPercent(BATTERY_NAMES)
