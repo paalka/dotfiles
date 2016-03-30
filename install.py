@@ -96,7 +96,7 @@ def get_files_to_ignore(ignore_file):
 
 if __name__ == "__main__":
     CWD = os.getcwd()
-    HOME_DIR =  os.path.expanduser('~')
+    HOME_DIR = os.path.expanduser('~')
 
     init_git_submodules()
     update_git_submodules()
