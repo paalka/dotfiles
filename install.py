@@ -101,5 +101,5 @@ if __name__ == "__main__":
     init_git_submodules()
     update_git_submodules()
 
-    to_ignore = get_files_to_ignore("ignore_symlink")
-    create_symlinks(CWD, HOME_DIR, to_ignore)
+    FILES_TO_IGNORE = get_files_to_ignore("ignore_symlink")
+    create_symlinks(CWD, HOME_DIR, FILES_TO_IGNORE)
