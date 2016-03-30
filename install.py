@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from subprocess import call
-import os, errno
+import os
 
 def is_link_or_file(path):
     """
