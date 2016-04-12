@@ -8,7 +8,7 @@ fi
 
 /usr/bin/xscreensaver -no-splash &
 
-BG=~/.bg/bg_triangular_glow.png
+BG=~/.bg/bg_ses9.jpg
 [ -f $BG ] && /usr/bin/feh --bg-scale $BG
 
 /usr/bin/setxkbmap -option caps:none
