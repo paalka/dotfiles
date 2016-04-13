@@ -83,6 +83,7 @@ alias 'rm=rm -i'
 alias 'py=python'
 alias 'mc=mosh cass'
 alias 'less=less -R'
+alias 'gdb=gdb -q'
 
 # Fetch the weather for Trondheim
 alias trd='finger 7012@graph.no | grep -v NRK'
