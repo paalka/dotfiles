@@ -10,7 +10,7 @@ vim/bundle/*/*
 oh-my-zsh/*
 !oh-my-zsh/.git
 !vim/bundle/*/.git
-vim/.netrwhist
+vim/.netrwhist*
 *.local
 zsh/cache
 config/awesome/local.lua
