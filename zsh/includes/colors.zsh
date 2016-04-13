@@ -19,5 +19,5 @@ export CLICOLOR=1
 if [[ $IS_MAC -eq 1 ]]; then
     export LS_COLORS=exfxcxdxbxegedabagacad
 elif [[ $IS_LINUX -eq 1 ]]; then
-    export LS_COLORS='di=1;34:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=1;36:*.rpm=90:*.tar=1;31'
+    export LS_COLORS='di=01;34:ln=01;36:pi=01;32:so=01;35:do=01;35:bd=01;33:cd=01;33:ex=01;31:mi=00;37:or=00;36:*.rpm=90:*.tar=1;31'
 fi
