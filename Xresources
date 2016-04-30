@@ -40,7 +40,7 @@ Xft.dpi:        96
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
-Xft.hintstyle:  hintfull
+Xft.hintstyle:  hintslight
 
 URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,url-select
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
