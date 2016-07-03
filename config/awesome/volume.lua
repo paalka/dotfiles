@@ -7,15 +7,19 @@ function update_volume(widget)
     fd:close()
 
     local volume = tonumber(string.match(status, "(%d?%d?%d)%%"))
-    volume = string.format("%3d", volume)
+    if volume ~= nil then
+        volume = string.format("%3d", volume)
 
-    status = string.match(status, "%[(o[^%]]*)%]")
-    if string.find(status, "on", 1, true) then
-        volume = " <span>🔉" .. volume .. "%</span>"
+        status = string.match(status, "%[(o[^%]]*)%]")
+        if string.find(status, "on", 1, true) then
+            volume = " <span>🔉" .. volume .. "%</span>"
+        else
+            volume = " <span color='red'>🔇" .. volume .. "%</span>"
+        end
+        widget.text = volume
     else
-        volume = " <span color='red'>🔇" .. volume .. "%</span>"
+        widget.text = "Device not found"
     end
-    widget.text = volume
  end
 
 update_volume(volume_widget)
