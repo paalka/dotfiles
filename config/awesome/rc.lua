@@ -13,11 +13,11 @@ require("debian.menu")
 require("local")
 
 if SHOW_BATTERY then
-require("battery")
+    require("battery")
 end
 
 if SHOW_VOLUME then
-require("volume")
+    require("volume")
 end
 
 -- {{{ Error handling
