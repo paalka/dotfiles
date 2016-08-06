@@ -20,6 +20,10 @@ if SHOW_VOLUME then
     require("volume")
 end
 
+if SHOW_LOAD then
+    require("load")
+end
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -194,6 +198,8 @@ for s = 1, screen.count() do
         batterywidget,
         spacer,
         volume_widget,
+        spacer,
+        load_widget,
         spacer,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
