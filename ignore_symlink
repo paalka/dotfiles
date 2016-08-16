@@ -12,6 +12,7 @@ psql
 urxvt
 urxvt/urxvt-perls
 vrapper
+ideavim
 bg/*
 bin/*
 gdb
