@@ -1,38 +1,42 @@
 #!/bin/sh
 set -e
 
-create_symlink() {
-	if [ -e "$2" ]; then
-		echo "File $2 already exists!"
+create_dotfile_symlink() {
+	DEST_PATH="$HOME/$2"
+	SRC_PATH="$PWD/$1"
+
+	echo $SRC_PATH
+
+	if [ -e "$DEST_PATH" ]; then
+		echo "File $DEST_PATH already exists!"
 	else
-		ln -s $2 $1
-		echo "Created symlink $2 -> $1"
+		ln -s -v "$SRC_PATH"  "$DEST_PATH"
 	fi
 }
 
-create_symlink "$PWD/vim/vimrc" "$HOME/.vimrc"
-create_symlink "$PWD/vim" "$HOME/.vim"
-create_symlink "$PWD/vrapper/vrapperrc" "$HOME/.vrapperrc"
+create_dotfile_symlink "vim/vimrc" ".vimrc"
+create_dotfile_symlink "vim" ".vim"
+create_dotfile_symlink "vrapper/vrapperrc" ".vrapperrc"
 
-create_symlink "$PWD/Xresources" "$HOME/.Xresources"
-create_symlink "$PWD/Xsession" "$HOME/.Xsession"
+create_dotfile_symlink "Xresources" ".Xresources"
+create_dotfile_symlink "Xsession" ".Xsession"
 
-create_symlink "$PWD/zsh/zshrc" "$HOME/.zshrc"
-create_symlink "$PWD/zsh*" "$HOME/.zsh"
+create_dotfile_symlink "zsh/zshrc" ".zshrc"
+create_dotfile_symlink "zsh*" ".zsh"
 
-create_symlink "$PWD/bash/bashrc" "$HOME/.bashrc"
+create_dotfile_symlink "bash/bashrc" ".bashrc"
 
-create_symlink "$PWD/git/gitconfig*" "$HOME/.gitconfig"
+create_dotfile_symlink "git/gitconfig*" ".gitconfig"
 
-create_symlink "$PWD/urxvt" "$HOME/.urxvt"
+create_dotfile_symlink "urxvt" ".urxvt"
 
-create_symlink "$PWD/tmux/tmux.conf" "$HOME/.tmux.conf"
+create_dotfile_symlink "tmux/tmux.conf" ".tmux.conf"
 
-create_symlink "$PWD/bin" "$HOME/.bin"
-create_symlink "$PWD/bg" "$HOME/.bg"
+create_dotfile_symlink "bin" ".bin"
+create_dotfile_symlink "bg" ".bg"
 
-create_symlink "$PWD/config/awesome" "$HOME/.config/awesome"
+create_dotfile_symlink "config/awesome" ".config/awesome"
 
-create_symlink "$PWD/gdb/gdbinit" "$HOME/.gdbinit"
+create_dotfile_symlink "gdb/gdbinit" ".gdbinit"
 
-create_symlink "$PWD/psql/psqlrc" "$HOME/.psqlrc"
+create_dotfile_symlink "psql/psqlrc" ".psqlrc"
