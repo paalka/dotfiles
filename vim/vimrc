@@ -37,7 +37,7 @@ set undolevels=1000
 autocmd StdinReadPre * let s:std_in=1
 
 set textwidth=79
-"
+
 " When a line is longer than textwidth, show the part longer than textwidth on
 " the next line, instead of scrolling horizontally.
 set wrap
