@@ -105,6 +105,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E225'
+
 " ======== Keybindings ======== "
 
 " Easily save a file as root
@@ -147,5 +150,3 @@ if v:version < 703
         autocmd InsertLeave * :set relativenumber
 
 set pastetoggle=<F2>
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501,E225'
