@@ -25,11 +25,7 @@ set noerrorbells    " don't beep
 
 set title           " change the terminal's title
 
-set tabstop=4       " a tab is four spaces
-set shiftwidth=4    " number of spaces to use for autoindenting
-set softtabstop=4   " the number of spaces a tab counts as while editing
 set copyindent      " copy the previous indentation on autoindenting
-set expandtab       " Always use spaces rather than tabs
 set smarttab        " Insert spaces based on the shiftwidth
 set autoindent      " Copy the indent from the current line
 
