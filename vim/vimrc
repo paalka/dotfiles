@@ -46,6 +46,9 @@ set formatoptions=qrn1
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+" Save at most 500 lines per register.
+set viminfo='20,<500
+
 " ======== Visuals ======== "
 
 color peachpuff
