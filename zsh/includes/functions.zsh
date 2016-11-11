@@ -37,7 +37,7 @@ function start_agent {
 }
 
 function add_keys {
-   echo "Adding keys to existsing SSH agent..."
+   echo "Adding keys to existing SSH agent..."
    /usr/bin/ssh-add;
 }
 
