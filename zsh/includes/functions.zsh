@@ -36,12 +36,19 @@ function start_agent {
     /usr/bin/ssh-add;
 }
 
+function add_keys {
+   echo "Adding keys to existsing SSH agent..."
+   /usr/bin/ssh-add;
+}
+
 function init_ssh_agent {
     # Source SSH settings, if applicable
     if [ -f "${SSH_ENV}" ]; then
         . "${SSH_ENV}" > /dev/null
 	if [[ -z "$(ps -ef | grep ${SSH_AGENT_PID} | grep "ssh-agent.*$")" ]]; then
             start_agent;
+        elif ! ssh-add -l >> /dev/null; then
+            add_keys;
         fi
     else
         start_agent;
