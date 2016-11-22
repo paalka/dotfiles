@@ -10,13 +10,23 @@
 (global-linum-mode t)
 (setq linum-format "%d ")
 
-(setq-default fill-column 78)
-
 ;; Highlight the currenly selected line
 (global-hl-line-mode 1)
 
 (set-default-font "DejaVu Sans Mono")
 (set-face-attribute 'default nil :height 80)
+
+;;;; Misc
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+    '(("." . "~/.backups")) ; don't litter my fs tree
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups
+
+(setq-default fill-column 78)
 
 ;;;; Handle packages
 (require 'package)
@@ -37,16 +47,6 @@
 
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
-
-(setq
-   backup-by-copying t      ; don't clobber symlinks
-   backup-directory-alist
-    '(("." . "~/.backups")) ; don't litter my fs tree
-   delete-old-versions t
-   kept-new-versions 6
-   kept-old-versions 2
-   version-control t)       ; use versioned backups
-
 
 (ensure-package-installed
  'helm
