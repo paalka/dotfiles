@@ -28,6 +28,8 @@
 
 (setq-default fill-column 78)
 
+(setq tramp-default-method "ssh")
+
 ;;;; Handle packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
