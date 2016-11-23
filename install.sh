@@ -16,7 +16,6 @@ create_dotfile_symlink() {
 
 create_dotfile_symlink "vim/vimrc" ".vimrc"
 create_dotfile_symlink "vim" ".vim"
-create_dotfile_symlink "vrapper/vrapperrc" ".vrapperrc"
 
 create_dotfile_symlink "Xresources" ".Xresources"
 create_dotfile_symlink "Xsession" ".Xsession"
