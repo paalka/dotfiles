@@ -6,7 +6,7 @@ set $64BITS = 1
 
 set confirm off
 set verbose off
-set prompt \033[31mgdb$ \033[0m
+set prompt gdb$ 
 
 set output-radix 0x10
 set input-radix 0x10
