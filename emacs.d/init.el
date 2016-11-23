@@ -113,6 +113,7 @@
 ;;;; Package settings
 (global-evil-leader-mode)
 (evil-leader/set-key
+  "a" #'helm-M-x
   "f" #'helm-find-files
   "p" #'helm-projectile
   "s" 'switch-to-buffer
