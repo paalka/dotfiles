@@ -103,8 +103,8 @@
  'helm
  'helm-projectile
  'evil
+ 'evil-escape
  'evil-leader
- 'key-chord
  'company
  'projectile
  'rainbow-delimiters
@@ -133,8 +133,6 @@
 ;; Auto-complete one there is only a single match
 (setq helm-ff-auto-update-initial-value t)
 
-(key-chord-mode 1)
-(key-chord-define evil-insert-state-map  "jj" 'evil-normal-state)
 
 ;; Enable company-mode globally
 (add-hook 'after-init-hook 'global-company-mode)
@@ -144,3 +142,7 @@
 
 ;; Prevent org-mode from folding sections on start-up
 (setq org-startup-folded nil)
+
+;; Make it possible to esacpe windows using jk
+(evil-escape-mode 1)
+(setq-default evil-escape-key-sequence "jk")
