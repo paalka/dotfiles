@@ -15,6 +15,8 @@ vim/.netrwhist*
 zsh/cache
 config/awesome/local.lua
 *~
-bookmarks
+*bookmarks*
 auto-save-list
 elpa
+*#*
+tramp
