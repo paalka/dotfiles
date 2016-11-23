@@ -103,6 +103,7 @@
  'helm
  'helm-projectile
  'evil
+ 'evil-leader
  'key-chord
  'company
  'projectile
@@ -110,6 +111,14 @@
 )
 
 ;;;; Package settings
+(global-evil-leader-mode)
+(evil-leader/set-key
+  "f" #'helm-find-files
+  "p" #'helm-projectile
+  "s" 'switch-to-buffer
+  "k" 'kill-buffer)
+
+(evil-leader/set-leader "<SPC>")
 (evil-mode 1)
 
 (require 'helm-config)
