@@ -117,7 +117,7 @@
   "a" #'helm-M-x
   "f" #'helm-find-files
   "p" #'helm-projectile
-  "s" 'switch-to-buffer
+  "s" #'helm-mini
   "k" 'kill-buffer)
 
 (evil-leader/set-leader "<SPC>")
