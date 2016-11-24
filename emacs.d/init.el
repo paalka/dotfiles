@@ -108,6 +108,7 @@
  'company
  'projectile
  'rainbow-delimiters
+ 'flycheck
 )
 
 ;;;; Package settings
@@ -146,3 +147,5 @@
 ;; Make it possible to esacpe windows using jk
 (evil-escape-mode 1)
 (setq-default evil-escape-key-sequence "jk")
+
+(global-flycheck-mode)
