@@ -76,6 +76,12 @@ alias tmuxa="tmux attach-session -t"
 alias tmuxls="tmux list-sessions"
 
 # -------------------------------------------------------------------
+# emacs
+# -------------------------------------------------------------------
+alias e="emacsclient -c"
+alias et="emacsclient -nw"
+
+# -------------------------------------------------------------------
 # Etc
 # -------------------------------------------------------------------
 # make rm command (potentially) less destructive
@@ -88,3 +94,4 @@ alias 'latexcont=latexmk -pvc -interaction=nonstopmode'
 
 # Fetch the weather for Trondheim
 alias trd='finger 7012@graph.no | grep -v NRK'
+
