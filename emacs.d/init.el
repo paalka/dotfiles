@@ -134,6 +134,7 @@
 ;; Auto-complete one there is only a single match
 (setq helm-ff-auto-update-initial-value t)
 
+(setq helm-M-x-fuzzy-match t)
 
 ;; Enable company-mode globally
 (add-hook 'after-init-hook 'global-company-mode)
