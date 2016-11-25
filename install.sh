@@ -5,8 +5,6 @@ create_dotfile_symlink() {
 	DEST_PATH="$HOME/$2"
 	SRC_PATH="$PWD/$1"
 
-	echo $SRC_PATH
-
 	if [ -e "$DEST_PATH" ]; then
 		echo "File $DEST_PATH already exists!"
 	else
