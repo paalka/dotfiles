@@ -39,3 +39,5 @@ create_dotfile_symlink "config/awesome" ".config/awesome"
 create_dotfile_symlink "gdb/gdbinit" ".gdbinit"
 
 create_dotfile_symlink "psql/psqlrc" ".psqlrc"
+
+create_dotfile_symlink "emacs.d" ".emacs.d"
