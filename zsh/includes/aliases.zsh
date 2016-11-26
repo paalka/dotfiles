@@ -22,15 +22,8 @@ alias ducks='du -cks * | sort -rn | head' # Get the largest folders
 # -------------------------------------------------------------------
 # Platform specific
 # -------------------------------------------------------------------
-if [[ $IS_MAC -eq 1 ]]; then
-    alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
-    alias oo='open .' # open current directory in OS X Finder
-    alias ls='ls -GFha' # Colorize output, add file type indicator, and put sizes in human readable format
-    alias ll='ls -GFhla' # Same as above, but in long listing format
-elif [[ $IS_LINUX -eq 1 ]]; then
-    alias ls='ls -Fha --color' # Colorize output, add file type indicator, and put sizes in human readable format
-    alias ll='ls -Fhla --color' # Same as above, but in long listing format
-fi
+alias ls='ls -Fha --color' # Colorize output, add file type indicator, and put sizes in human readable format
+alias ll='ls -Fhla --color' # Same as above, but in long listing format
 
 # -------------------------------------------------------------------
 # Git
