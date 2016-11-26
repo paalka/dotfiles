@@ -3,5 +3,5 @@
 # And press it
 
 bindkey -v
-bindkey -M viins 'jj' vi-cmd-mode
+bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^R' history-incremental-pattern-search-backward

@@ -54,6 +54,7 @@ set viminfo='20,<500
 color peachpuff
 
 set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
+hi StatusLine ctermbg=white ctermfg=black
 
 " Always show the statusline
 set laststatus=2
@@ -66,58 +67,13 @@ hi CursorLine term=bold cterm=bold guibg=Grey40
 " colorscheme.
 highlight clear SignColumn
 
-" ======== Plugins ======== "
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Handle packages
-Plugin 'gmarik/Vundle.vim'
-
-" Make vimdiff act sanely
-Plugin 'tpope/vim-fugitive'
-Plugin 'christoomey/vim-conflicted'
-
-" Make the statusline more useful
-Plugin 'bling/vim-airline'
-
-" Allow HTML tag expansion
-Plugin 'rstacruz/sparkup'
-
-" Give each level of parentheses a distinct color
-Plugin 'kien/rainbow_parentheses.vim'
-
-" Make it easier to comment out large blocks
-Plugin 'scrooloose/nerdcommenter'
-
-" Give syntactic hints in realtime
-Plugin 'scrooloose/syntastic'
-Plugin 'fatih/vim-go'
-
-call vundle#end()   " required by vundle
-
-" ======== Plugin settings ======== "
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='raven'
-
-" auto enable rainbow ()
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501,E225'
-
 " ======== Keybindings ======== "
 
 " Easily save a file as root
 cmap w!! w !sudo tee > /dev/null %
 
-" use jj to enter command mode
-imap jj <Esc>
+" use jk to enter command mode
+imap jk <Esc>
 
 let mapleader=","
 
