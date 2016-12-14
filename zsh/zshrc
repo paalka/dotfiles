@@ -1,7 +1,7 @@
 ZSH_ROOT=${HOME}/dotfiles/zsh
 
 for ZSH_FILE in checks aliases bindkeys colors completion functions \
-                history prompt exports setopt zsh_hooks; do
+                history exports setopt zsh_hooks; do
 
     filename=$ZSH_ROOT/includes/$ZSH_FILE.zsh
     if [[ -s $filename ]]; then
@@ -19,3 +19,5 @@ done
 if [[ -s $ZSH_ROOT/zshrc.local ]]; then
     source $ZSH_ROOT/zshrc.local
 fi
+
+source $ZSH_ROOT/includes/prompt.zsh
