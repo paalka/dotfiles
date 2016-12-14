@@ -11,13 +11,9 @@ alias 'bk=cd $OLDPWD'
 # directory information
 # -------------------------------------------------------------------
 alias lh='ls -d .*' # show hidden files/directories only
-alias lsd='ls -aFhlG'
 alias l='ls -al'
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias 'dus=du -sckx * | sort -nr' # directories sorted by size
-alias 'filecount=find . -type f | wc -l' # number of files (not directories)
 alias ducks='du -cks * | sort -rn | head' # Get the largest folders
-
 
 # -------------------------------------------------------------------
 # Platform specific
@@ -34,32 +30,11 @@ alias gl='git log'
 alias gpl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gs='git status'
 alias gd='git diff'
-alias gm='git commit -m'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gc='git checkout'
-alias gcb='git checkout -b'
-alias gra='git remote add'
-alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
-alias gta='git tag -a -m'
-alias gf='git reflog'
-alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort -nr'
-
-# leverage aliases from ~/.gitconfig
-alias gh='git hist'
-alias gt='git today'
 
 # gu shows a list of all developers and the number of commits they've made
 alias gu="git shortlog -s -n --all"
-
-# -------------------------------------------------------------------
-# Python virtualenv 
-# -------------------------------------------------------------------
-alias mkenv='mkvirtualenv'
-alias on="workon"
-alias off="deactivate"
 
 # -------------------------------------------------------------------
 # Tmux
@@ -79,7 +54,6 @@ alias et="emacsclient -nw"
 # -------------------------------------------------------------------
 # make rm command (potentially) less destructive
 alias 'rm=rm -i'
-alias 'py=python'
 alias 'mc=mosh cass'
 alias 'less=less -R'
 alias 'gdb=gdb -q'
