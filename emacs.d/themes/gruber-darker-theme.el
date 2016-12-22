@@ -367,7 +367,7 @@
 (make-face 'mode-line-80col-face)
 
 (set-face-attribute 'mode-line nil
-		    :foreground "gray60" :background "gray20"
+		    :foreground "gray60" :background "gray10"
 		    :inverse-video nil
 		    :box '(:line-width 6 :color "gray20" :style nil))
 
