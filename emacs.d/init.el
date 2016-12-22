@@ -113,6 +113,8 @@
  'projectile
  'rainbow-delimiters
  'flycheck
+ 'go-mode
+ 'lua-mode
 )
 
 ;;;; Package settings
