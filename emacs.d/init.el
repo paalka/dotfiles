@@ -33,6 +33,7 @@
    (:propertize mode-name
 		face mode-line-mode-face)
    "%] "
+   "\t"
    (:eval (propertize (format-mode-line minor-mode-alist)
 		      'face 'mode-line-minor-mode-face))
    (:propertize mode-line-process

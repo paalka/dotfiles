@@ -357,6 +357,60 @@
    `(company-preview-common ((t (:foreground ,gruber-darker-green :background ,gruber-darker-bg-1))))
    ))
 
+(make-face 'mode-line-read-only-face)
+(make-face 'mode-line-modified-face)
+(make-face 'mode-line-folder-face)
+(make-face 'mode-line-filename-face)
+(make-face 'mode-line-mode-face)
+(make-face 'mode-line-minor-mode-face)
+(make-face 'mode-line-process-face)
+(make-face 'mode-line-80col-face)
+
+(set-face-attribute 'mode-line nil
+		    :foreground "gray60" :background "gray20"
+		    :inverse-video nil
+		    :box '(:line-width 6 :color "gray20" :style nil))
+
+(set-face-attribute 'mode-line-inactive nil
+		    :foreground "gray80" :background "gray40"
+		    :inverse-video nil
+		    :box '(:line-width 6 :color "gray40" :style nil))
+
+(set-face-attribute 'mode-line-read-only-face nil
+		    :inherit 'mode-line-face
+		    :foreground "#4271ae"
+		    :box '(:line-width 2 :color "#4271ae"))
+
+(set-face-attribute 'mode-line-modified-face nil
+		    :inherit 'mode-line-face
+		    :foreground "gray90"
+		    :box '(:line-width 2 :color "#c82829"))
+
+(set-face-attribute 'mode-line-folder-face nil
+		    :inherit 'mode-line-face
+		    :foreground "gray60")
+
+(set-face-attribute 'mode-line-filename-face nil
+		    :inherit 'mode-line-face
+		    :foreground "gray90"
+		    :weight 'bold)
+
+(set-face-attribute 'mode-line-mode-face nil
+		    :inherit 'mode-line-face
+		    :foreground "gray90")
+
+(set-face-attribute 'mode-line-minor-mode-face nil
+		    :inherit 'mode-line-mode-face
+		    :foreground "gray40")
+
+(set-face-attribute 'mode-line-process-face nil
+		    :inherit 'mode-line-face
+		    :foreground "gray60")
+
+(set-face-attribute 'mode-line-80col-face nil
+		    :inherit 'mode-line-position-face
+		    :foreground "black")
+
 ;;;###autoload
 (when load-file-name
   (add-to-list 'custom-theme-load-path
