@@ -54,7 +54,7 @@ set viminfo='20,<500
 color peachpuff
 
 set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
-hi StatusLine ctermbg=white ctermfg=black
+hi StatusLine ctermbg=white ctermfg=234
 
 " Always show the statusline
 set laststatus=2
