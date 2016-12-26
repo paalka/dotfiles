@@ -372,7 +372,7 @@
 		    :box '(:line-width 6 :color "gray20" :style nil))
 
 (set-face-attribute 'mode-line-inactive nil
-		    :foreground "gray80" :background "gray40"
+		    :foreground "gray80" :background "gray30"
 		    :inverse-video nil
 		    :box '(:line-width 6 :color "gray40" :style nil))
 
