@@ -124,7 +124,9 @@
   "f" #'helm-find-files
   "p" #'helm-projectile
   "s" #'helm-mini
-  "k" 'kill-buffer)
+  "k" 'kill-buffer
+  "-" 'split-window-below
+  "j" 'other-window)
 
 (evil-leader/set-leader "<SPC>")
 (evil-mode 1)
