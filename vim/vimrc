@@ -75,6 +75,9 @@ cmap w!! w !sudo tee > /dev/null %
 " use jk to enter command mode
 imap jk <Esc>
 
+" Make sure visual block mode always works.
+noremap <C-V> <C-V>
+
 let mapleader=","
 
 " Don't jump over wrapped lines.
