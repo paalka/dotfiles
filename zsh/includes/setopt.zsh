@@ -24,7 +24,7 @@ setopt extended_glob
 # ===== History
 HISTSIZE=10000
 SAVEHIST=9000
-HISTFILE=~/.zsh_history
+HISTFILE=~/.zsh_history_$(hostname -s)
 
 # Allow multiple terminal sessions to all append to one zsh command history
 setopt append_history
