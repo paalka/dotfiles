@@ -9,7 +9,6 @@ alternative_order text/plain text/html
 
 set record="=.sent"
 set postponed="=.drafts"
-set imap_list_subscribed=no
 set header_cache="~/.mutt-headercache"
 
 # Show the main index by default
@@ -35,32 +34,9 @@ macro browser  \t      "<select-entry><next-unread-mailbox>"
 bind index,pager gu next-unread-mailbox
 
 ignore *
+unignore From Reply-To User-Agent Resent* \
+         To Cc Bcc Subject Date X-Spam-Score X-Spam-Report
 unset markers
-
-unignore From
-color header green default "From: "
-unignore Reply-To
-color header green default "From: "
-unignore User-Agent
-
-unignore Resent*
-
-unignore To
-color header red default "To: "
-
-unignore Cc
-unignore Bcc
-color header red default "Cc: "
-color header red default "Bc: "
-
-unignore Subject
-color header yellow default "Subject: "
-
-unignore Date
-color header magenta default "Date: "
-
-unignore X-Spam-Score
-unignore X-Spam-Report
 
 set move=no
 
@@ -94,8 +70,25 @@ set status_format = "───[ %f ]───[%r%m messages%?n? (%n new)?%?d? (%
 set sort=threads
 set sort_aux=last-date-received
 
-color body      yellow       default "[;:=]-?[)/(|]"
+set read_inc=1000 # Speed up opening of large mboxes
+set write_inc=1000
+
+set charset=utf-8
+set send_charset=utf-8
+
+# vim like movement
+bind index gg       first-entry
+bind index G        last-entry
+
+color header green default "From: "
+color header red default "To: "
+color header red default "Cc: "
+color header red default "Bc: "
+color header magenta default "Date: "
+color header yellow default "Subject: "
 color header brightblack default "User-Agent.*"
+
+color body      yellow       default "[;:=]-?[)/(|]"
 
 color index     yellow       default ~N      # New
 color index     yellow       default ~O      # Old, but unread
@@ -113,16 +106,6 @@ color tilde 		blue 		default
 color tree		red		default
 color indicator		default		black
 color status		default		black
-
-set read_inc=1000 # Speed up opening of large mboxes
-set write_inc=1000
-
-set charset=utf-8
-set send_charset=utf-8
-
-# vim like movement
-bind index gg       first-entry
-bind index G        last-entry
 
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
