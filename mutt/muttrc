@@ -1,0 +1,130 @@
+set autoedit
+set use_from
+set mail_check=30
+set timeout=60
+set sleep_time=0
+
+auto_view text/html application/html application/pdf application/msword application/word text/richtext
+alternative_order text/plain text/html
+
+set record="=.sent"
+set postponed="=.drafts"
+set imap_list_subscribed=no
+set header_cache="~/.mutt-headercache"
+
+# Show the main index by default
+set spoolfile="=/"
+
+mailboxes `\
+echo -n "+ "; \
+for file in ~/Mail/.*; do \
+        box=$(basename $file); \
+        if [ ! $box = '.' -a ! $box = '..' -a ! $box = '.customflags' -a ! $box = '.subscriptions' -a ! $box = '.INBOX' ]; then \
+                echo -n "+$box "; \
+        fi; \
+done`
+
+# Sane macros for maildir-usage
+macro index,pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+# Always go the the next unread when pressing tab.
+bind index,pager  \t      next-unread-mailbox
+macro browser  \t      "<select-entry><next-unread-mailbox>"
+
+bind index,pager gu next-unread-mailbox
+
+ignore *
+unset markers
+
+unignore From
+color header green default "From: "
+unignore Reply-To
+color header green default "From: "
+unignore User-Agent
+
+unignore Resent*
+
+unignore To
+color header red default "To: "
+
+unignore Cc
+unignore Bcc
+color header red default "Cc: "
+color header red default "Bc: "
+
+unignore Subject
+color header yellow default "Subject: "
+
+unignore Date
+color header magenta default "Date: "
+
+unignore X-Spam-Score
+unignore X-Spam-Report
+
+set move=no
+
+set copy=yes            # Save all outgoing mail
+set delete=ask-yes
+set include=yes         # always quote
+
+set postpone=ask-yes
+set print=ask-no
+
+set edit_hdrs
+set abort_unmodified
+set bounce_delivered=no
+set pager_index_lines=8
+set pager_stop=yes   # jump to the next message when done reading the current
+set arrow_cursor=no
+set check_new=yes
+set forward_quote=no
+set help=no
+set indent_string="> "
+set status_on_top
+
+set mark_old=no 	# Show old but unread messages
+set menu_scroll=yes
+
+set folder_format="%t%N  %2C %-30f %8s %d "
+set hdr_format="%4C %Z %{%b %d} %-15.15n (%4l) %s"
+set pager_format="%S [%T] %n / %s"
+set status_format = "───[ %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+set sort=threads
+set sort_aux=last-date-received
+
+color body      yellow       default "[;:=]-?[)/(|]"
+color header brightblack default "User-Agent.*"
+
+color index     yellow       default ~N      # New
+color index     yellow       default ~O      # Old, but unread
+color index     magenta      default ~F      # Flagged
+color index     blue         default ~T      # Tagged
+color index     red          default ~D      # Deleted
+
+color normal		default 	default
+color hdrdefault	cyan	 	default
+color signature 	brightblack	default
+color attachment 	brightyellow 	default
+color quoted 		green 		default
+color quoted1 		cyan 		default
+color tilde 		blue 		default
+color tree		red		default
+color indicator		default		black
+color status		default		black
+
+set read_inc=1000 # Speed up opening of large mboxes
+set write_inc=1000
+
+set charset=utf-8
+set send_charset=utf-8
+
+# vim like movement
+bind index gg       first-entry
+bind index G        last-entry
+
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+source ~/.mutt/mutt-patch-highlighting.muttrc
+source ~/.mutt/muttrc.local

@@ -1,0 +1,4 @@
+set from='foo@bar.com'
+set realname='A nice name'
+
+subscribe all-kinds@of-lists.com
