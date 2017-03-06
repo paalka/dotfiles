@@ -14,6 +14,7 @@ set header_cache="~/.mutt-headercache"
 # Show the main index by default
 set spoolfile="=/"
 
+# Dynamically add mailboxes. 'echo -n "+ "' adds the default inbox (=/).
 mailboxes `echo -n "+ "; find $MAIL -type d -name cur -printf '%h\n' | grep -vE 'Spam|notmuch$' | tr "\n" " "`
 
 # Sane macros for maildir-usage
