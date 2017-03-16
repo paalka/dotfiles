@@ -84,6 +84,8 @@ let mapleader=","
 nnoremap j gj
 nnoremap k gk
 
+set spelllang=en_us,nb_no
+
 nnoremap <leader><space> :nohlsearch<CR>
 
 nnoremap <C-t>     :tabnew<CR>
