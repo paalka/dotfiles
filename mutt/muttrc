@@ -25,8 +25,6 @@ macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 bind index,pager  \t      next-unread-mailbox
 macro browser  \t      "<select-entry><next-unread-mailbox>"
 
-bind index,pager gu next-unread-mailbox
-
 ignore *
 unignore From Reply-To User-Agent Resent* \
          To Cc Bcc Subject Date X-Spam-Score X-Spam-Report
