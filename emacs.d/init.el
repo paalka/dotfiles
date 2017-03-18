@@ -80,6 +80,8 @@
 
 (setq-default fill-column 78)
 
+(setq initial-scratch-message "")
+
 (setq tramp-default-method "ssh")
 
 (setq x-select-enable-clipboard t)
