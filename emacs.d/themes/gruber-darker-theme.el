@@ -129,30 +129,6 @@
    `(dired-ignored ((t ,(list :foreground gruber-darker-quartz
                               :inherit 'unspecified))))
 
-   ;; Ebrowse
-   `(ebrowse-root-class ((t (:foreground ,gruber-darker-niagara :weight bold))))
-   `(ebrowse-progress ((t (:background ,gruber-darker-niagara))))
-
-   ;; Egg
-   `(egg-branch ((t (:foreground ,gruber-darker-yellow))))
-   `(egg-branch-mono ((t (:foreground ,gruber-darker-yellow))))
-   `(egg-diff-add ((t (:foreground ,gruber-darker-green))))
-   `(egg-diff-del ((t (:foreground ,gruber-darker-red))))
-   `(egg-diff-file-header ((t (:foreground ,gruber-darker-wisteria))))
-   `(egg-help-header-1 ((t (:foreground ,gruber-darker-yellow))))
-   `(egg-help-header-2 ((t (:foreground ,gruber-darker-niagara))))
-   `(egg-log-HEAD-name ((t (:box (:color ,gruber-darker-fg)))))
-   `(egg-reflog-mono ((t (:foreground ,gruber-darker-niagara-1))))
-   `(egg-section-title ((t (:foreground ,gruber-darker-yellow))))
-   `(egg-text-base ((t (:foreground ,gruber-darker-fg))))
-   `(egg-term ((t (:foreground ,gruber-darker-yellow))))
-
-   ;; ERC
-   `(erc-notice-face ((t (:foreground ,gruber-darker-wisteria))))
-   `(erc-timestamp-face ((t (:foreground ,gruber-darker-green))))
-   `(erc-input-face ((t (:foreground ,gruber-darker-red+1))))
-   `(erc-my-nick-face ((t (:foreground ,gruber-darker-red+1))))
-
    ;; EShell
    `(eshell-ls-backup ((t (:foreground ,gruber-darker-quartz))))
    `(eshell-ls-directory ((t (:foreground ,gruber-darker-niagara))))
@@ -236,41 +212,10 @@
    `(info-xref ((t (:foreground ,gruber-darker-niagara))))
    `(info-visited ((t (:foreground ,gruber-darker-wisteria))))
 
-   ;; Jabber
-   `(jabber-chat-prompt-foreign ((t ,(list :foreground gruber-darker-quartz
-                                           :bold nil))))
-   `(jabber-chat-prompt-local ((t (:foreground ,gruber-darker-yellow))))
-   `(jabber-chat-prompt-system ((t (:foreground ,gruber-darker-green))))
-   `(jabber-rare-time-face ((t (:foreground ,gruber-darker-green))))
-   `(jabber-roster-user-online ((t (:foreground ,gruber-darker-green))))
-   `(jabber-activity-face ((t (:foreground ,gruber-darker-red))))
-   `(jabber-activity-personal-face ((t (:foreground ,gruber-darker-yellow :bold t))))
-
    ;; Line Highlighting
    `(highlight ((t (:background ,gruber-darker-bg+1 :foreground nil))))
    `(highlight-current-line-face ((t ,(list :background gruber-darker-bg+1
                                             :foreground nil))))
-
-   ;; Magit
-   `(magit-branch ((t (:foreground ,gruber-darker-niagara))))
-   `(magit-diff-hunk-header ((t (:background ,gruber-darker-bg+2))))
-   `(magit-diff-file-header ((t (:background ,gruber-darker-bg+4))))
-   `(magit-log-sha1 ((t (:foreground ,gruber-darker-red+1))))
-   `(magit-log-author ((t (:foreground ,gruber-darker-brown))))
-   `(magit-log-head-label-remote ((t ,(list :foreground gruber-darker-green
-                                            :background gruber-darker-bg+1))))
-   `(magit-log-head-label-local ((t ,(list :foreground gruber-darker-niagara
-                                           :background gruber-darker-bg+1))))
-   `(magit-log-head-label-tags ((t ,(list :foreground gruber-darker-yellow
-                                          :background gruber-darker-bg+1))))
-   `(magit-log-head-label-head ((t ,(list :foreground gruber-darker-fg
-                                          :background gruber-darker-bg+1))))
-   `(magit-item-highlight ((t (:background ,gruber-darker-bg+1))))
-   `(magit-tag ((t ,(list :foreground gruber-darker-yellow
-                          :background gruber-darker-bg))))
-   `(magit-blame-heading ((t ,(list :background gruber-darker-bg+1
-                                    :foreground gruber-darker-fg))))
-
    ;; Message
    `(message-header-name ((t (:foreground ,gruber-darker-green))))
 
@@ -306,9 +251,6 @@
 
    ;; Slime
    `(slime-repl-inputed-output-face ((t (:foreground ,gruber-darker-red))))
-
-   ;; Tuareg
-   `(tuareg-font-lock-governing-face ((t (:foreground ,gruber-darker-yellow))))
 
    ;; Speedbar
    `(speedbar-directory-face ((t ,(list :foreground gruber-darker-niagara
@@ -410,11 +352,6 @@
 (set-face-attribute 'mode-line-80col-face nil
 		    :inherit 'mode-line-position-face
 		    :foreground "black")
-
-;;;###autoload
-(when load-file-name
-  (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide-theme 'gruber-darker)
 
