@@ -62,8 +62,9 @@ set status_format = "───[ %f ]───[%r%m messages%?n? (%n new)?%?d? (%
 set sort=threads
 set sort_aux=last-date-received
 
-set read_inc=1000 # Speed up opening of large mboxes
-set write_inc=1000
+# Only update the progress bar occasionally, as updating it makes mutt slower.
+set read_inc=3000
+set write_inc=3000
 
 set charset=utf-8
 set send_charset=utf-8
