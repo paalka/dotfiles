@@ -151,6 +151,14 @@
    `(font-lock-variable-name-face ((t (:foreground ,gruber-darker-fg+1))))
    `(font-lock-warning-face ((t (:foreground ,gruber-darker-red))))
 
+   `(flycheck-error
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,gruber-darker-red)
+                   :foreground unspecified
+                   :background unspecified
+                   :inherit unspecified))
+      (t (:foreground ,gruber-darker-red :weight bold :underline t))))
+
    ;; Flymake
    `(flymake-errline
      ((((supports :underline (:style wave)))
