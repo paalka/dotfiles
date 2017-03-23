@@ -1,23 +1,35 @@
-ZSH_ROOT=${HOME}/dotfiles/zsh
+if [[ "$TERM" == "dumb" ]]
+then
+    unsetopt zle
+    unsetopt prompt_cr
+    unsetopt prompt_subst
+    unfunction precmd
+    unfunction preexec
+    PS1='$ '
+else
 
-for ZSH_FILE in aliases bindkeys colors completion functions \
-                exports setopt zsh_hooks; do
+    ZSH_ROOT=${HOME}/dotfiles/zsh
 
-    filename=$ZSH_ROOT/includes/$ZSH_FILE.zsh
+    for ZSH_FILE in aliases bindkeys colors completion functions \
+                    exports setopt zsh_hooks; do
+
+        filename=$ZSH_ROOT/includes/$ZSH_FILE.zsh
     if [[ -s $filename ]]; then
         source $filename
     fi
-done
+    done
 
-for ZSH_SCRIPT in z; do
-    filename=$ZSH_ROOT/scripts/$ZSH_SCRIPT.sh
-    if [[ -s $filename ]]; then
-        source $filename
+    for ZSH_SCRIPT in z; do
+        filename=$ZSH_ROOT/scripts/$ZSH_SCRIPT.sh
+        if [[ -s $filename ]]; then
+            source $filename
     fi
-done
+    done
 
-if [[ -s $ZSH_ROOT/zshrc.local ]]; then
-    source $ZSH_ROOT/zshrc.local
+    if [[ -s $ZSH_ROOT/zshrc.local ]]; then
+        source $ZSH_ROOT/zshrc.local
+    fi
+
+    source $ZSH_ROOT/includes/prompt.zsh
+
 fi
-
-source $ZSH_ROOT/includes/prompt.zsh
