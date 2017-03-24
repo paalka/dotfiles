@@ -127,7 +127,7 @@ call plug#end()
 
 " ========= Plugin settings =========  "
 
-nmap <Leader>p :Files<CR>
+nmap <Leader>f :Files<CR>
 nmap <Leader>s :Buffers<CR>
 nmap <Leader>h :History<CR>
 nmap <Leader>p :GFiles<CR>
