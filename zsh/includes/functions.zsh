@@ -29,7 +29,7 @@ function myip() {
 # -------------------------------------------------------------------
 function start_agent {
     echo "Initialising new SSH agent..."
-    /usr/bin/ssh-agent -t 1h | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    /usr/bin/ssh-agent -t 4h | sed 's/^echo/#echo/' > "${SSH_ENV}"
     echo "The SSH agent was started!"
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
