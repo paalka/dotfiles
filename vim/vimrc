@@ -1,21 +1,15 @@
 set nocompatible    " be iMproved, required
 filetype off        " required
 
-" show line numbers
-set number
+set number " show line numbers
 
-" turn on syntax highlighting
-syntax on
+syntax on " turn on syntax highlighting
 
-" Enable a graphical menu for cycling through filenames.
-set wildmenu
+set wildmenu " Enable a graphical menu for cycling through filenames.
 
-" Don't redreaw unless VIM really has to.
-" This enables ex. faster macros.
-set lazyredraw
+set lazyredraw " Don't redreaw unless VIM really has to.
 
-" Show matching [({})]
-set showmatch
+set showmatch " Show matching [({})]
 
 set hlsearch        " highlight search terms
 set incsearch       " show search matches as you type
@@ -29,14 +23,20 @@ set copyindent      " copy the previous indentation on autoindenting
 set smarttab        " Insert spaces based on the shiftwidth
 set autoindent      " Copy the indent from the current line
 
-filetype plugin indent on    " required by vundle
+set smartindent
+set expandtab
+set tabstop=2
+set softtabstop=-1
+set shiftwidth=2
+
+filetype plugin indent on
 
 set history=1000
 set undolevels=1000
 
 autocmd StdinReadPre * let s:std_in=1
 
-set textwidth=79
+set textwidth=72
 
 " When a line is longer than textwidth, show the part longer than textwidth on
 " the next line, instead of scrolling horizontally.
@@ -46,15 +46,17 @@ set formatoptions=qrn1
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Save at most 500 lines per register.
-set viminfo='20,<500
+set viminfo='20,<500 " Save at most 500 lines per register.
 
 " ======== Visuals ======== "
 
-color peachpuff
+set background=dark
+color hybrid
 
 set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
 hi StatusLine ctermbg=white ctermfg=234
+hi TabLine ctermfg=black ctermbg=234
+hi TabLineFill term=bold cterm=bold ctermbg=234
 
 " Always show the statusline
 set laststatus=2
@@ -78,15 +80,13 @@ imap jk <Esc>
 " Make sure visual block mode always works.
 noremap <C-V> <C-V>
 
-let mapleader=","
-
 " Don't jump over wrapped lines.
 nnoremap j gj
 nnoremap k gk
 
 set spelllang=en_us,nb_no
 
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>l :nohlsearch<CR>
 
 nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
@@ -97,13 +97,7 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-" Higlight whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+map <SPACE> <Leader>
 
 " Clear searches
 " Show line numbers relative to the current line when in command mode.
@@ -114,3 +108,48 @@ if v:version < 703
         autocmd InsertLeave * :set relativenumber
 
 set pastetoggle=<F2>
+
+
+" ========= Plugins =========  "
+
+call plug#begin('~/.vim/plugged')
+Plug 'Yggdroot/indentLine'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/syntastic'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'Shougo/neocomplete'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'easymotion/vim-easymotion'
+call plug#end()
+
+" ========= Plugin settings =========  "
+
+nmap <Leader>p :Files<CR>
+nmap <Leader>s :Buffers<CR>
+nmap <Leader>h :History<CR>
+nmap <Leader>p :GFiles<CR>
+nmap <Leader>a :Commands<CR>
+
+" auto enable rainbow ()
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+let g:indentLine_color_term = 239
+
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E225'
+
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+let g:NERDSpaceDelims = 1
+
+let g:fzf_layout = { 'down': '~15%' }
