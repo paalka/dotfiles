@@ -148,7 +148,7 @@ else
   let s:cterm_delbg      = "167"
 endif
 
-let s:palette.cterm.background = { 'dark' : "234"              , 'light' : "254" }
+let s:palette.cterm.background = { 'dark' : "233"              , 'light' : "254" }
 let s:palette.cterm.foreground = { 'dark' : s:cterm_foreground , 'light' : "16"  }
 let s:palette.cterm.window     = { 'dark' : "236"              , 'light' : "247" }
 let s:palette.cterm.selection  = { 'dark' : s:cterm_selection  , 'light' : "250" }
@@ -161,7 +161,7 @@ let s:palette.cterm.green      = { 'dark' : s:cterm_green      , 'light' : "22" 
 let s:palette.cterm.aqua       = { 'dark' : s:cterm_aqua       , 'light' : "23"  }
 let s:palette.cterm.blue       = { 'dark' : s:cterm_blue       , 'light' : "17"  }
 let s:palette.cterm.purple     = { 'dark' : s:cterm_purple     , 'light' : "53"  }
-let s:palette.cterm.darkcolumn = { 'dark' : "234"              , 'light' : "244" }
+let s:palette.cterm.darkcolumn = { 'dark' : "233"              , 'light' : "244" }
 let s:palette.cterm.addbg      = { 'dark' : "65"               , 'light' : "194" }
 let s:palette.cterm.addfg      = { 'dark' : "193"              , 'light' : "22"  }
 let s:palette.cterm.changebg   = { 'dark' : "60"               , 'light' : "189" }
