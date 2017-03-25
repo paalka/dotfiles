@@ -10,7 +10,7 @@ volume_sub_widget = wibox.widget.textbox()
 volume_widget = wibox.widget{
   {
     volume_sub_widget,
-    forced_width = 40,
+    forced_width = 60,
     widget = wibox.container.background
   },
   layout = wibox.container.margin(volume_widget, 5, 5, 5, 5)

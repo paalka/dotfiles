@@ -34,7 +34,7 @@ cpu_load_widget = wibox.widget{
   {
     cpu_load_sub_widget,
     fg = "#6e6e6e",
-    forced_width = 50,
+    forced_width = 65,
     widget = wibox.container.background
   },
   layout = wibox.container.margin(cpu_load_widget, 5, 5, 5, 5)
