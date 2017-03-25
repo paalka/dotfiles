@@ -1,0 +1,3 @@
+SHOW_BATTERY = true
+SHOW_VOLUME = true
+SHOW_LOAD = true
