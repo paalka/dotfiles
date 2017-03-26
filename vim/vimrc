@@ -121,7 +121,6 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'Shougo/neocomplete'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
