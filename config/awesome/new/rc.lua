@@ -210,7 +210,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             cpu_load_widget,
             volume_widget,
-            battery_ting,
+            battery_widget,
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             mytextclock,

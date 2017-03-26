@@ -76,14 +76,14 @@ end
 should_show_battery_warning = true
 notification = nil
 
-battery_widget = wibox.widget.textbox()
-battery_widget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
+battery_sub_widget = wibox.widget.textbox()
+battery_sub_widget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
 
 local loacal battery_widget_timer = gears.timer({ timeout = 15 })
 
 battery_widget_timer:connect_signal("timeout",
   function()
-    battery_widget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
+    battery_sub_widget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
     local total_battery_percent = getTotalBatteryPercent(BATTERY_NAMES)
 
     if not isCharging() and should_show_battery_warning and total_battery_percent < LOW_BATTERY_THRESHOLD then
@@ -107,7 +107,7 @@ battery_widget_timer:connect_signal("timeout",
   end
 )
 
-battery_widget:connect_signal("mouse::enter", function()
+battery_sub_widget:connect_signal("mouse::enter", function()
   local widget_text = ""
   for i, acpi_battery_name in ipairs(ACPI_BATTERY_NAMES) do
       acpi_battery_status = getACPIBatteryText(acpi_battery_name)
@@ -121,9 +121,9 @@ end)
 
 battery_widget_timer:start()
 
-battery_ting = wibox.widget {
+battery_widget = wibox.widget {
     {
-      battery_widget,
+      battery_sub_widget,
       fg     = '#6e6e6e',
       forced_width = 115,
       widget = wibox.container.background
