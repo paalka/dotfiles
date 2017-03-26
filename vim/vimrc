@@ -153,3 +153,11 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:NERDSpaceDelims = 1
 
 let g:fzf_layout = { 'down': '~15%' }
+
+nmap s <Plug>(easymotion-s2)
+map  / <Plug>(easymotion-sn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1
