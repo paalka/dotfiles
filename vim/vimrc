@@ -123,6 +123,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
+Plug 'tommcdo/vim-exchange'
 call plug#end()
 
 " ========= Plugin settings =========  "
