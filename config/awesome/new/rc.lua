@@ -213,8 +213,8 @@ awful.screen.connect_for_each_screen(function(s)
             battery_ting,
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-            wibox.widget.systray(),
             mytextclock,
+            wibox.widget.systray(),
             s.mylayoutbox,
         },
     }
