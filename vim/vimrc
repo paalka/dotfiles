@@ -118,7 +118,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/syntastic'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'Shougo/neocomplete'
+Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
@@ -146,12 +146,6 @@ let g:indentLine_color_term = 239
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E225'
 
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-
 let g:NERDSpaceDelims = 1
 
 let g:fzf_layout = { 'down': '~15%' }
@@ -161,3 +155,13 @@ map  / <Plug>(easymotion-sn)
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1
+
+" YouCompleteMe
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
