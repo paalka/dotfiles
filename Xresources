@@ -91,4 +91,4 @@ xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 XDvi.expert: True
 XDvi*shrinkFactor: 6
 
-URxvt.geometry: 110x40
+URxvt.geometry: 140x40
