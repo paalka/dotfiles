@@ -29,7 +29,7 @@ function update_volume(widget)
         if string.find(status, "on", 1, true) then
             volume = " <span>🔉" .. volume .. "%</span>"
         else
-            volume = " <span color='red'>🔇" .. volume .. "%</span>"
+            volume = " <span color='#ff284c'>🔇" .. volume .. "%</span>"
         end
         widget.markup = volume
     else
