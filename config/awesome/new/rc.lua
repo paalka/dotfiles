@@ -313,9 +313,9 @@ globalkeys = awful.util.table.join(
 
     -- Handle volume
     awful.key({ }, "XF86AudioRaiseVolume", function ()
-       awful.util.spawn("amixer set Master 5%+ unmute") end),
+       awful.util.spawn("amixer set Master 3%+ unmute") end),
     awful.key({ }, "XF86AudioLowerVolume", function ()
-        awful.util.spawn("amixer set Master 5%- unmute") end),
+        awful.util.spawn("amixer set Master 3%- unmute") end),
     awful.key({ }, "XF86AudioMute", function ()
        awful.util.spawn("amixer sset Master toggle") end),
 
