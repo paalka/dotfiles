@@ -113,7 +113,6 @@ set pastetoggle=<F2>
 " ========= Plugins =========  "
 
 call plug#begin('~/.vim/plugged')
-Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/syntastic'
@@ -141,7 +140,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-let g:indentLine_color_term = 239
 
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E225'
