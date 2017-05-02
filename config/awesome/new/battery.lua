@@ -113,10 +113,13 @@ battery_sub_widget:connect_signal("mouse::enter", function()
       acpi_battery_status = getACPIBatteryText(acpi_battery_name)
       widget_text = string.format("%s\n%s ", widget_text, acpi_battery_status)
   end
-  notification = naughty.notify{
+  notification_options = {
       text = widget_text,
-      timeout = 2, hover_timeout = 0.5
-  }
+      timeout = 0, hover_timeout = 0.5 }
+  battery_sub_widget.hover = naughty.notify(notification_options)
+end)
+battery_sub_widget:connect_signal("mouse::leave", function()
+  naughty.destroy(battery_sub_widget.hover)
 end)
 
 battery_widget_timer:start()
