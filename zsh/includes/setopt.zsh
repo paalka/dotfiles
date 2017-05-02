@@ -93,3 +93,6 @@ setopt transient_rprompt
 # ===== Scripts and Functions
 # Perform implicit tees or cats when multiple redirections are attempted
 setopt multios
+
+stty stop undef
+stty start undef
