@@ -44,7 +44,6 @@ set wrap
 set formatoptions=qrn1
 
 set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
 
 set viminfo='20,<500 " Save at most 500 lines per register.
 
