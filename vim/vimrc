@@ -47,6 +47,10 @@ set noerrorbells visualbell t_vb=
 
 set viminfo='20,<500 " Save at most 500 lines per register.
 
+set backupdir=~/.vim/backup/
+set directory=~/.vim/swap/
+set undodir=~/.vim/undo/
+
 " ======== Visuals ======== "
 
 set background=dark
@@ -107,7 +111,6 @@ if v:version < 703
         autocmd InsertLeave * :set relativenumber
 
 set pastetoggle=<F2>
-
 
 " ========= Plugins =========  "
 
