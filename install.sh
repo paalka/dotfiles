@@ -35,6 +35,7 @@ create_dotfile_symlink "bg" ".bg"
 create_dotfile_symlink "config/awesome" ".config/awesome"
 
 create_dotfile_symlink "gdb/gdbinit" ".gdbinit"
+create_dotfile_symlink "gdb/gdbinit-gef.py" ".gdbinit-gef.py"
 
 create_dotfile_symlink "psql/psqlrc" ".psqlrc"
 
