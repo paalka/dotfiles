@@ -25,3 +25,14 @@ muttrc.local
 mailcap
 plugged
 autoload
+weechat/logs
+weechat/script/plugins.xml.gz
+weechat/sec.conf
+weechat/irc.conf
+weechat/perl
+weechat/python
+weechat/tcl
+weechat/lua
+weechat/guile
+weechat/ruby
+weechat/*.log
