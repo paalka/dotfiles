@@ -44,12 +44,6 @@ alias tmuxa="tmux attach-session -t"
 alias tmuxls="tmux list-sessions"
 
 # -------------------------------------------------------------------
-# emacs
-# -------------------------------------------------------------------
-alias ee="emacs -nw --no-site-file"
-alias et="emacsclient -nw"
-
-# -------------------------------------------------------------------
 # Etc
 # -------------------------------------------------------------------
 # make rm command (potentially) less destructive

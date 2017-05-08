@@ -39,8 +39,6 @@ create_dotfile_symlink "gdb/gdbinit-gef.py" ".gdbinit-gef.py"
 
 create_dotfile_symlink "psql/psqlrc" ".psqlrc"
 
-create_dotfile_symlink "emacs.d" ".emacs.d"
-
 create_dotfile_symlink "top/toprc" ".toprc"
 
 create_dotfile_symlink "mutt" ".mutt"
