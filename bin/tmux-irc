@@ -1,5 +1,5 @@
 #!/bin/sh
 
-tmux new-session -d 'irssi'
+tmux new-session -d 'weechat'
 tmux new-window
 tmux rename-session 'a'
