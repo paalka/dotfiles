@@ -126,6 +126,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'tommcdo/vim-exchange'
 Plug 'wellle/targets.vim'
+Plug 'fatih/vim-go'
 call plug#end()
 
 " ========= Plugin settings =========  "
