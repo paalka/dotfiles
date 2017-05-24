@@ -325,9 +325,9 @@ globalkeys = awful.util.table.join(
 
     -- Handle screen brightness
     awful.key({ }, "XF86MonBrightnessUp", function ()
-       awful.util.spawn("xbacklight -inc 15") end),
+       awful.util.spawn("xbacklight -inc 10") end),
     awful.key({ }, "XF86MonBrightnessDown", function ()
-       awful.util.spawn("xbacklight -dec 15") end),
+       awful.util.spawn("xbacklight -dec 10") end),
 
     -- Lock the screen
     awful.key({ modkey,           }, "y", function () awful.util.spawn_with_shell("~/.bin/lock") end),
