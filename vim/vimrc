@@ -117,7 +117,6 @@ set pastetoggle=<F2>
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/syntastic'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
@@ -127,6 +126,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tommcdo/vim-exchange'
 Plug 'wellle/targets.vim'
 Plug 'fatih/vim-go'
+
+if v:version >= 800
+  Plug 'w0rp/ale'
+else
+  Plug 'scrooloose/syntastic'
+endif
+
 call plug#end()
 
 " ========= Plugin settings =========  "
