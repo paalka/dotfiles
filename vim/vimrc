@@ -105,10 +105,11 @@ map <SPACE> <Leader>
 
 " Show line numbers relative to the current line when in command mode.
 if v:version < 703
-        finish
-    endif
-        autocmd InsertEnter * :set number
-        autocmd InsertLeave * :set relativenumber
+    finish
+else
+    autocmd InsertEnter * :set number
+    autocmd InsertLeave * :set relativenumber
+endif
 
 set pastetoggle=<F2>
 
