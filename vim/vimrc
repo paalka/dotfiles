@@ -56,12 +56,8 @@ set undodir=~/.vim/undo/
 set background=dark
 color hybrid
 
-hi StatusLine ctermbg=white ctermfg=234
 hi TabLine ctermfg=232 ctermbg=242
 hi TabLineFill term=bold cterm=bold ctermbg=234
-
-" Always show the statusline
-set laststatus=2
 
 " Highlight the current line.
 set cursorline
@@ -120,6 +116,11 @@ function! StatuslineGit()
   let l:branchname = GitBranch()
   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
+
+" Always show the statusline
+set laststatus=2
+
+hi StatusLine ctermbg=white ctermfg=234
 
 set statusline=
 set statusline+=%#Normal#
