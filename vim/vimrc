@@ -56,7 +56,6 @@ set undodir=~/.vim/undo/
 set background=dark
 color hybrid
 
-set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
 hi StatusLine ctermbg=white ctermfg=234
 hi TabLine ctermfg=232 ctermbg=242
 hi TabLineFill term=bold cterm=bold ctermbg=234
