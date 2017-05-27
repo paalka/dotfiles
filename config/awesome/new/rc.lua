@@ -11,9 +11,19 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
-local battery = require('new.battery')
-local volume = require('new.volume')
-local cpu_load = require('new.load')
+local local_config = require("new.local")
+
+if SHOW_BATTERY then
+  local battery = require('new.battery')
+end
+
+if SHOW_VOLUME then
+  local volume = require('new.volume')
+end
+
+if SHOW_LOAD then
+  local cpu_load = require('new.load')
+end
 
 -- Load Debian menu entries
 require("debian.menu")
