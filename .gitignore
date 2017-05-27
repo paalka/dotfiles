@@ -13,7 +13,7 @@ oh-my-zsh/*
 vim/.netrwhist*
 *.local
 zsh/cache
-config/awesome/local.lua
+local.lua
 *~
 *bookmarks*
 auto-save-list
