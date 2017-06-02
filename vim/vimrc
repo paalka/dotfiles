@@ -7,8 +7,6 @@ syntax on " turn on syntax highlighting
 
 set wildmenu " Enable a graphical menu for cycling through filenames.
 
-set lazyredraw " Don't redreaw unless VIM really has to.
-
 set showmatch " Show matching [({})]
 
 set hlsearch        " highlight search terms
