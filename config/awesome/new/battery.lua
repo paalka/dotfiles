@@ -10,38 +10,44 @@ BATTERY_NAMES = {"BAT0", "BAT1"}
 ACPI_BATTERY_NAMES = {"Battery 0", "Battery 1"}
 LOW_BATTERY_THRESHOLD = 15
 
+should_show_battery_warning = true
+notification = nil
+
 -- Creates the text to be shown on the widget.
-function getBatteryWidgetText(acpi_battery_names)
+function updateBatteryWidgetText(acpi_battery_names, battery_sub_widget)
+    local widget_text = "  "
     if isCharging() then
         widget_text = " ⚡"
-    else
-        widget_text = "  "
     end
 
-    for i, acpi_battery_name in ipairs(acpi_battery_names) do
-        acpi_battery_status = getACPIBatteryStatus(acpi_battery_name)
-        widget_text = string.format("%s | %s | ", widget_text, acpi_battery_status)
+    awful.spawn.easy_async([[bash -c 'acpi']], function(stdout, stderr, exitreason, exitcode)
+      local acpi_output_no_newline = stdout:sub(1, -2)
+      for i, acpi_battery_name in ipairs(acpi_battery_names) do
+          acpi_battery_status = getACPIBatteryStatus(acpi_battery_name, acpi_output_no_newline)
+          widget_text = string.format("%s | %s | ", widget_text, acpi_battery_status)
+      end
+
+      battery_sub_widget.text = widget_text
     end
+    )
+
     return widget_text
 end
 
 -- Returns a string indicating the status of the battery (eg. whether it is
 -- charging, discharging, etc.)
-function getACPIBatteryStatus(acpi_battery_name)
-    local battery_status_cmd = assert(io.popen("acpi | grep '" .. acpi_battery_name .. ":' | cut -d, -f 2 | xargs", "r"))
-    local battery_status = battery_status_cmd:read("*l")
+function getACPIBatteryStatus(battery_name, acpi_output)
+    local battery_status = string.match(acpi_output, battery_name .. ": %w+, (%d%d%%).+")
 
     if battery_status == '' then
-        battery_status = acpi_battery_name .. " missing"
+        battery_status = battery_name .. " missing"
     end
 
     return battery_status
 end
 
-function getACPIBatteryText(acpi_battery_name)
-    local battery_status_cmd = assert(io.popen("acpi | grep '" .. acpi_battery_name .. ":' | cut -d, -f 3 | xargs", "r"))
-    local battery_status = battery_status_cmd:read("*l") 
-    return battery_status
+function getACPIBatteryText(battery_name, acpi_output)
+    return string.match(acpi_output, battery_name .. ": %w+, %d%d%%, (.+)")
 end
 
 -- Get the sum of the remaining battery across all batteries.
@@ -73,24 +79,17 @@ function getBatteryPercent(battery_name)
     return adapter_current_capacity
 end
 
-should_show_battery_warning = true
-notification = nil
-
-battery_sub_widget = wibox.widget.textbox()
-battery_sub_widget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
-
-local loacal battery_widget_timer = gears.timer({ timeout = 15 })
-
-battery_widget_timer:connect_signal("timeout",
-  function()
-    battery_sub_widget.text = getBatteryWidgetText(ACPI_BATTERY_NAMES)
+function updateWidgetText(battery_sub_widget)
+    updateBatteryWidgetText(ACPI_BATTERY_NAMES, battery_sub_widget)
     local total_battery_percent = getTotalBatteryPercent(BATTERY_NAMES)
 
     if not isCharging() and should_show_battery_warning and total_battery_percent < LOW_BATTERY_THRESHOLD then
         notification = naughty.notify({ 
-                                text       = "Less than " .. LOW_BATTERY_THRESHOLD .. "% battery left!"
-                                , timeout    = 300 , position   = "top_right" , fg         = beautiful.fg_focus
-                                , bg         = beautiful.bg_urgent
+                                text       = "Less than " .. LOW_BATTERY_THRESHOLD .. "% battery left!",
+                                timeout    = 300,
+                                position   = "top_right",
+                                fg         = beautiful.fg_focus,
+                                bg         = beautiful.bg_urgent
                                 })
         should_show_battery_warning = false
     -- If the battery warning has not recently been shown, allow it to be
@@ -104,25 +103,33 @@ battery_widget_timer:connect_signal("timeout",
         naughty.destroy(notification)
         notification = nil
     end
-  end
-)
+end
 
-battery_sub_widget:connect_signal("mouse::enter", function()
-  local widget_text = ""
-  for i, acpi_battery_name in ipairs(ACPI_BATTERY_NAMES) do
-      acpi_battery_status = getACPIBatteryText(acpi_battery_name)
-      widget_text = string.format("%s\n%s ", widget_text, acpi_battery_status)
-  end
-  notification_options = {
-      text = widget_text,
-      timeout = 0, hover_timeout = 0.5 }
-  battery_sub_widget.hover = naughty.notify(notification_options)
-end)
-battery_sub_widget:connect_signal("mouse::leave", function()
-  naughty.destroy(battery_sub_widget.hover)
-end)
+function showBatteryStatus(battery_sub_widget)
+  awful.spawn.easy_async([[bash -c 'acpi']], function(stdout, stderr, exitreason, exitcode)
+    local widget_text = ""
+    for i, acpi_battery_name in ipairs(ACPI_BATTERY_NAMES) do
+        acpi_battery_status = getACPIBatteryText(acpi_battery_name, stdout:sub(1, -2))
+        if acpi_battery_status ~= nil and acpi_battery_status ~= '' then
+          widget_text = string.format("%s\n%s ", widget_text, acpi_battery_status)
+        end
+    end
 
+    hover_notification_options.text = widget_text
+    battery_sub_widget.hover = naughty.notify(hover_notification_options)
+  end
+  )
+end
+
+local battery_widget_timer = gears.timer({ timeout = 10 })
+battery_sub_widget = wibox.widget.textbox()
+updateWidgetText(battery_sub_widget)
+battery_widget_timer:connect_signal("timeout", function() updateWidgetText(battery_sub_widget) end)
 battery_widget_timer:start()
+
+hover_notification_options = { timeout = 0, hover_timeout = 0.5 }
+battery_sub_widget:connect_signal("mouse::enter", function() showBatteryStatus(battery_sub_widget) end)
+battery_sub_widget:connect_signal("mouse::leave", function() naughty.destroy(battery_sub_widget.hover) end)
 
 battery_widget = wibox.widget {
     {
