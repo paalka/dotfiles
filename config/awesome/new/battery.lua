@@ -21,10 +21,14 @@ function updateBatteryWidgetText(acpi_battery_names, battery_sub_widget)
     end
 
     awful.spawn.easy_async([[bash -c 'acpi']], function(stdout, stderr, exitreason, exitcode)
-      local acpi_output_no_newline = stdout:sub(1, -2)
-      for i, acpi_battery_name in ipairs(acpi_battery_names) do
-          acpi_battery_status = getACPIBatteryStatus(acpi_battery_name, acpi_output_no_newline)
-          widget_text = string.format("%s | %s | ", widget_text, acpi_battery_status)
+      if exitcode == 0 then
+        local acpi_output_no_newline = stdout:sub(1, -2)
+        for i, acpi_battery_name in ipairs(acpi_battery_names) do
+            acpi_battery_status = getACPIBatteryStatus(acpi_battery_name, acpi_output_no_newline)
+            widget_text = string.format("%s | %s | ", widget_text, acpi_battery_status)
+      end
+      else
+        widget_text = "acpi returned exitcode: " .. exitcode
       end
 
       battery_sub_widget.text = widget_text
@@ -108,13 +112,18 @@ end
 function showBatteryStatus(battery_sub_widget)
   awful.spawn.easy_async([[bash -c 'acpi']], function(stdout, stderr, exitreason, exitcode)
     local widget_text = ""
-    for i, acpi_battery_name in ipairs(ACPI_BATTERY_NAMES) do
-        acpi_battery_status = getACPIBatteryText(acpi_battery_name, stdout:sub(1, -2))
-        if acpi_battery_status ~= nil and acpi_battery_status ~= '' then
-          widget_text = string.format("%s\n%s ", widget_text, acpi_battery_status)
-        end
-    end
+    if exitcode == 0 then
+      local acpi_output_no_newline = stdout:sub(1, -2)
+      for i, acpi_battery_name in ipairs(ACPI_BATTERY_NAMES) do
+          acpi_battery_status = getACPIBatteryText(acpi_battery_name, acpi_output_no_newline)
+          if acpi_battery_status ~= nil and acpi_battery_status ~= '' then
+            widget_text = string.format("%s\n%s ", widget_text, acpi_battery_status)
+          end
+      end
 
+    else
+      widget_text = "acpi returned exitcode: " .. exitcode
+    end
     hover_notification_options.text = widget_text
     battery_sub_widget.hover = naughty.notify(hover_notification_options)
   end
