@@ -40,7 +40,7 @@ end
 -- Returns a string indicating the status of the battery (eg. whether it is
 -- charging, discharging, etc.)
 function getACPIBatteryStatus(battery_name, acpi_output)
-    local battery_status = string.match(acpi_output, battery_name .. ": %w+, (%d%d%%).+")
+    local battery_status = string.match(acpi_output, battery_name .. ": %w+, (%d+%%).*")
 
     if battery_status == '' then
         battery_status = battery_name .. " missing"
