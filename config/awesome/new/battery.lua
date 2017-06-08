@@ -50,7 +50,7 @@ function getACPIBatteryStatus(battery_name, acpi_output)
 end
 
 function getACPIBatteryText(battery_name, acpi_output)
-    return string.match(acpi_output, battery_name .. ": %w+, %d%d%%, (.+)")
+    return string.match(acpi_output, battery_name .. ": %w+, %d+%%, (.+)")
 end
 
 -- Get the sum of the remaining battery across all batteries.
