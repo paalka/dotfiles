@@ -104,3 +104,5 @@ macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "ma
 
 source ~/.mutt/mutt-patch-highlighting.muttrc
 source ~/.mutt/muttrc.local
+
+set sidebar_visible=no
