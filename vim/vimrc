@@ -149,6 +149,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tommcdo/vim-exchange'
 Plug 'wellle/targets.vim'
 Plug 'fatih/vim-go'
+Plug 'editorconfig/editorconfig-vim'
 
 if v:version >= 800
   Plug 'w0rp/ale'
