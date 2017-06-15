@@ -124,7 +124,7 @@ set statusline=
 set statusline+=%#Normal#
 set statusline+=%{StatuslineGit()}
 set statusline+=%#StatusLine#
-set statusline+=\ %f
+set statusline+=\ %F
 set statusline+=%m\ 
 set statusline+=%=
 set statusline+=%#StatusLine#
