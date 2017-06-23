@@ -26,6 +26,7 @@ alias ll='ls -Fhla --color' # Same as above, but in long listing format
 # -------------------------------------------------------------------
 alias ga='git add'
 alias gp='git push'
+alias gc='git commit'
 alias gl='git log'
 alias gpl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gs='git status'
