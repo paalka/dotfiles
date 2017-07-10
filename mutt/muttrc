@@ -106,3 +106,4 @@ source ~/.mutt/mutt-patch-highlighting.muttrc
 source ~/.mutt/muttrc.local
 
 set sidebar_visible=no
+set crypt_use_gpgme=no
