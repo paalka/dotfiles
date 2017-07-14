@@ -37,3 +37,4 @@ weechat/lua
 weechat/guile
 weechat/ruby
 weechat/*.log
+pwd
