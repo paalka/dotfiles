@@ -115,6 +115,7 @@
  'evil-leader
  'company
  'company-go
+ 'company-jedi
  'projectile
  'rainbow-delimiters
  'flycheck-gometalinter
@@ -174,6 +175,11 @@
 
 (eval-after-load 'company
                    '(add-to-list 'company-backends 'company-go))
+
+(defun my/python-mode-hook ()
+    (add-to-list 'company-backends 'company-jedi))
+
+(add-hook 'python-mode-hook 'my/python-mode-hook)
 
 ;; Enable rainbow delimiters when in prog-mode
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
