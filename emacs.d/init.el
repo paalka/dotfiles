@@ -206,3 +206,4 @@
 (simpleclip-mode 1)
 
 (editorconfig-mode 1)
+(show-paren-mode 1)
