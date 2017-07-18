@@ -186,9 +186,11 @@
                    '(add-hook 'flycheck-mode-hook #'flycheck-gometalinter-setup))
 
 (setq flycheck-gometalinter-vendor t)
-(setq flycheck-gometalinter-errors-only t)
 (setq flycheck-gometalinter-fast t)
 
+(setq flycheck-gometalinter-disable-linters '("gotype" "gocyclo"))
+
+(add-hook 'before-save-hook 'gofmt-before-save)
 (simpleclip-mode 1)
 
 (editorconfig-mode 1)
