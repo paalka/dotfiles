@@ -123,6 +123,7 @@
  'lua-mode
  'simpleclip
  'editorconfig
+ 'exec-path-from-shell
 )
 
 ;; Prevent org-mode from folding sections on start-up
@@ -191,6 +192,11 @@
 (setq flycheck-gometalinter-disable-linters '("gotype" "gocyclo"))
 
 (add-hook 'before-save-hook 'gofmt-before-save)
+
+(when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
+
+(exec-path-from-shell-copy-env "PATH")
 (simpleclip-mode 1)
 
 (editorconfig-mode 1)
