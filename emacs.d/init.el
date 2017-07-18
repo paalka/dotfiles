@@ -122,6 +122,7 @@
  'go-mode
  'lua-mode
  'simpleclip
+ 'editorconfig
 )
 
 ;; Prevent org-mode from folding sections on start-up
@@ -189,3 +190,5 @@
 (setq flycheck-gometalinter-fast t)
 
 (simpleclip-mode 1)
+
+(editorconfig-mode 1)
