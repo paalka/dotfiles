@@ -151,6 +151,8 @@
 (setq-default evil-escape-key-sequence "jk")
 (setq-default evil-escape-delay 0.2)
 
+(evil-select-search-module 'evil-search-module 'evil-search)
+
 (require 'helm-config)
 (helm-mode 1)
 (helm-projectile-on)
