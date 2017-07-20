@@ -1,0 +1,12 @@
+[Unit]
+Description=Emacs: the extensible, self-documenting text editor
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/emacs --daemon --no-site-file
+ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Environment="PATH=/usr/local:/usr/local/bin:/usr/bin:/bin:/bin:/home/paal/dev/go/bin"
+Restart=always
+
+[Install]
+WantedBy=default.target
