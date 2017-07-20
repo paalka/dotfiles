@@ -78,6 +78,9 @@
    kept-old-versions 2
    version-control t)       ; use versioned backups
 
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 (setq-default fill-column 78)
 
 (setq initial-scratch-message "")
