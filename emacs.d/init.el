@@ -127,6 +127,7 @@
  'lua-mode
  'simpleclip
  'editorconfig
+ 'rjsx-mode
  'exec-path-from-shell
 )
 
