@@ -193,6 +193,9 @@
 ;; Auto close brackets. New in emacs 24
 (electric-pair-mode 1)
 
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+
 (global-flycheck-mode)
 
 (eval-after-load 'flycheck
