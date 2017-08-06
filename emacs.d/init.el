@@ -18,6 +18,7 @@
 (require 'company-cfg)
 (require 'flycheck-cfg)
 (require 'org-cfg)
+(require 'rjsx-cfg)
 (require 'exec-path-cfg)
 (require 'editorconfig-cfg)
 (require 'rainbow-delim-cfg)
