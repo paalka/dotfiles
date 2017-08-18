@@ -9,8 +9,9 @@
 (global-evil-leader-mode)
 (evil-leader/set-key
   "a" #'helm-M-x
-  "p" #'helm-projectile
-  "s" #'helm-mini
+  "p" #'helm-projectile-find-file
+  "s" #'helm-projectile-switch-to-buffer
+  "b" #'helm-buffers-list
   "k" 'kill-buffer
   "-" 'split-window-below
   "j" 'other-window)
