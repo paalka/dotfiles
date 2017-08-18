@@ -8,7 +8,6 @@
 (package-initialize)
 
 (require 'shorten-dir)
-(require 'simplified-mode-line)
 (require 'minimal-ui)
 (require 'backups)
 (require 'term-title-update)
