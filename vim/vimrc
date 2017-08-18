@@ -141,7 +141,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
@@ -149,12 +148,6 @@ Plug 'tommcdo/vim-exchange'
 Plug 'wellle/targets.vim'
 Plug 'fatih/vim-go'
 Plug 'editorconfig/editorconfig-vim'
-
-if v:version >= 800
-  Plug 'w0rp/ale'
-else
-  Plug 'scrooloose/syntastic'
-endif
 
 call plug#end()
 
