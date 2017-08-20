@@ -2,6 +2,7 @@
 
 (ensure-package-installed 
  'company
+ 'go-mode
  'company-go
  'company-jedi
 )

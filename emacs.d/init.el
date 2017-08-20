@@ -24,6 +24,5 @@
 (require 'electric-pair-cfg)
 
 (ensure-package-installed
- 'go-mode
  'simpleclip
 )
