@@ -74,11 +74,7 @@ function parse_git_state() {
 # If inside a Git repository, print its branch and state
 function git_prompt_string() {
   local git_where="$(parse_git_branch)"
-  [ -n "$git_where" ] && echo "on %{${PR_BOLD_BLACK}%}${git_where#(refs/heads/|tags/)}$(parse_git_state)%{$reset_color%}"
-}
-
-function current_pwd {
-  echo $(pwd | sed -e "s,^$HOME,~,")
+  [ -n "$git_where" ] && echo "%{${PR_BOLD_BLACK}%}${git_where#(refs/heads/|tags/)}$(parse_git_state)%{$reset_color%}"
 }
 
 if [ -z "$USER_COLOR" ]; then
@@ -89,7 +85,6 @@ if [ -z "$HOST_COLOR" ]; then
 fi
 
 PROMPT='
-${USER_COLOR}%n%{$reset_color%} at ${HOST_COLOR}$(hostname -s)%{$reset_color%} in ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)
-$(prompt_char) '
+${USER_COLOR}%n%{$reset_color%}%F{241}[%f${HOST_COLOR}$(hostname -s)%{$reset_color%}%F{241}]%f ${PR_BOLD_YELLOW}%~%{$reset_color%} $(git_prompt_string)$(prompt_char) '
 
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [y, n, a  e]? "
