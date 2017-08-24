@@ -2,12 +2,6 @@ function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
 
-function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
-    hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '>'
-}
-
 # http://blog.joshdick.net/2012/12/30/my_git_prompt_for_zsh.html
 # copied from https://gist.github.com/4415470
 # Adapted from code found at <https://gist.github.com/1712320>.
@@ -17,8 +11,8 @@ autoload -U colors && colors # Enable colors in prompt
 
 # Modify the colors and symbols in these variables as desired.
 GIT_PROMPT_SYMBOL="%{$fg[blue]%}±"
-GIT_PROMPT_PREFIX="%{$fg[green]%} [%{$reset_color%}"
-GIT_PROMPT_SUFFIX="%{$fg[green]%}]%{$reset_color%}"
+GIT_PROMPT_PREFIX="%{$fg[black]%} [%{$reset_color%}"
+GIT_PROMPT_SUFFIX="%{$fg[black]%}]%{$reset_color%}"
 GIT_PROMPT_AHEAD="%{$fg[red]%}ANUM%{$reset_color%}"
 GIT_PROMPT_BEHIND="%{$fg[cyan]%}BNUM%{$reset_color%}"
 GIT_PROMPT_MERGING="%{$fg_bold[magenta]%}⚡︎%{$reset_color%}"
@@ -81,10 +75,10 @@ if [ -z "$USER_COLOR" ]; then
   USER_COLOR=${PR_BOLD_BLACK}
 fi
 if [ -z "$HOST_COLOR" ]; then
-  HOST_COLOR=${PR_BOLD_CYAN}
+  HOST_COLOR=%F{147}
 fi
 
 PROMPT='
-${USER_COLOR}%n%{$reset_color%}%F{241}[%f${HOST_COLOR}$(hostname -s)%{$reset_color%}%F{241}]%f ${PR_BOLD_YELLOW}%~%{$reset_color%} $(git_prompt_string)$(prompt_char) '
+${USER_COLOR}%n%{$reset_color%}%F{241}[%f${HOST_COLOR}$(hostname -s)%f%F{241}]%f %F{189}%~%f $(git_prompt_string)> '
 
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [y, n, a  e]? "
