@@ -79,6 +79,7 @@ if [ -z "$HOST_COLOR" ]; then
 fi
 
 PROMPT='
-${USER_COLOR}%n%{$reset_color%}%F{241}[%f${HOST_COLOR}$(hostname -s)%f%F{241}]%f %F{189}%~%f $(git_prompt_string)> '
+${USER_COLOR}%n%{$reset_color%}%F{249} / %f${HOST_COLOR}$(hostname -s)%f %F{189}%~%f $(git_prompt_string)
+> '
 
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [y, n, a  e]? "
