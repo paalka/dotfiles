@@ -340,10 +340,6 @@ globalkeys = awful.util.table.join(
     -- Lock the screen
     awful.key({ modkey,           }, "y", function () awful.util.spawn_with_shell("~/.bin/lock") end),
 
-    -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"}),
-
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run {
@@ -355,6 +351,22 @@ globalkeys = awful.util.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"})
 )
+if USE_ROFI then
+   rofikeys = awful.util.table.join(
+    awful.key({ modkey,           }, "w", function () awful.util.spawn_with_shell("rofi -show window") end),
+    awful.key({ modkey,           }, "p", function () awful.util.spawn_with_shell("rofi -modi 'firefox:fuzzyfox' -show firefox") end),
+
+    awful.key({ modkey },            "r",     function () awful.util.spawn_with_shell("rofi -show run") end,
+              {description = "run prompt", group = "launcher"})
+   )
+   globalkeys = awful.util.table.crush(globalkeys, rofikeys)
+else
+   launcher_keys = awful.util.table.join(
+    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+              {description = "run prompt", group = "launcher"})
+   )
+   globalkeys = awful.util.table.merge(globalkeys, launcher_keys)
+end
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",
