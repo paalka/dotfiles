@@ -354,7 +354,7 @@ globalkeys = awful.util.table.join(
 if USE_ROFI then
    rofikeys = awful.util.table.join(
     awful.key({ modkey,           }, "w", function () awful.util.spawn_with_shell("rofi -show window") end),
-    awful.key({ modkey,           }, "p", function () awful.util.spawn_with_shell("rofi -modi 'firefox:fuzzyfox' -show firefox") end),
+    awful.key({ modkey,           }, "p", function () awful.util.spawn_with_shell("rofi -modi 'firefox:fuzzyfox' -i -show firefox") end),
 
     awful.key({ modkey },            "r",     function () awful.util.spawn_with_shell("rofi -show run") end,
               {description = "run prompt", group = "launcher"})
