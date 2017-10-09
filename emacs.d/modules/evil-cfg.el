@@ -12,6 +12,7 @@
   "p" #'helm-projectile-find-file
   "s" #'helm-projectile-switch-to-buffer
   "b" #'helm-buffers-list
+  "f" #'helm-ag
   "k" 'kill-buffer
   "-" 'split-window-below
   "j" 'other-window)
