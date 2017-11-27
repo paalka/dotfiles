@@ -23,6 +23,7 @@
 (require 'rainbow-delim-cfg)
 (require 'electric-pair-cfg)
 (require 'popwin-cfg)
+(require 'custom-funcs)
 
 (ensure-package-installed
  'simpleclip
