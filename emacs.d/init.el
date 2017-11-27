@@ -22,6 +22,7 @@
 (require 'editorconfig-cfg)
 (require 'rainbow-delim-cfg)
 (require 'electric-pair-cfg)
+(require 'popwin-cfg)
 
 (ensure-package-installed
  'simpleclip
