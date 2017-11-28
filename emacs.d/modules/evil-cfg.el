@@ -4,6 +4,7 @@
  'evil
  'evil-escape
  'evil-leader
+ 'avy
 )
 
 (global-evil-leader-mode)
@@ -12,7 +13,8 @@
   "p" #'helm-projectile-find-file
   "s" #'helm-projectile-switch-to-buffer
   "b" #'helm-buffers-list
-  "f" #'helm-ag
+  "g" #'helm-ag
+  "f" 'avy-goto-char-2
   "k" 'kill-buffer
   "-" 'split-window-below
   "j" 'other-window)
