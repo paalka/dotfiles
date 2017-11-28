@@ -5,6 +5,7 @@
  'evil-escape
  'evil-leader
  'avy
+ 'iedit
 )
 
 (global-evil-leader-mode)
@@ -17,6 +18,7 @@
   "f" 'avy-goto-char-2
   "k" 'kill-buffer
   "-" 'split-window-below
+  "i" 'iedit-mode
   "j" 'other-window)
 
 (evil-leader/set-leader "<SPC>")
