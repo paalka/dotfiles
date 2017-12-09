@@ -29,3 +29,10 @@
 (ensure-package-installed
  'simpleclip
 )
+
+
+;; Show trailing whitespace
+(setq whitespace-style
+      '(face trailing tabs indentation::space tab-mark)
+      )
+(global-whitespace-mode)
