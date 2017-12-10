@@ -30,9 +30,4 @@
  'simpleclip
 )
 
-
-;; Show trailing whitespace
-(setq whitespace-style
-      '(face trailing tabs indentation::space tab-mark)
-      )
-(global-whitespace-mode)
+(setq-default show-trailing-whitespace t)
