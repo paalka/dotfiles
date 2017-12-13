@@ -241,10 +241,6 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "h",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
-              {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
-              {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
@@ -336,18 +332,7 @@ globalkeys = awful.util.table.join(
        awful.util.spawn("xbacklight -dec 10") end),
 
     -- Lock the screen
-    awful.key({ modkey,           }, "y", function () awful.util.spawn_with_shell("~/.bin/lock") end),
-
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run {
-                    prompt       = "Run Lua code: ",
-                    textbox      = awful.screen.focused().mypromptbox.widget,
-                    exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. "/history_eval"
-                  }
-              end,
-              {description = "lua execute prompt", group = "awesome"})
+    awful.key({ modkey,           }, "y", function () awful.util.spawn_with_shell("~/.bin/lock") end)
 )
 if USE_ROFI then
    rofikeys = awful.util.table.join(
