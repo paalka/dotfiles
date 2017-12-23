@@ -18,6 +18,7 @@
   "f" 'avy-goto-char-2
   "k" 'kill-buffer
   "-" 'split-window-below
+  "v" 'simpleclip-paste
   "i" 'iedit-mode
   "j" 'other-window)
 
