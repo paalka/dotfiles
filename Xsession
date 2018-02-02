@@ -14,6 +14,6 @@ BG=~/.bg/bg_ses9.jpg
 /usr/bin/setxkbmap -option caps:none
 /usr/bin/setxkbmap -option Caps_Lock:none
 
-xset r rate 250 50
+xset r rate 200 50
 
 /usr/bin/awesome
