@@ -4,6 +4,7 @@
  'evil
  'evil-escape
  'evil-leader
+ 'evil-surround
  'avy
  'iedit
 )
@@ -31,5 +32,6 @@
 (setq-default evil-escape-delay 0.2)
 
 (evil-select-search-module 'evil-search-module 'evil-search)
+(global-evil-surround-mode 1)
 
 (provide 'evil-cfg)
