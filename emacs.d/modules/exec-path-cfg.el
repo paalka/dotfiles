@@ -7,6 +7,5 @@
 
 (exec-path-from-shell-copy-env "PATH")
 (exec-path-from-shell-copy-env "GOPATH")
-(simpleclip-mode 1)
 
 (provide 'exec-path-cfg)

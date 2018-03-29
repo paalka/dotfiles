@@ -28,6 +28,37 @@
 
 (ensure-package-installed
  'simpleclip
+ 'shell-pop
+)
+(simpleclip-mode 1)
+
+(custom-set-variables
+ '(safe-local-variable-values
+   (quote
+    ((eval when
+	   (fboundp
+	    (quote rainbow-mode))
+	   (rainbow-mode 1)))))
+ '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
+ '(shell-pop-term-shell "/bin/zsh")
+ '(shell-pop-window-size 35)
+ '(shell-pop-full-span t)
+ '(shell-pop-window-position "bottom")
 )
 
-(setq-default show-trailing-whitespace t)
+;; ensure that whitespace and line numbers are not shown in the terminal.
+(add-hook 'term-mode-hook 'my-inhibit-global-linum-mode)
+(add-hook 'term-mode-hook 'my-inhibit-global-whitespace)
+
+(defun my-inhibit-global-linum-mode ()
+  "Counter-act `global-linum-mode'."
+  (add-hook 'after-change-major-mode-hook
+            (lambda () (linum-mode 0))
+            :append :local))
+
+
+(defun my-inhibit-global-whitespace ()
+  "Counter-act `global-whitespace'."
+  (add-hook 'after-change-major-mode-hook
+            (lambda () (setq-default show-trailing-whitespace nil))
+            :append :local))

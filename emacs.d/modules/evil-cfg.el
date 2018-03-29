@@ -20,6 +20,7 @@
   "k" 'kill-buffer
   "-" 'split-window-below
   "v" 'simpleclip-paste
+  "t" 'shell-pop
   "i" 'iedit-mode
   "j" 'other-window)
 
