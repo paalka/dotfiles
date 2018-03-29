@@ -13,6 +13,8 @@
 (setq flycheck-gometalinter-vendor t)
 (setq flycheck-gometalinter-fast t)
 
+(setq gofmt-command "goimports")
+
 (setq flycheck-gometalinter-disable-linters '("gotype" "gocyclo"))
 
 (add-hook 'before-save-hook 'gofmt-before-save)
