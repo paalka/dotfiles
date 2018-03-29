@@ -44,8 +44,6 @@
 (global-linum-mode t)
 (setq linum-format "%d ")
 
-(load-theme 'gruber-darker t)
-
 ;; Highlight the currenly selected line
 (global-hl-line-mode 1)
 
@@ -56,5 +54,16 @@
 (setq initial-scratch-message "")
 
 (show-paren-mode 1)
+
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
+
+;; Ensure that the theme is loaded after a new frame is created when in daemon mode.
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+        (lambda (frame)
+            (with-selected-frame frame
+                (load-theme 'gruber-darker t))))
+    (load-theme 'gruber-darker t))
 
 (provide 'minimal-ui)
