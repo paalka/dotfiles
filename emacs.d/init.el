@@ -4,7 +4,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://stable.melpa.org/packages/"))
 (package-initialize)
 
 (require 'shorten-dir)
