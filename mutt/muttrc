@@ -5,7 +5,8 @@ set timeout=60
 set sleep_time=0
 
 auto_view text/html application/html application/pdf application/msword application/word text/richtext
-alternative_order text/plain text/html
+set implicit_autoview
+set mailcap_path="~/.mailcap"
 
 set record="=.sent"
 set postponed="=.drafts"
