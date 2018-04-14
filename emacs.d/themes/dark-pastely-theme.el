@@ -9,6 +9,7 @@
       (dark-pastely-bg        "#111111")
       (dark-pastely-bg+1      "#212121")
       (dark-pastely-bg+2      "#303030")
+      (dark-pastely-pink      "#e4cffc")
       (dark-pastely-red       "#ff638f")
       (dark-pastely-orange    "#f9ba7c")
       (dark-pastely-yellow    "#ffff80")
@@ -103,7 +104,7 @@
    `(font-lock-preprocessor-face ((t (:foreground ,dark-pastely-blue))))
    `(font-lock-reference-face ((t (:foreground ,dark-pastely-blue))))
    `(font-lock-string-face ((t (:foreground ,dark-pastely-yellow))))
-   `(font-lock-type-face ((t (:foreground ,dark-pastely-blue))))
+   `(font-lock-type-face ((t (:foreground ,dark-pastely-pink))))
    `(font-lock-variable-name-face ((t (:foreground ,dark-pastely-fg))))
    `(font-lock-warning-face ((t (:foreground ,dark-pastely-red))))
 
