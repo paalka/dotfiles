@@ -20,7 +20,6 @@
 (require 'rjsx-cfg)
 (require 'exec-path-cfg)
 (require 'editorconfig-cfg)
-(require 'rainbow-delim-cfg)
 (require 'electric-pair-cfg)
 (require 'popwin-cfg)
 (require 'expand-region-cfg)

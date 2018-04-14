@@ -63,7 +63,7 @@
     (add-hook 'after-make-frame-functions
         (lambda (frame)
             (with-selected-frame frame
-                (load-theme 'gruber-darker t))))
-    (load-theme 'gruber-darker t))
+                (load-theme 'dark-pastely t))))
+    (load-theme 'dark-pastely t))
 
 (provide 'minimal-ui)
