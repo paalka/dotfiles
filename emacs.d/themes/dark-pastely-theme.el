@@ -170,6 +170,7 @@
    `(helm-ff-symlink ((t (:foreground ,dark-pastely-purple :bold t))))
    `(helm-selection-line ((t (:background ,dark-pastely-bg+1))))
    `(helm-selection ((t (:background ,dark-pastely-bg+1 :underline nil))))
+   `(helm-match ((t (:foreground ,dark-pastely-yellow :underline nil))))
    `(helm-source-header ((t ,(list :foreground dark-pastely-purple
                                    :background dark-pastely-bg
                                    :box (list :line-width -1
@@ -261,7 +262,7 @@
    `(company-tooltip ((t (:foreground ,dark-pastely-fg :background ,dark-pastely-bg))))
    `(company-tooltip-annotation ((t (:foreground ,dark-pastely-grey :background ,dark-pastely-bg))))
    `(company-tooltip-annotation-selection ((t (:foreground ,dark-pastely-grey :background ,dark-pastely-bg))))
-   `(company-tooltip-selection ((t (:foreground ,dark-pastely-fg :background ,dark-pastely-bg))))
+   `(company-tooltip-selection ((t (:foreground ,dark-pastely-fg :background ,dark-pastely-bg+2))))
    `(company-tooltip-mouse ((t (:background ,dark-pastely-bg))))
    `(company-tooltip-common ((t (:foreground ,dark-pastely-yellow))))
    `(company-tooltip-common-selection ((t (:foreground ,dark-pastely-yellow))))
