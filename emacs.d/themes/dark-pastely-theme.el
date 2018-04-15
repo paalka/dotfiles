@@ -124,6 +124,14 @@
                    :inherit unspecified))
       (t (:foreground ,dark-pastely-orange :weight bold :underline t))))
 
+   `(flycheck-info
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,dark-pastely-fg)
+                   :foreground unspecified
+                   :background unspecified
+                   :inherit unspecified))
+      (t (:foreground nil :weight bold :underline t))))
+
    ;; Flymake
    `(flymake-errline
      ((((supports :underline (:style wave)))
