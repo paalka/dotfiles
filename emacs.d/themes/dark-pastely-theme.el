@@ -38,7 +38,7 @@
    ;; Basic Coloring (or Uncategorized)
    `(border ((t ,(list :background dark-pastely-bg
                        :foreground dark-pastely-bg))))
-   `(cursor ((t (:background ,dark-pastely-purple))))
+   `(cursor ((t (:background ,dark-pastely-fg))))
    `(default ((t ,(list :foreground dark-pastely-fg
                         :background dark-pastely-bg))))
    `(fringe ((t ,(list :background dark-pastely-bg
@@ -279,6 +279,8 @@
    `(company-scrollbar-bg ((t (:background ,dark-pastely-bg))))
    `(company-preview ((t (:background ,dark-pastely-yellow))))
    `(company-preview-common ((t (:foreground ,dark-pastely-yellow :background ,dark-pastely-bg))))
+
+   `(js2-function-param ((t (:foreground nil :background nil))))
 ))
 
 (make-face 'mode-line-read-only-face)
