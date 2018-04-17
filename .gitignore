@@ -38,3 +38,5 @@ weechat/guile
 weechat/ruby
 weechat/*.log
 pwd
+
+emacs.d/custom.el
