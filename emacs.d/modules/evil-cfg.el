@@ -15,6 +15,7 @@
   "p" #'helm-projectile-find-file
   "s" #'helm-projectile-switch-to-buffer
   "b" #'helm-buffers-list
+  "w" #'helm-projectile-switch-project
   "g" #'helm-ag
   "f" 'avy-goto-char-2
   "k" 'kill-buffer
