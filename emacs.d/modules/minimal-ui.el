@@ -47,8 +47,7 @@
 ;; Highlight the currenly selected line
 (global-hl-line-mode 1)
 
-(set-default-font "DejaVu Sans Mono")
-(set-face-attribute 'default nil :height 80)
+(setq default-frame-alist '((font . "DejaVu Sans Mono-7.5")))
 
 (setq-default fill-column 78)
 (setq initial-scratch-message "")
