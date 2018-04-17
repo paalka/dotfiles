@@ -38,7 +38,14 @@
 
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(scroll-bar-mode -1)
+
+(defun my/disable-scroll-bars (frame)
+  (modify-frame-parameters frame
+			   '((vertical-scroll-bars . nil)
+			     (horizontal-scroll-bars . nil))))
+(add-hook 'after-make-frame-functions 'my/disable-scroll-bars)
+
 (setq inhibit-splash-screen t)
 
 (global-linum-mode t)
