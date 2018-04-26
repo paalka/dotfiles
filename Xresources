@@ -92,6 +92,7 @@ XDvi.expert: True
 XDvi*shrinkFactor: 6
 
 URxvt.geometry: 140x40
+Emacs.geometry: 140x50
 
 rofi.color-enabled: true
 rofi.color-window: #111111, #222222, #222222
