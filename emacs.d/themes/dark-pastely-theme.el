@@ -108,6 +108,8 @@
    `(font-lock-variable-name-face ((t (:foreground ,dark-pastely-fg))))
    `(font-lock-warning-face ((t (:foreground ,dark-pastely-red))))
 
+   `(eldoc-highlight-function-argument ((t (:foreground ,dark-pastely-blue))))
+
    `(flycheck-error
      ((((supports :underline (:style wave)))
        (:underline (:style wave :color ,dark-pastely-red)
@@ -221,14 +223,17 @@
    `(isearch-fail ((t ,(list :foreground dark-pastely-black
                              :background dark-pastely-red))))
    `(isearch-lazy-highlight-face ((t ,(list
-                                       :foreground dark-pastely-red
-                                       :background dark-pastely-bg+1))))
+                                       :foreground dark-pastely-bg+1
+                                       :background dark-pastely-grey))))
 
    ;; Sh
    `(sh-quoted-exec ((t (:foreground ,dark-pastely-red))))
 
    ;; Show Paren
-   `(show-paren-match-face ((t (:background ,dark-pastely-bg))))
+   `(show-paren-match ((t ,(list :background dark-pastely-grey
+                                        :weight 'bold))))
+   `(show-paren-match-face ((t ,(list :foreground dark-pastely-fg
+                                        :weight 'bold))))
    `(show-paren-mismatch-face ((t (:background ,dark-pastely-red))))
 
    ;; Slime
@@ -336,9 +341,5 @@
 (set-face-attribute 'mode-line-80col-face nil
 		    :inherit 'mode-line-position-face
 		    :foreground "black")
-
-(set-face-attribute 'eldoc-highlight-function-argument nil
-                    :underline t :foreground "#73c936"
-                    :weight 'bold)
 
 (provide-theme 'dark-pastely)
