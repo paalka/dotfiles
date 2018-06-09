@@ -1,19 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 [ -f ~/.bin/autostart.local ] && ~/.bin/autostart.local &
 
 urxvtd=$(pidof urxvtd)
 if [[ -z $urxvtd ]]; then
-    /usr/bin/urxvtd -f -o -q
+    /usr/bin/env urxvtd -f -o -q
 fi
 
-/usr/bin/xscreensaver -no-splash &
+/usr/bin/env xscreensaver -no-splash &
 
 BG=~/.bg/bg_ses9.jpg
-[ -f $BG ] && /usr/bin/feh --bg-scale $BG
+[ -f $BG ] && /usr/bin/env feh --bg-scale $BG
 
-/usr/bin/setxkbmap -option caps:none
-/usr/bin/setxkbmap -option Caps_Lock:none
+/usr/bin/env setxkbmap -option caps:none
+/usr/bin/env setxkbmap -option Caps_Lock:none
 
-xset r rate 200 50
+/usr/bin/env xset r rate 200 50
 
-/usr/bin/awesome
+/usr/bin/env awesome

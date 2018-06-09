@@ -16,7 +16,7 @@ create_dotfile_symlink "vim/vimrc" ".vimrc"
 create_dotfile_symlink "vim" ".vim"
 
 create_dotfile_symlink "Xresources" ".Xresources"
-create_dotfile_symlink "Xsession" ".Xsession"
+create_dotfile_symlink "Xsession" ".xsession"
 create_dotfile_symlink "Xmodmap" ".Xmodmap"
 
 create_dotfile_symlink "zsh/zshrc" ".zshrc"
