@@ -109,6 +109,7 @@
    `(font-lock-warning-face ((t (:foreground ,dark-pastely-red))))
 
    `(eldoc-highlight-function-argument ((t (:foreground ,dark-pastely-blue))))
+   `(linum ((t (:foreground ,dark-pastely-bg+2))))
 
    `(flycheck-error
      ((((supports :underline (:style wave)))
