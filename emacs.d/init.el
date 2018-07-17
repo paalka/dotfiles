@@ -23,6 +23,7 @@
 (require 'electric-pair-cfg)
 (require 'popwin-cfg)
 (require 'expand-region-cfg)
+(require 'js-cfg)
 (require 'custom-funcs)
 
 (ensure-package-installed
