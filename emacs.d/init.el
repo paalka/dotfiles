@@ -23,6 +23,7 @@
 (require 'electric-pair-cfg)
 (require 'popwin-cfg)
 (require 'expand-region-cfg)
+(require 'lsp-cfg)
 (require 'go-cfg)
 (require 'js-cfg)
 (require 'deft-cfg)
@@ -36,5 +37,3 @@
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
-(require 'lsp-ui)
-(add-hook 'lsp-mode-hook 'lsp-ui-mode)
