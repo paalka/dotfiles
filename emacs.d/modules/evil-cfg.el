@@ -37,4 +37,13 @@
 (evil-select-search-module 'evil-search-module 'evil-search)
 (global-evil-surround-mode 1)
 
+(evil-add-to-alist
+ 'evil-surround-pairs-alist
+ ?\( '("(" . ")")
+ ?\[ '("[" . "]")
+ ?\{ '("{" . "}")
+ ?\) '("( " . " )")
+ ?\] '("[ " . " ]")
+ ?\} '("{ " . " }"))
+
 (provide 'evil-cfg)
