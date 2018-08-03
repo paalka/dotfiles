@@ -23,6 +23,7 @@
   "v" 'simpleclip-paste
   "t" 'shell-pop
   "i" 'iedit-mode
+  "d" 'deft
   "j" 'other-window)
 
 (evil-leader/set-leader "<SPC>")

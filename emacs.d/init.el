@@ -25,6 +25,7 @@
 (require 'expand-region-cfg)
 (require 'go-cfg)
 (require 'js-cfg)
+(require 'deft-cfg)
 (require 'custom-funcs)
 
 (ensure-package-installed
