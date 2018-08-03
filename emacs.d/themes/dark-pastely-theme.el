@@ -13,6 +13,8 @@
       (dark-pastely-red       "#ff638f")
       (dark-pastely-orange    "#f9ba7c")
       (dark-pastely-yellow    "#ffff80")
+      (dark-pastely-green     "#42f48f")
+      (dark-pastely-mint      "#91e2de")
       (dark-pastely-purple    "#e8a7fc")
       (dark-pastely-grey      "#918c8c")
       (dark-pastely-blue      "#b6b6fa")
@@ -91,6 +93,15 @@
    `(eshell-ls-directory ((t (:foreground ,dark-pastely-blue))))
    `(eshell-ls-executable ((t (:foreground ,dark-pastely-yellow))))
    `(eshell-ls-symlink ((t (:foreground ,dark-pastely-purple))))
+
+   ;; smerge
+   `(smerge-base ((t (:foreground ,dark-pastely-yellow))))
+   `(smerge-markers ((t (:foreground ,dark-pastely-purple))))
+   `(smerge-mine ((t (:foreground ,dark-pastely-blue))))
+   `(smerge-other ((t (:foreground ,dark-pastely-deep-blue))))
+   `(smerge-refined-added ((t (:foreground ,dark-pastely-green))))
+   `(smerge-refined-changed ((t (:foreground ,dark-pastely-orange))))
+   `(smerge-refined-removed ((t (:foreground ,dark-pastely-red))))
 
    ;; Font Lock
    `(font-lock-builtin-face ((t (:foreground ,dark-pastely-blue :bold t))))
@@ -183,6 +194,7 @@
    `(helm-selection-line ((t (:background ,dark-pastely-bg+1))))
    `(helm-selection ((t (:background ,dark-pastely-bg+1 :underline nil))))
    `(helm-match ((t (:foreground ,dark-pastely-yellow :underline nil))))
+   `(helm-buffer--details ((t (:foreground ,dark-pastely-yellow :underline nil))))
    `(helm-source-header ((t ,(list :foreground dark-pastely-purple
                                    :background dark-pastely-bg
                                    :box (list :line-width -1
@@ -287,6 +299,10 @@
    `(company-preview-common ((t (:foreground ,dark-pastely-yellow :background ,dark-pastely-bg))))
 
    `(js2-function-param ((t (:foreground nil :background nil))))
+
+   `(lsp-face-highlight-read ((t (:foreground ,dark-pastely-bg))))
+   `(lsp-face-highlight-write ((t (:foreground ,dark-pastely-blue))))
+   `(lsp-face-highlight-textual ((t (:foreground ,dark-pastely-pink :underline t))))
 ))
 
 (make-face 'mode-line-read-only-face)
