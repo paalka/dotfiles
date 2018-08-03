@@ -20,7 +20,7 @@ watch(
           if string.find(status, "on", 1, true) then
               volume = " <span>🔉 " .. volume .. "</span>"
           else
-              volume = " <span color='#ff284c'>🔇 " .. volume .. "</span>"
+              volume = " <span color='#ff638f'>🔇 " .. volume .. "</span>"
           end
           volume_sub_widget.markup = volume
       else
