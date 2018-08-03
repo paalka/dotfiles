@@ -21,6 +21,7 @@ set copyindent      " copy the previous indentation on autoindenting
 set smarttab        " Insert spaces based on the shiftwidth
 set autoindent      " Copy the indent from the current line
 
+set hidden
 set smartindent
 set expandtab
 set tabstop=2
@@ -148,6 +149,16 @@ Plug 'tommcdo/vim-exchange'
 Plug 'wellle/targets.vim'
 Plug 'fatih/vim-go'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+if has('nvim')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+	Plug 'Shougo/deoplete.nvim'
+	Plug 'roxma/nvim-yarp'
+	Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 
@@ -179,14 +190,6 @@ map  / <Plug>(easymotion-sn)
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1
 
-" YouCompleteMe
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_complete_in_comments = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-
 let g:ale_lint_delay = 1200
+let g:delve_new_command = "new"
+let g:deoplete#enable_at_startup = 1
