@@ -7,5 +7,7 @@
 
 (exec-path-from-shell-copy-env "PATH")
 (exec-path-from-shell-copy-env "GOPATH")
+(exec-path-from-shell-copy-env "GOROOT")
+(exec-path-from-shell-copy-env "RUST_SRC_PATH")
 
 (provide 'exec-path-cfg)
