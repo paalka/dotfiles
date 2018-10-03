@@ -3,23 +3,24 @@
 
 ;; Please, install rainbow-mode.
 ;; Colors with +x are lighter. Colors with -x are darker.
-(let ((dark-pastely-fg        "#ffffff")
-      (dark-pastely-white     "#ffffff")
+(let ((dark-pastely-fg        "#dfdfdf")
+      (dark-pastely-white     "#dfdfdf")
       (dark-pastely-black     "#000000")
-      (dark-pastely-bg        "#111111")
+      (dark-pastely-bg        "#151413")
       (dark-pastely-bg+1      "#212121")
       (dark-pastely-bg+2      "#303030")
-      (dark-pastely-pink      "#e4cffc")
+      (dark-pastely-pink      "#d4abf9")
       (dark-pastely-red       "#ff638f")
       (dark-pastely-orange    "#f9ba7c")
-      (dark-pastely-yellow    "#ffff80")
+      (dark-pastely-yellow    "#f2c5e4")
       (dark-pastely-green     "#42f48f")
       (dark-pastely-mint      "#91e2de")
-      (dark-pastely-purple    "#e8a7fc")
+      (dark-pastely-purple    "#ffc9fb")
       (dark-pastely-grey      "#918c8c")
       (dark-pastely-blue      "#b6b6fa")
-      (dark-pastely-deep-blue "#9e95c7")
+      (dark-pastely-deep-blue "#5b4c8f")
       )
+
   (custom-theme-set-variables
    'dark-pastely
    '(frame-brackground-mode (quote dark)))
@@ -104,14 +105,14 @@
    `(smerge-refined-removed ((t (:foreground ,dark-pastely-red))))
 
    ;; Font Lock
-   `(font-lock-builtin-face ((t (:foreground ,dark-pastely-blue :bold t))))
+   `(font-lock-builtin-face ((t (:foreground ,dark-pastely-blue))))
    `(font-lock-comment-face ((t (:foreground ,dark-pastely-grey))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,dark-pastely-grey))))
    `(font-lock-constant-face ((t (:foreground ,dark-pastely-blue))))
    `(font-lock-doc-face ((t (:foreground ,dark-pastely-yellow))))
    `(font-lock-doc-string-face ((t (:foreground ,dark-pastely-yellow))))
-   `(font-lock-function-name-face ((t (:foreground ,dark-pastely-blue :bold t))))
-   `(font-lock-keyword-face ((t (:foreground ,dark-pastely-purple :bold t))))
+   `(font-lock-function-name-face ((t (:foreground ,dark-pastely-blue))))
+   `(font-lock-keyword-face ((t (:foreground ,dark-pastely-purple))))
    `(font-lock-preprocessor-face ((t (:foreground ,dark-pastely-blue))))
    `(font-lock-reference-face ((t (:foreground ,dark-pastely-blue))))
    `(font-lock-string-face ((t (:foreground ,dark-pastely-yellow))))
