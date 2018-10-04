@@ -12,7 +12,7 @@
       (dark-pastely-pink      "#d4abf9")
       (dark-pastely-red       "#ff638f")
       (dark-pastely-orange    "#f9ba7c")
-      (dark-pastely-yellow    "#f2c5e4")
+      (dark-pastely-yellow    "#ffd8f2")
       (dark-pastely-green     "#42f48f")
       (dark-pastely-mint      "#91e2de")
       (dark-pastely-purple    "#ffc9fb")
