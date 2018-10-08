@@ -20,11 +20,11 @@ create_dotfile_symlink "Xsession" ".xsession"
 create_dotfile_symlink "Xmodmap" ".Xmodmap"
 
 create_dotfile_symlink "zsh/zshrc" ".zshrc"
-create_dotfile_symlink "zsh*" ".zsh"
+create_dotfile_symlink "zsh" ".zsh"
 
 create_dotfile_symlink "bash/bashrc" ".bashrc"
 
-create_dotfile_symlink "git/gitconfig*" ".gitconfig"
+create_dotfile_symlink "git/gitconfig" ".gitconfig"
 
 create_dotfile_symlink "urxvt" ".urxvt"
 
