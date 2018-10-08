@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # Since the screen by default has a yellow-ish tint, run a screen calibration.
-/usr/bin/xcalib -d :0 /usr/share/color/icm/ThinkPad_X240_FHD_LP125WF2.icm
+#/usr/bin/xcalib -d :0 /usr/share/color/icm/ThinkPad_X240_FHD_LP125WF2.icm
 
 # Handle WLAN using NetworkManager.
 /usr/bin/nm-applet &
