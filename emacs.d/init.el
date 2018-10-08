@@ -30,6 +30,7 @@
 (require 'custom-funcs)
 
 (ensure-package-installed
+ 'use-package
  'simpleclip
  'shell-pop
 )
