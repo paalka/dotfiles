@@ -10,4 +10,7 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+
 (provide 'backups)
