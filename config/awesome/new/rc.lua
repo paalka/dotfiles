@@ -346,6 +346,14 @@ else
    globalkeys = awful.util.table.merge(globalkeys, launcher_keys)
 end
 
+if USE_EMACS then
+   emacskeys = awful.util.table.join(
+    awful.key({ modkey },            "e",     function () awful.util.spawn_with_shell("emacsclient -c") end,
+              {description = "emacsclient", group = "emacs"})
+   )
+   globalkeys = awful.util.table.crush(globalkeys, emacskeys)
+end
+
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",
         function (c)
