@@ -33,6 +33,7 @@
 (require 'lsp-cfg)
 (require 'org-cfg)
 (require 'popwin-cfg)
+(require 'auctex-cfg)
 (require 'rjsx-cfg)
 
 (ensure-package-installed
