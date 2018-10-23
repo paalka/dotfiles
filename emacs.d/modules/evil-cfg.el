@@ -17,6 +17,7 @@
   "b" #'helm-buffers-list
   "w" #'helm-projectile-switch-project
   "g" #'helm-ag
+  "r" #'helm-recentf
   "f" 'avy-goto-char-2
   "k" 'kill-buffer
   "-" 'split-window-below
