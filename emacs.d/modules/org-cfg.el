@@ -17,5 +17,13 @@
 	       (function my/org-file-by-date)
 	       ""))
 
+(defvar my-org-capture-before-config nil
+  "Window configuration before `org-capture'.")
+
+(defadvice org-capture (before save-config activate)
+  "Save the window configuration before `org-capture'."
+  (setq my-org-capture-before-config (current-window-configuration)))
+
+(add-hook 'org-capture-mode-hook 'delete-other-windows)
 
 (setq org-agenda-files (list "~/documents/org/todos/todos.org"))
