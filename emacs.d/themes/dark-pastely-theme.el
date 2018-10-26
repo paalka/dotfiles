@@ -9,14 +9,12 @@
       (dark-pastely-bg        "#151413")
       (dark-pastely-bg+1      "#212121")
       (dark-pastely-bg+2      "#303030")
+      (dark-pastely-grey      "#918c8c")
       (dark-pastely-pink      "#d4abf9")
+      (dark-pastely-pink+1    "#ffc9fb")
       (dark-pastely-red       "#ff638f")
       (dark-pastely-orange    "#f9ba7c")
-      (dark-pastely-yellow    "#ffd8f2")
-      (dark-pastely-green     "#42f48f")
-      (dark-pastely-mint      "#91e2de")
-      (dark-pastely-purple    "#ffc9fb")
-      (dark-pastely-grey      "#918c8c")
+      (dark-pastely-green     "#91e2de")
       (dark-pastely-blue      "#b6b6fa")
       (dark-pastely-deep-blue "#5b4c8f")
       )
@@ -31,11 +29,11 @@
    ;; AUCTeX
    `(font-latex-bold-face ((t (:foreground ,dark-pastely-blue :bold t))))
    `(font-latex-italic-face ((t (:foreground ,dark-pastely-blue :italic t))))
-   `(font-latex-math-face ((t (:foreground ,dark-pastely-yellow))))
+   `(font-latex-math-face ((t (:foreground ,dark-pastely-pink+1))))
    `(font-latex-sectioning-5-face ((t ,(list :foreground dark-pastely-blue
                                              :bold t))))
    `(font-latex-slide-title-face ((t (:foreground ,dark-pastely-blue))))
-   `(font-latex-string-face ((t (:foreground ,dark-pastely-yellow))))
+   `(font-latex-string-face ((t (:foreground ,dark-pastely-pink+1))))
    `(font-latex-warning-face ((t (:foreground ,dark-pastely-red))))
 
    ;; Basic Coloring (or Uncategorized)
@@ -62,7 +60,7 @@
    `(holiday-face ((t (:foreground ,dark-pastely-red))))
 
    ;; Compilation
-   `(compilation-info ((t ,(list :foreground dark-pastely-yellow
+   `(compilation-info ((t ,(list :foreground dark-pastely-pink+1
                                  :inherit 'unspecified))))
    `(compilation-warning ((t ,(list :foreground dark-pastely-orange
                                     :bold t
@@ -71,17 +69,17 @@
    `(compilation-mode-line-fail ((t ,(list :foreground dark-pastely-red
                                            :weight 'bold
                                            :inherit 'unspecified))))
-   `(compilation-mode-line-exit ((t ,(list :foreground dark-pastely-yellow
+   `(compilation-mode-line-exit ((t ,(list :foreground dark-pastely-pink+1
                                            :weight 'bold
                                            :inherit 'unspecified))))
 
    ;; Custom
-   `(custom-state ((t (:foreground ,dark-pastely-yellow))))
+   `(custom-state ((t (:foreground ,dark-pastely-pink+1))))
 
    ;; Diff
    `(diff-removed ((t ,(list :foreground dark-pastely-red
                              :background nil))))
-   `(diff-added ((t ,(list :foreground dark-pastely-yellow
+   `(diff-added ((t ,(list :foreground dark-pastely-pink+1
                            :background nil))))
 
    ;; Dired
@@ -92,12 +90,12 @@
    ;; EShell
    `(eshell-ls-backup ((t (:foreground ,dark-pastely-blue))))
    `(eshell-ls-directory ((t (:foreground ,dark-pastely-blue))))
-   `(eshell-ls-executable ((t (:foreground ,dark-pastely-yellow))))
-   `(eshell-ls-symlink ((t (:foreground ,dark-pastely-purple))))
+   `(eshell-ls-executable ((t (:foreground ,dark-pastely-pink+1))))
+   `(eshell-ls-symlink ((t (:foreground ,dark-pastely-pink+1))))
 
    ;; smerge
-   `(smerge-base ((t (:foreground ,dark-pastely-yellow))))
-   `(smerge-markers ((t (:foreground ,dark-pastely-purple))))
+   `(smerge-base ((t (:foreground ,dark-pastely-pink+1))))
+   `(smerge-markers ((t (:foreground ,dark-pastely-pink+1))))
    `(smerge-mine ((t (:foreground ,dark-pastely-blue))))
    `(smerge-other ((t (:foreground ,dark-pastely-deep-blue))))
    `(smerge-refined-added ((t (:foreground ,dark-pastely-green))))
@@ -109,13 +107,13 @@
    `(font-lock-comment-face ((t (:foreground ,dark-pastely-grey))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,dark-pastely-grey))))
    `(font-lock-constant-face ((t (:foreground ,dark-pastely-blue))))
-   `(font-lock-doc-face ((t (:foreground ,dark-pastely-yellow))))
-   `(font-lock-doc-string-face ((t (:foreground ,dark-pastely-yellow))))
+   `(font-lock-doc-face ((t (:foreground ,dark-pastely-pink+1))))
+   `(font-lock-doc-string-face ((t (:foreground ,dark-pastely-pink+1))))
    `(font-lock-function-name-face ((t (:foreground ,dark-pastely-blue))))
-   `(font-lock-keyword-face ((t (:foreground ,dark-pastely-purple))))
+   `(font-lock-keyword-face ((t (:foreground ,dark-pastely-pink+1))))
    `(font-lock-preprocessor-face ((t (:foreground ,dark-pastely-blue))))
    `(font-lock-reference-face ((t (:foreground ,dark-pastely-blue))))
-   `(font-lock-string-face ((t (:foreground ,dark-pastely-yellow))))
+   `(font-lock-string-face ((t (:foreground ,dark-pastely-pink+1))))
    `(font-lock-type-face ((t (:foreground ,dark-pastely-pink))))
    `(font-lock-variable-name-face ((t (:foreground ,dark-pastely-fg))))
    `(font-lock-warning-face ((t (:foreground ,dark-pastely-red))))
@@ -157,18 +155,18 @@
       (t (:foreground ,dark-pastely-red :weight bold :underline t))))
    `(flymake-warnline
      ((((supports :underline (:style wave)))
-       (:underline (:style wave :color ,dark-pastely-purple)
+       (:underline (:style wave :color ,dark-pastely-pink+1)
                    :foreground unspecified
                    :background unspecified
                    :inherit unspecified))
-      (t (:forground ,dark-pastely-purple :weight bold :underline t))))
+      (t (:forground ,dark-pastely-pink+1 :weight bold :underline t))))
    `(flymake-infoline
      ((((supports :underline (:style wave)))
-       (:underline (:style wave :color ,dark-pastely-yellow)
+       (:underline (:style wave :color ,dark-pastely-pink+1)
                    :foreground unspecified
                    :background unspecified
                    :inherit unspecified))
-      (t (:forground ,dark-pastely-yellow :weight bold :underline t))))
+      (t (:forground ,dark-pastely-pink+1 :weight bold :underline t))))
 
    ;; Flyspell
    `(flyspell-incorrect
@@ -177,32 +175,32 @@
       (t (:foreground ,dark-pastely-red :weight bold :underline t))))
    `(flyspell-duplicate
      ((((supports :underline (:style wave)))
-       (:underline (:style wave :color ,dark-pastely-purple) :inherit unspecified))
-      (t (:foreground ,dark-pastely-purple :weight bold :underline t))))
+       (:underline (:style wave :color ,dark-pastely-pink+1) :inherit unspecified))
+      (t (:foreground ,dark-pastely-pink+1 :weight bold :underline t))))
 
    ;; Helm
    `(helm-candidate-number ((t ,(list :background dark-pastely-bg
-                                      :foreground dark-pastely-purple
+                                      :foreground dark-pastely-pink+1
                                       :bold t))))
    `(helm-ff-directory ((t ,(list :foreground dark-pastely-blue
                                   :background dark-pastely-bg
                                   :bold t))))
-   `(helm-ff-executable ((t (:foreground ,dark-pastely-yellow))))
+   `(helm-ff-executable ((t (:foreground ,dark-pastely-pink+1))))
    `(helm-ff-file ((t (:foreground ,dark-pastely-fg :inherit unspecified))))
    `(helm-ff-invalid-symlink ((t ,(list :foreground dark-pastely-bg
                                         :background dark-pastely-red))))
-   `(helm-ff-symlink ((t (:foreground ,dark-pastely-purple :bold t))))
+   `(helm-ff-symlink ((t (:foreground ,dark-pastely-pink+1 :bold t))))
    `(helm-selection-line ((t (:background ,dark-pastely-bg+1))))
    `(helm-selection ((t (:background ,dark-pastely-bg+1 :underline nil))))
-   `(helm-match ((t (:foreground ,dark-pastely-yellow :underline nil))))
-   `(helm-buffer--details ((t (:foreground ,dark-pastely-yellow :underline nil))))
-   `(helm-source-header ((t ,(list :foreground dark-pastely-purple
+   `(helm-match ((t (:foreground ,dark-pastely-pink+1 :underline nil))))
+   `(helm-buffer--details ((t (:foreground ,dark-pastely-pink+1 :underline nil))))
+   `(helm-source-header ((t ,(list :foreground dark-pastely-pink+1
                                    :background dark-pastely-bg
                                    :box (list :line-width -1
                                               :style 'released-button)))))
 
    ;; Ido
-   `(ido-first-match ((t (:foreground ,dark-pastely-purple :bold nil))))
+   `(ido-first-match ((t (:foreground ,dark-pastely-pink+1 :bold nil))))
    `(ido-only-match ((t (:foreground ,dark-pastely-grey :weight bold))))
    `(ido-subdir ((t (:foreground ,dark-pastely-blue :weight bold))))
 
@@ -215,7 +213,7 @@
    `(highlight-current-line-face ((t ,(list :background dark-pastely-bg+1
                                             :foreground nil))))
    ;; Message
-   `(message-header-name ((t (:foreground ,dark-pastely-yellow))))
+   `(message-header-name ((t (:foreground ,dark-pastely-pink+1))))
 
    ;; Mode Line
    `(mode-line ((t ,(list :background dark-pastely-bg
@@ -227,9 +225,9 @@
 
    ;; Org Mode
    `(org-agenda-structure ((t (:foreground ,dark-pastely-blue))))
-   `(org-done ((t (:foreground ,dark-pastely-yellow))))
+   `(org-done ((t (:foreground ,dark-pastely-pink+1))))
    `(org-todo ((t (:foreground ,dark-pastely-red))))
-   `(org-upcoming-deadline ((t (:foreground ,dark-pastely-purple))))
+   `(org-upcoming-deadline ((t (:foreground ,dark-pastely-pink+1))))
 
    ;; Search
    `(isearch ((t ,(list :foreground dark-pastely-black
@@ -259,7 +257,7 @@
    `(speedbar-file-face ((t (:foreground ,dark-pastely-fg))))
    `(speedbar-highlight-face ((t (:background ,dark-pastely-bg))))
    `(speedbar-selected-face ((t (:foreground ,dark-pastely-red))))
-   `(speedbar-tag-face ((t (:foreground ,dark-pastely-purple))))
+   `(speedbar-tag-face ((t (:foreground ,dark-pastely-pink+1))))
 
    ;; Which Function
    `(which-func ((t (:foreground ,dark-pastely-deep-blue))))
@@ -277,12 +275,12 @@
                                    :foreground dark-pastely-bg))))
    `(whitespace-trailing ((t ,(list :background dark-pastely-red
                                     :foreground dark-pastely-red))))
-   `(whitespace-empty ((t ,(list :background dark-pastely-purple
-                                 :foreground dark-pastely-purple))))
-   `(whitespace-indentation ((t ,(list :background dark-pastely-purple
+   `(whitespace-empty ((t ,(list :background dark-pastely-pink+1
+                                 :foreground dark-pastely-pink+1))))
+   `(whitespace-indentation ((t ,(list :background dark-pastely-pink+1
                                        :foreground dark-pastely-red))))
-   `(whitespace-space-after-tab ((t ,(list :background dark-pastely-purple
-                                           :foreground dark-pastely-purple))))
+   `(whitespace-space-after-tab ((t ,(list :background dark-pastely-pink+1
+                                           :foreground dark-pastely-pink+1))))
    `(whitespace-space-before-tab ((t ,(list :background dark-pastely-grey
                                             :foreground dark-pastely-grey))))
 
@@ -292,12 +290,12 @@
    `(company-tooltip-annotation-selection ((t (:foreground ,dark-pastely-grey :background ,dark-pastely-bg))))
    `(company-tooltip-selection ((t (:foreground ,dark-pastely-fg :background ,dark-pastely-bg+2))))
    `(company-tooltip-mouse ((t (:background ,dark-pastely-bg))))
-   `(company-tooltip-common ((t (:foreground ,dark-pastely-yellow))))
-   `(company-tooltip-common-selection ((t (:foreground ,dark-pastely-yellow))))
+   `(company-tooltip-common ((t (:foreground ,dark-pastely-pink+1))))
+   `(company-tooltip-common-selection ((t (:foreground ,dark-pastely-pink+1))))
    `(company-scrollbar-fg ((t (:background ,dark-pastely-bg))))
    `(company-scrollbar-bg ((t (:background ,dark-pastely-bg))))
-   `(company-preview ((t (:background ,dark-pastely-yellow))))
-   `(company-preview-common ((t (:foreground ,dark-pastely-yellow :background ,dark-pastely-bg))))
+   `(company-preview ((t (:background ,dark-pastely-pink+1))))
+   `(company-preview-common ((t (:foreground ,dark-pastely-pink+1 :background ,dark-pastely-bg))))
 
    `(js2-function-param ((t (:foreground nil :background nil))))
 
