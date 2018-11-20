@@ -7,7 +7,7 @@
       (dark-pastely-white     "#dfdfdf")
       (dark-pastely-black     "#000000")
       (dark-pastely-bg        "#151413")
-      (dark-pastely-bg+1      "#212121")
+      (dark-pastely-bg+1      "#222222")
       (dark-pastely-bg+2      "#303030")
       (dark-pastely-grey      "#918c8c")
       (dark-pastely-pink      "#d4abf9")
