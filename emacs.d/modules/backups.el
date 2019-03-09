@@ -11,6 +11,6 @@
       `((".*" ,temporary-file-directory t)))
 
 (recentf-mode 1)
-(setq recentf-max-menu-items 25)
+(setq recentf-max-menu-items 100)
 
 (provide 'backups)
