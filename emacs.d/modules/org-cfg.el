@@ -5,8 +5,13 @@
 (add-hook 'org-mode-hook 'auto-fill-mode)
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/documents/org/todos/todos.org" "Tasks")
-	 "* TODO %?\n  %i\n")))
+      '(
+	("t" "Todo" entry (file+headline "~/documents/org/todos/todos.org" "Tasks")
+	 "* TODO %?\n  %i\n")
+	("l" "Long reads" entry (file "~/documents/org/long-reads/long-reads.org")
+	 "")
+	)
+)
 
 (defun my/org-file-by-date ()
   "Create an Org file with current time as name."

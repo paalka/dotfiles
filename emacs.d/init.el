@@ -35,6 +35,7 @@
 (require 'popwin-cfg)
 (require 'auctex-cfg)
 (require 'rjsx-cfg)
+(require 'yas-cfg)
 
 (ensure-package-installed
  'simpleclip

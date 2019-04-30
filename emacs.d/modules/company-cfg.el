@@ -25,4 +25,10 @@
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
+
+(advice-add 'company-complete-common :before (lambda () (setq my-company-point (point))))
+(advice-add 'company-complete-common :after (lambda ()
+					      (when (equal my-company-point (point))
+						(yas-expand))))
+
 (provide 'company-cfg)

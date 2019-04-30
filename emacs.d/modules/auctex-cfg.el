@@ -13,6 +13,9 @@
 	  (lambda () (set (make-variable-buffer-local 'TeX-electric-math)
 			  (cons "\\(" "\\)"))))
 
+(setq tex-fontify-script nil)
+(setq font-latex-fontify-script nil)
+
 (require 'company-auctex)
 (company-auctex-init)
 

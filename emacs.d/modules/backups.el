@@ -10,6 +10,7 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+(run-at-time (current-time) 300 'recentf-save-list) ; Save the recentf list every 5 min
 (recentf-mode 1)
 (setq recentf-max-menu-items 100)
 
