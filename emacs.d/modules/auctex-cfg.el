@@ -15,6 +15,7 @@
 
 (setq tex-fontify-script nil)
 (setq font-latex-fontify-script nil)
+(setq TeX-electric-sub-and-superscript t)
 
 (require 'company-auctex)
 (company-auctex-init)
