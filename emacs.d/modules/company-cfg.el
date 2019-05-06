@@ -31,4 +31,5 @@
 					      (when (equal my-company-point (point))
 						(yas-expand))))
 
+(company-tng-configure-default)
 (provide 'company-cfg)
