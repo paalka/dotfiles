@@ -32,8 +32,8 @@ URxvt.scrollBar: false
 URxvt.depth: 32
 
 URxvt.perl-lib: /home/paal/.urxvt/urxvt-perls/
-urxvt.font:         xft:DejavuSansMono:pixelsize=11
-urxvt.boldFont:     xft:DejavuSansMono:pixelsize=11
+URxvt.font:         xft:NotoMono:pixelsize=11
+URxvt.boldFont:     xft:NotoMono:pixelsize=11
 URxvt.letterSpace:  -2
 
 Xft.dpi:        96
