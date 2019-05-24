@@ -34,6 +34,7 @@ create_dotfile_symlink "bin" ".bin"
 create_dotfile_symlink "bg" ".bg"
 
 create_dotfile_symlink "config/awesome" ".config/awesome"
+create_dotfile_symlink "config/systemd" ".config/systemd"
 
 create_dotfile_symlink "gdb/gdbinit" ".gdbinit"
 create_dotfile_symlink "gdb/gdbinit-gef.py" ".gdbinit-gef.py"
