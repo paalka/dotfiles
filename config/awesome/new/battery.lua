@@ -144,7 +144,7 @@ battery_widget = wibox.widget {
     {
       battery_sub_widget,
       fg     = '#6e6e6e',
-      forced_width = 115,
+      forced_width = 125,
       widget = wibox.container.background
     },
     layout = wibox.container.margin(battery_ting, 5, 5, 5, 5)
