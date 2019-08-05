@@ -33,7 +33,6 @@ function start_agent {
     echo "The SSH agent was started!"
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
-    /usr/bin/env ssh-add;
 }
 
 function add_keys {
@@ -47,10 +46,14 @@ function init_ssh_agent {
         . "${SSH_ENV}" > /dev/null
 	if ! ps -ef | grep ${SSH_AGENT_PID} | grep "ssh-agent.*$" > /dev/null; then
             start_agent;
-        elif ! ssh-add -l > /dev/null; then
-            add_keys;
-        fi
+	fi
     else
         start_agent;
+    fi
+
+    if ! ssh-add -l > /dev/null; then
+	trap '' INT;
+	(add_keys);
+	trap - INT;
     fi
 }
