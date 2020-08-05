@@ -26,7 +26,9 @@ function updateBatteryWidgetText(acpi_battery_names, battery_sub_widget)
           local acpi_output_no_newline = stdout:sub(1, -2)
           for i, acpi_battery_name in ipairs(acpi_battery_names) do
               acpi_battery_status = getACPIBatteryStatus(acpi_battery_name, acpi_output_no_newline)
-              widget_text = string.format("%s | %s | ", widget_text, acpi_battery_status)
+	      if not (acpi_battery_status == nil) then
+		widget_text = string.format("%s | %s | ", widget_text, acpi_battery_status)
+	      end
         end
         else
           widget_text = "acpi returned exitcode: " .. exitcode
