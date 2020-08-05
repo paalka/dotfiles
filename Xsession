@@ -15,5 +15,6 @@ BG=~/.bg/bg_ses9.jpg
 /usr/bin/env setxkbmap -option Caps_Lock:none
 
 /usr/bin/env xset r rate 200 50
+#[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 /usr/bin/env awesome
