@@ -10,6 +10,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
+local scratch = require('new.scratch')
 
 local local_config = require("new.local")
 
@@ -468,6 +469,16 @@ awful.rules.rules = {
     { rule = { instance = "firefox" },
     properties = { tag = "1" }
   },
+    { rule_any = {
+	 instance = {
+	    "scratch"
+	 },
+    },
+      properties = {
+	 floating = true,
+	 placement = awful.placement.centered
+      }
+    },
 
     -- Floating clients.
     { rule_any = {
