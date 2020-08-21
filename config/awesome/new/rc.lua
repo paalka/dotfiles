@@ -311,30 +311,30 @@ globalkeys = awful.util.table.join(
 
     -- Handle volume
     awful.key({ }, "XF86AudioRaiseVolume", function ()
-       awful.util.spawn("amixer set Master 3%+ unmute") end),
+       awful.spawn("amixer -q set Master 3%+ unmute") end),
     awful.key({ }, "XF86AudioLowerVolume", function ()
-        awful.util.spawn("amixer set Master 3%- unmute") end),
+        awful.spawn("amixer -q set Master 3%- unmute") end),
     awful.key({ }, "XF86AudioMute", function ()
-       awful.util.spawn("amixer sset Master toggle") end),
+       awful.spawn("amixer -q sset Master toggle") end),
 
     -- Play/Pause the music when pressing Control + Space
     awful.key({ "Control" }, "space", function ()
-       awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause") end),
+       awful.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause") end),
 
     -- Handle screen brightness
     awful.key({ }, "XF86MonBrightnessUp", function ()
-       awful.util.spawn("xbacklight -inc 10") end),
+       awful.spawn("xbacklight -inc 10") end),
     awful.key({ }, "XF86MonBrightnessDown", function ()
-       awful.util.spawn("xbacklight -dec 10") end),
+       awful.spawn("xbacklight -dec 10") end),
 
     -- Lock the screen
-    awful.key({ modkey,           }, "y", function () awful.util.spawn_with_shell("~/.bin/lock") end)
+    awful.key({ modkey,           }, "y", function () awful.spawn.with_shell("~/.bin/lock") end)
 )
 if USE_ROFI then
    rofikeys = awful.util.table.join(
-    awful.key({ modkey,           }, "w", function () awful.util.spawn_with_shell("rofi -show window") end),
+    awful.key({ modkey,           }, "w", function () awful.spawn.with_shell("rofi -show window") end),
 
-    awful.key({ modkey },            "r",     function () awful.util.spawn_with_shell("rofi -show run") end,
+    awful.key({ modkey },            "r",     function () awful.spawn.with_shell("rofi -show run") end,
               {description = "run prompt", group = "launcher"})
    )
    globalkeys = awful.util.table.crush(globalkeys, rofikeys)
@@ -348,7 +348,7 @@ end
 
 if USE_EMACS then
    emacskeys = awful.util.table.join(
-    awful.key({ modkey },            "e",     function () awful.util.spawn_with_shell("emacsclient -c") end,
+    awful.key({ modkey },            "e",     function () awful.spawn("emacsclient -cq") end,
               {description = "emacsclient", group = "emacs"})
    )
    globalkeys = awful.util.table.crush(globalkeys, emacskeys)
