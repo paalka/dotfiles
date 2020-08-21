@@ -309,6 +309,8 @@ globalkeys = awful.util.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
+    awful.key({ modkey,           }, "l",      function() revelation({curr_tag_only=true}) end),
+    awful.key({ modkey,           }, "s",      function() scratch.toggle("urxvt -name scratch-term", {instance = "scratch-term"}) end),
     -- Handle volume
     awful.key({ }, "XF86AudioRaiseVolume", function ()
        awful.spawn("amixer -q set Master 3%+ unmute") end),
@@ -460,6 +462,12 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
+    { rule = { instance = "spotify" },
+    properties = { tag = "8" }
+  },
+    { rule = { instance = "firefox" },
+    properties = { tag = "1" }
+  },
 
     -- Floating clients.
     { rule_any = {
