@@ -465,8 +465,8 @@ awful.rules.rules = {
    { rule = { instance = "spotify" },
      properties = { tag = "8" }
    },
-   { rule = { instance = "firefox" },
-     properties = { tag = "1" }
+   { rule = { role = "browser" },
+     properties = { tag = "4" }
    },
    { rule_any = {
 	instance = {
