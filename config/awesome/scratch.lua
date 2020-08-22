@@ -15,6 +15,7 @@ local function turn_on(c)
    end
    c:tags(ctags)
    c:raise()
+   c.sticky = true
    client.focus = c
 end
 
@@ -25,6 +26,7 @@ local function turn_off(c)
    for k,tag in pairs(c:tags()) do
       if tag ~= current_tag then table.insert(ctags, tag) end
    end
+   c.sticky = false
    c:tags(ctags)
 end
 
