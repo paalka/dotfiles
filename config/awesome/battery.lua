@@ -20,7 +20,7 @@ function updateBatteryWidgetText(acpi_battery_names, battery_sub_widget)
       widget_text = " ⚡"
    end
 
-   awful.spawn.easy_async([[bash -c 'acpi']],
+   awful.spawn.easy_async('acpi',
       function(stdout, stderr, exitreason, exitcode)
 	 if exitcode == 0 then
 	    local acpi_output_no_newline = stdout:sub(1, -2)
@@ -113,7 +113,7 @@ function updateWidgetText(battery_sub_widget)
 end
 
 function showBatteryStatus(battery_sub_widget)
-   awful.spawn.easy_async([[bash -c 'acpi']],
+   awful.spawn.easy_async('acpi',
       function(stdout, stderr, exitreason, exitcode)
 	 local widget_text = ""
 	 if exitcode == 0 then
