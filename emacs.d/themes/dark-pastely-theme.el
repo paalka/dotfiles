@@ -210,7 +210,9 @@
 
    ;; Line Highlighting
    `(highlight ((t (:background ,dark-pastely-bg+1 :foreground nil))))
-   `(highlight-current-line-face ((t ,(list :background dark-pastely-bg+1
+   `(hl-line ((t ,(list :background dark-pastely-bg+1
+                                            :foreground nil))))
+   `(lazy-highlight ((t ,(list :background dark-pastely-grey
                                             :foreground nil))))
    ;; Message
    `(message-header-name ((t (:foreground ,dark-pastely-pink+1))))
