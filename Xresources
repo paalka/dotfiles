@@ -42,7 +42,7 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
-URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,url-select
+URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,url-select,resize-font
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
