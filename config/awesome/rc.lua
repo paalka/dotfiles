@@ -219,7 +219,6 @@ awful.screen.connect_for_each_screen(function(s)
 	    volume_widget,
 	    battery_widget,
 	    layout = wibox.layout.fixed.horizontal,
-	    mykeyboardlayout,
 	    mytextclock,
 	    wibox.widget.systray(),
 	    s.mylayoutbox,
