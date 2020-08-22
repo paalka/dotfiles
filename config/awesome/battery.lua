@@ -68,6 +68,7 @@ end
 function isCharging()
    local charging_status_file = io.open(POWER_SUPPLY_PATH .. "AC/online")
    local charging_status = charging_status_file:read()
+   charging_status_file:close()
    return charging_status == "1"
 end
 
@@ -80,6 +81,7 @@ function getBatteryPercent(battery_name)
    else
       adapter_current_capacity = 0
    end
+   adapter_current_capacity_file:close()
 
    return adapter_current_capacity
 end
