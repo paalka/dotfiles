@@ -465,7 +465,7 @@ awful.rules.rules = {
      properties = { tag = "8" }
    },
    { rule = { role = "browser" },
-     properties = { tag = "4" }
+     properties = { tag = "4", switchtotag = true }
    },
    { rule_any = {
 	instance = {
