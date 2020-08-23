@@ -224,6 +224,12 @@ awful.screen.connect_for_each_screen(function(s)
 	    s.mylayoutbox,
 	 },
       }
+      awful.tag.add("scratch", {
+		      layout             = awful.layout.suit.fair,
+		      screen             = s,
+		      selected           = true,
+      })
+
 end)
 -- }}}
 
@@ -541,3 +547,8 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+awful.spawn.single_instance("urxvtcd -name scratch-1", { tag = "scratch", floating = false, urgent = false })
+awful.spawn.single_instance("urxvtcd -name scratch-2", { tag = "scratch", floating = false, urgent = false })
+awful.spawn.single_instance("urxvtcd -name scratch-3", { tag = "scratch", floating = false, urgent = false })
+awful.spawn.single_instance("urxvtcd -name scratch-4", { tag = "scratch", floating = false, urgent = false })
