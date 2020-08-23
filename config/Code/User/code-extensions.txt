@@ -1,0 +1,17 @@
+amatiasq.sort-imports
+apollographql.vscode-apollo
+bibhasdn.django-html
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+firefox-devtools.vscode-firefox-debug
+freakypie.code-python-isort
+matangover.mypy
+mikestead.dotenv
+ms-python.python
+ms-python.vscode-pylance
+ms-vsliveshare.vsliveshare
+mtsmfm.graphql-lsc
+Prisma.vscode-graphql
+streetsidesoftware.code-spell-checker
+vscodevim.vim
+will-stone.plastic
