@@ -473,6 +473,9 @@ awful.rules.rules = {
    { rule = { role = "browser" },
      properties = { tag = "4", switchtotag = true }
    },
+   { rule = { class = "Code" },
+     properties = { tag = "1", switchtotag = true }
+   },
    { rule_any = {
 	instance = {
 	   "scratch"
