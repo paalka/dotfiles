@@ -10,6 +10,7 @@
       ]
     }
   ],
+  "emmet.showExpandedAbbreviation": "never",
   "python.languageServer": "Pylance",
   "window.zoomLevel": -2,
   "[typescriptreact]": {
