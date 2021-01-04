@@ -322,7 +322,7 @@ globalkeys = awful.util.table.join(
    awful.key({ }, "XF86AudioLowerVolume", function ()
 	 awful.spawn("amixer -q set Master 3%- unmute") end),
    awful.key({ }, "XF86AudioMute", function ()
-	 awful.spawn("amixer -q sset Master toggle") end),
+	 awful.spawn("amixer -q -D pulse sset Master toggle") end),
 
    -- Play/Pause the music when pressing Control + Space
    awful.key({ "Control" }, "space", function ()
