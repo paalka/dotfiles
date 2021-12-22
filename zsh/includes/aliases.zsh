@@ -33,6 +33,7 @@ alias gs='git status'
 alias gd='git diff'
 alias gpu='git pull'
 alias gcl='git clone'
+alias gco='git checkout'
 
 # gu shows a list of all developers and the number of commits they've made
 alias gu="git shortlog -s -n --all"
