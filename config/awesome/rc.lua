@@ -318,11 +318,11 @@ globalkeys = awful.util.table.join(
    awful.key({ modkey,           }, "s",      function() scratch.toggle("alacritty --class scratch-term", {instance = "scratch-term"}) end),
    -- Handle volume
    awful.key({ }, "XF86AudioRaiseVolume", function ()
-	 awful.spawn("amixer -q set Master 3%+ unmute") end),
+	 awful.spawn("pulsemixer --unmute --change-volume +3") end),
    awful.key({ }, "XF86AudioLowerVolume", function ()
-	 awful.spawn("amixer -q set Master 3%- unmute") end),
+	 awful.spawn("pulsemixer --unmute --change-volume -3") end),
    awful.key({ }, "XF86AudioMute", function ()
-	 awful.spawn("amixer -q -D pulse sset Master toggle") end),
+	 awful.spawn("pulsemixer --toggle-mute") end),
 
    -- Play/Pause the music when pressing Control + Space
    awful.key({ "Control" }, "space", function ()
