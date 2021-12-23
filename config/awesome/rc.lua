@@ -57,7 +57,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
 
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvtcd"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -315,7 +315,7 @@ globalkeys = awful.util.table.join(
       end,
       {description = "restore minimized", group = "client"}),
 
-   awful.key({ modkey,           }, "s",      function() scratch.toggle("urxvt -name scratch-term", {instance = "scratch-term"}) end),
+   awful.key({ modkey,           }, "s",      function() scratch.toggle("alacritty --class scratch-term", {instance = "scratch-term"}) end),
    -- Handle volume
    awful.key({ }, "XF86AudioRaiseVolume", function ()
 	 awful.spawn("amixer -q set Master 3%+ unmute") end),
