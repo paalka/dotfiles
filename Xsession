@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 [ -f ~/.bin/autostart.local ] && ~/.bin/autostart.local &
 
-urxvtd=$(pidof urxvtd)
-if [[ -z $urxvtd ]]; then
-    /usr/bin/env urxvtd -f -o -q
-fi
-
 /usr/bin/env xscreensaver -no-splash &
 
 BG=~/.bg/bg_ses9.jpg
