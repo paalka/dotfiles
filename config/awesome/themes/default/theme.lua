@@ -44,6 +44,8 @@ theme.menu_submenu_icon = "~/.config/awesome/themes/default/submenu.png"
 theme.menu_height = "15"
 theme.menu_width  = "100"
 
+theme.tasklist_disable_icon = true
+
 -- You can add as many variables as
 -- you wish and access them by using
 -- beautiful.variable in your rc.lua
