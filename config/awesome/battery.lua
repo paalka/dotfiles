@@ -8,7 +8,7 @@ local watch = require("awful.widget.watch")
 POWER_SUPPLY_PATH = "/sys/class/power_supply/"
 BATTERY_NAMES = {"BAT0", "BAT1"}
 ACPI_BATTERY_NAMES = {"Battery 0", "Battery 1"}
-LOW_BATTERY_THRESHOLD = 15
+LOW_BATTERY_THRESHOLD = 7
 
 should_show_battery_warning = true
 notification = nil
