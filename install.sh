@@ -12,6 +12,8 @@ create_dotfile_symlink() {
 	fi
 }
 
+create_dotfile_symlink "alacritty.yml" ".alacritty.yml"
+
 create_dotfile_symlink "vim/vimrc" ".vimrc"
 create_dotfile_symlink "vim" ".vim"
 
