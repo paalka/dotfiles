@@ -2,8 +2,9 @@
 [ -f ~/.bin/autostart.local ] && ~/.bin/autostart.local &
 
 /usr/bin/env xscreensaver -no-splash &
+/usr/bin/env xss-lock -- /usr/bin/xscreensaver-command -lock &
 
-BG=~/.bg/bg_ses9.jpg
+BG=~/.bg/bg_stars.jpg
 [ -f $BG ] && /usr/bin/env feh --bg-scale $BG
 
 /usr/bin/env setxkbmap -option caps:none
