@@ -34,6 +34,7 @@ alias gd='git diff'
 alias gpu='git pull'
 alias gcl='git clone'
 alias gco='git checkout'
+alias gst='git stash'
 
 # gu shows a list of all developers and the number of commits they've made
 alias gu="git shortlog -s -n --all"
@@ -50,6 +51,8 @@ alias tmuxls="tmux list-sessions"
 # -------------------------------------------------------------------
 alias ee="emacs -nw --no-site-file"
 alias et="emacsclient -nw"
+
+alias vim="nvim"
 
 # -------------------------------------------------------------------
 # kubectl
