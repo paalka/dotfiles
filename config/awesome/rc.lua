@@ -11,6 +11,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 local scratch = require('scratch')
+local quake = require('quake')
 
 local local_config = require("local")
 
@@ -182,6 +183,8 @@ awful.screen.connect_for_each_screen(function(s)
       -- Wallpaper
       set_wallpaper(s)
 
+      s.quake = quake({ app = "alacritty", argname = "--title %s",extra = "--class QuakeDD", visible = true, height = 0.7, width = 0.5, vert = "center", horiz = "center", screen = s })
+
       -- Each screen has its own tag table.
       awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8"}, s, awful.layout.layouts[1])
 
@@ -259,6 +262,8 @@ globalkeys = awful.util.table.join(
       {description = "focus previous by index", group = "client"}
    ),
 
+   awful.key({ modkey, }, "s", function () awful.screen.focused().quake:toggle() end, {description = "dropdown application", group = "launcher"}),
+
    -- Layout manipulation
    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
       {description = "swap with next client by index", group = "client"}),
@@ -315,7 +320,7 @@ globalkeys = awful.util.table.join(
       end,
       {description = "restore minimized", group = "client"}),
 
-   awful.key({ modkey,           }, "s",      function() scratch.toggle("alacritty --class scratch-term", {instance = "scratch-term"}) end),
+   --awful.key({ modkey,           }, "s",      function() scratch.toggle("alacritty --class scratch-term", {instance = "scratch-term"}) end),
    -- Handle volume
    awful.key({ }, "XF86AudioRaiseVolume", function ()
 	 awful.spawn("pulsemixer --unmute --change-volume +3") end),
@@ -473,6 +478,9 @@ awful.rules.rules = {
    { rule = { role = "browser" },
      properties = { tag = "4", switchtotag = true }
    },
+   { rule = { instance = "slack" },
+     properties = { tag = "7" }
+   },
    { rule = { class = "Code" },
      properties = { tag = "1", switchtotag = true }
    },
@@ -550,8 +558,23 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+--
+--
 
-awful.spawn.single_instance("urxvtcd -name scratch-1", { tag = "scratch", floating = false, urgent = false })
-awful.spawn.single_instance("urxvtcd -name scratch-2", { tag = "scratch", floating = false, urgent = false })
-awful.spawn.single_instance("urxvtcd -name scratch-3", { tag = "scratch", floating = false, urgent = false })
-awful.spawn.single_instance("urxvtcd -name scratch-4", { tag = "scratch", floating = false, urgent = false })
+tag.connect_signal("request::screen", function(t)
+    for s in screen do
+        if s ~= t.screen and
+           s.geometry.x == t.screen.geometry.x and
+           s.geometry.y == t.screen.geometry.y and
+           s.geometry.width == t.screen.geometry.width and
+           s.geometry.height == t.screen.geometry.height then
+            local t2 = awful.tag.find_by_name(s, t.name)
+            if t2 then
+                t:swap(t2)
+            else
+                t.screen = s
+            end
+            return
+        end
+    end
+end)
