@@ -40,3 +40,6 @@ weechat/*.log
 pwd
 
 emacs.d/custom.el
+nvim/undo
+nvim/plugin
+nvim/autoload
