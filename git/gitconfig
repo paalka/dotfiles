@@ -1,6 +1,4 @@
 [core]
-	editor = vim
-	mergetool = vim
 	filemode = false
 
 [user]
