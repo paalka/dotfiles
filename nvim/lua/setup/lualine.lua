@@ -1,23 +1,26 @@
--- Bubbles config for lualine
--- Author: lokesh-krishna
--- MIT license, see LICENSE for more details.
-
 require('lualine').setup {
   options = {
     theme = "nord",
     component_separators = '|',
-    section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
+      { 'mode', separator = { left = '' }, right_padding = 2 },
     },
-    lualine_b = { 'filename', 'branch' },
-    lualine_c = { 'fileformat' },
+    lualine_b = {
+      {
+        'filename',
+        path = 1, -- Show the relative path.
+        file_status = true,
+        shorting_target = 40,
+      }
+    },
+    lualine_c = {},
     lualine_x = {},
-    lualine_y = { 'filetype', 'progress' },
+    lualine_y = { 'filetype' },
     lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
+      { 'location', separator = { right = '' }, left_padding = 2 },
     },
   },
   inactive_sections = {
