@@ -40,19 +40,21 @@ require("telescope").setup({
     },
   },
   extensions = {
-          project = {
-                  base_dirs = {
-                          '~/dev/',
-                  },
-                  hidden_files = true, -- default: false
-                  theme = "dropdown"
-          }
+    repo = {
+      list = {
+        search_dirs = {
+          "~/dev",
+          "~/dotfiles",
+        }
+      },
+    },
   },
 })
 
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("file_browser")
-require("telescope").load_extension("project")
+require("telescope").load_extension("repo")
 require("telescope").load_extension("smart_history")
 require("telescope").load_extension("session-lens")
 
+vim.api.nvim_set_var("rooter_cd_cmd", "lcd")

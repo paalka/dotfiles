@@ -39,7 +39,7 @@ return require("packer").startup({
           requires = "kkharji/sqlite.lua"
         },
         { "nvim-telescope/telescope-file-browser.nvim" },
-        { "nvim-telescope/telescope-project.nvim" },
+        { "cljoly/telescope-repo.nvim", requires = "airblade/vim-rooter" },
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
       },
       config = get_config("telescope"),
