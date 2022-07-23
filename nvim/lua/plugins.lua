@@ -27,6 +27,10 @@ return require("packer").startup({
       config = get_config("nordic")
     }
 
+    use {
+      "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+    }
 
     use({
       "nvim-telescope/telescope.nvim",
@@ -108,6 +112,14 @@ return require("packer").startup({
       config = get_config("session-lens")
     }
 
+    use {
+      'phaazon/hop.nvim',
+      branch = 'v2', -- optional but strongly recommended
+      config = function()
+        require('hop').setup()
+      end
+    }
+
     use 'ms-jpq/chadtree'
 
     use {
@@ -123,6 +135,7 @@ return require("packer").startup({
     use {
       'neovim/nvim-lspconfig',
       config = get_config("lsp"),
+      requires = "ray-x/lsp_signature.nvim",
       after = "coq_nvim"
     }
   end

@@ -7,7 +7,7 @@ return require('nordic').colorscheme({
 
         -- Italics for certain keywords such as constructors, functions,
         -- labels and namespaces
-        italic = true,
+        italic = false,
 
         -- Italic styled comments
         italic_comments = false,
