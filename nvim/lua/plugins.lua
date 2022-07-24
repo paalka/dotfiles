@@ -27,11 +27,6 @@ return require("packer").startup({
       config = get_config("nordic")
     }
 
-    use {
-      "windwp/nvim-autopairs",
-      config = function() require("nvim-autopairs").setup {} end
-    }
-
     use({
       "nvim-telescope/telescope.nvim",
       module = "telescope",
@@ -49,6 +44,33 @@ return require("packer").startup({
       config = get_config("telescope"),
     })
 
+    use 'RRethy/vim-illuminate'
+    use {
+      'rmagatti/auto-session',
+      config = get_config("auto-session")
+    }
+
+    use {
+      'phaazon/hop.nvim',
+      branch = 'v2', -- optional but strongly recommended
+      config = function()
+        require('hop').setup()
+      end
+    }
+
+    use {
+      'rmagatti/session-lens',
+      requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
+      config = get_config("session-lens")
+    }
+
+    use 'ms-jpq/chadtree'
+
+    use {
+      'glepnir/dashboard-nvim',
+      config = get_config("dashboard")
+    }
+
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -61,6 +83,11 @@ return require("packer").startup({
         run = function()
           require('nvim-treesitter.install').update({ with_sync = true })
         end,
+    }
+
+    use {
+      "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
     }
 
     use {
@@ -79,10 +106,6 @@ return require("packer").startup({
       },
     }
 
-    use({ "onsails/lspkind-nvim", requires = { "famiu/bufdelete.nvim" } })
-
-    use "github/copilot.vim"
-
     -- use({
     --   "hrsh7th/nvim-cmp",
     --   requires = {
@@ -100,37 +123,14 @@ return require("packer").startup({
     --   config = get_config("cmp"),
     -- })
 
-    use 'RRethy/vim-illuminate'
-    use {
-      'rmagatti/auto-session',
-      config = get_config("auto-session")
-    }
-
-    use {
-      'rmagatti/session-lens',
-      requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
-      config = get_config("session-lens")
-    }
-
-    use {
-      'phaazon/hop.nvim',
-      branch = 'v2', -- optional but strongly recommended
-      config = function()
-        require('hop').setup()
-      end
-    }
-
-    use 'ms-jpq/chadtree'
-
-    use {
-      'glepnir/dashboard-nvim',
-      config = get_config("dashboard")
-    }
-
     use({'ms-jpq/coq_nvim',
       requires = { 'ms-jpq/coq.thirdparty', opt = true },
       config = get_config("coq"),
     })
+
+    use "github/copilot.vim"
+
+    use({ "onsails/lspkind-nvim", requires = { "famiu/bufdelete.nvim" } })
     
     use {
       'neovim/nvim-lspconfig',
