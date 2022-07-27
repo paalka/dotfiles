@@ -21,7 +21,7 @@ km.set("n", "<leader>fp", function()
   require("telescope").extensions.repo.list{}
 end)
 km.set("n", "<leader>cc", function()
-  require("telescope.builtin").commands()
+  require("telescope.builtin").command()
 end)
 km.set("n", "<leader>ss", function()
   require('session-lens').search_session()

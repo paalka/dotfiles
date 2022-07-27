@@ -22,9 +22,23 @@ return require("packer").startup({
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
 
+    use({
+      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      config = function()
+        require("lsp_lines").setup()
+      end,
+    })
+
     use {
       'andersevenrud/nordic.nvim',
       config = get_config("nordic")
+    }
+
+    use {
+      'echasnovski/mini.nvim',
+      config = function()
+        require('mini.starter').setup()
+      end
     }
 
     use({
@@ -65,11 +79,6 @@ return require("packer").startup({
     }
 
     use 'ms-jpq/chadtree'
-
-    use {
-      'glepnir/dashboard-nvim',
-      config = get_config("dashboard")
-    }
 
     use {
       'nvim-lualine/lualine.nvim',

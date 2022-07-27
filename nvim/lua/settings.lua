@@ -6,6 +6,7 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 7 -- Lines of context
 vim.opt.expandtab = true
 vim.opt.signcolumn     = "yes"
+vim.opt.termguicolors = true
 
 vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
 vim.opt.undofile = true

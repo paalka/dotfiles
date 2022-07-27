@@ -56,6 +56,11 @@ local function get_python_path(workspace)
   return vim.fn.exepath('python3') or vim.fn.exepath('python') or 'python'
 end
 
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+  virtual_text = false,
+})
+
 lspconfig["pyright"].setup {
     on_attach = on_attach,
     on_init = function(client)
