@@ -1,0 +1,21 @@
+{
+    "name": "pastely",
+    "displayName": "pastely",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.47.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "pastely",
+                "uiTheme": "vs-dark",
+                "path": "./themes/pastely-color-theme.json"
+            }
+        ]
+    }
+}
