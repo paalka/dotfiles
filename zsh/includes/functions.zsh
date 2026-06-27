@@ -50,10 +50,4 @@ function init_ssh_agent {
     else
         start_agent;
     fi
-
-    if ! ssh-add -l > /dev/null; then
-	trap '' INT;
-	(add_keys);
-	trap - INT;
-    fi
 }

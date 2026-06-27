@@ -4,7 +4,10 @@
 *.log
 *.swo
 *.local
-ssh/
+ssh/id_*
+ssh/known_hosts*
+ssh/environment
+ssh/authorized_keys
 backup
 vim/bundle/*/*
 oh-my-zsh/*

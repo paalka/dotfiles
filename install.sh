@@ -30,6 +30,8 @@ create_dotfile_symlink "tmux/tmux.conf" ".tmux.conf"
 
 create_dotfile_symlink "bg" ".bg"
 
+create_dotfile_symlink "ssh/config" ".ssh/config"
+
 create_dotfile_symlink "gdb/gdbinit" ".gdbinit"
 create_dotfile_symlink "gdb/gdbinit-gef.py" ".gdbinit-gef.py"
 
