@@ -1,6 +1,0 @@
-go.py
-autosort.py
-buffers.pl
-iset.pl
-highmon.pl
-title.py

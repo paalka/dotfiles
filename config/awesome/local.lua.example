@@ -1,5 +1,0 @@
-SHOW_BATTERY = false
-SHOW_VOLUME = false
-SHOW_LOAD = true
-USE_ROFI = false
-USE_EMACS = false
