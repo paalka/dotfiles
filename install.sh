@@ -12,6 +12,10 @@ create_dotfile_symlink() {
 	fi
 }
 
+create_dotfile_symlink "config/ghostty" ".config/ghostty"
+create_dotfile_symlink "config/hypr" ".config/hypr"
+create_dotfile_symlink "config/waybar" ".config/waybar"
+
 create_dotfile_symlink "vim/vimrc" ".vimrc"
 create_dotfile_symlink "vim" ".vim"
 
