@@ -1,0 +1,24 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: monospace, "Material Design Icons";
+    font-size: 13px;
+    min-height: 0;
+    color: #ffffff;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#workspaces button,
+#network,
+#battery,
+#clock {
+    padding: 0 10px;
+    background: transparent;
+}
+
+#workspaces button.active {
+    text-decoration: underline;
+}
