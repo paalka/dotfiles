@@ -1,5 +1,0 @@
-#!/bin/bash
-if ! pgrep xscreensaver > /dev/null 2>&1; then
-    xscreensaver &
-fi
-xscreensaver-command --lock > /dev/null 2>&1
