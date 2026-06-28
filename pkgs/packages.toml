@@ -48,4 +48,5 @@ packages = [
   "hyprland-guiutils",
   "hyprlauncher",
   "hyprlock",
+  "hyprpaper",
 ]
