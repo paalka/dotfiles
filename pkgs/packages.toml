@@ -30,6 +30,12 @@ packages = [
   "plymouth",
   "tmux",
   "psmisc",
+  # Power / diagnostics (generic, all machines)
+  "fwupd",
+  "powertop",
+  "lm-sensors",
+  "zram-tools",
+  "firmware-linux",
 ]
 
 [backports]
