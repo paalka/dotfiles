@@ -7,6 +7,10 @@
     color: #000000;
 }
 
+tooltip {
+  background-color: white;
+}
+
 window#waybar {
     background: transparent;
 }
