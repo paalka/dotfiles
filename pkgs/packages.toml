@@ -29,6 +29,7 @@ packages = [
   "kitty",
   "plymouth",
   "tmux",
+  "psmisc",
 ]
 
 [backports]
