@@ -1,0 +1,43 @@
+# Package manifest. Parsed by install-pkgs.py (run via install-pkgs.sh).
+#
+# Each [section] is a repo. Recognized keys:
+#   key      = GPG key URL -> /etc/apt/keyrings/<name>.{asc,gpg}
+#   source   = sources.list line; %KEYRING% is replaced with the key path
+#   target   = apt -t target for this section (e.g. a backports suite)
+#   packages = list of package names to install
+#
+# Example third-party repo:
+#   [docker]
+#   key      = "https://download.docker.com/linux/debian/gpg"
+#   source   = "deb [signed-by=%KEYRING%] https://download.docker.com/linux/debian trixie stable"
+#   packages = ["docker-ce", "docker-ce-cli"]
+
+[debian]
+packages = [
+  "sudo",
+  "git",
+  "firefox-esr",
+  "brightnessctl",
+  "greetd",
+  "tuigreet",
+  "fonts-materialdesignicons-webfont",
+  "grim",
+  "slurp",
+  "swappy",
+  "pipewire",
+  "wireplumber",
+  "kitty",
+  "plymouth",
+  "tmux",
+]
+
+[backports]
+source   = "deb http://deb.debian.org/debian trixie-backports main contrib non-free non-free-firmware"
+target   = "trixie-backports"
+packages = [
+  "waybar",
+  "hyprland",
+  "hyprland-guiutils",
+  "hyprlauncher",
+  "hyprlock",
+]
