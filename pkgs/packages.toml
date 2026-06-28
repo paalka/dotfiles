@@ -36,6 +36,7 @@ packages = [
   "lm-sensors",
   "zram-tools",
   "firmware-linux",
+  "gcc",
 ]
 
 [backports]
