@@ -30,13 +30,15 @@ packages = [
   "plymouth",
   "tmux",
   "psmisc",
+  "gcc",
+  "mako-notifier",
+  "libnotify-bin",
   # Power / diagnostics (generic, all machines)
   "fwupd",
   "powertop",
   "lm-sensors",
   "zram-tools",
   "firmware-linux",
-  "gcc",
 ]
 
 [backports]

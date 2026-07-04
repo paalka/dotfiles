@@ -17,6 +17,7 @@ create_dotfile_symlink "config/hypr" ".config/hypr"
 create_dotfile_symlink "config/waybar" ".config/waybar"
 create_dotfile_symlink "config/nix-profile" ".config/nix-profile"
 create_dotfile_symlink "config/nvim" ".config/nvim"
+create_dotfile_symlink "config/mako" ".config/mako"
 
 create_dotfile_symlink "vim/vimrc" ".vimrc"
 create_dotfile_symlink "vim" ".vim"
