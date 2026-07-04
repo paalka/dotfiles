@@ -24,6 +24,11 @@ window#waybar {
     background: transparent;
 }
 
+#tray {
+  padding-right: 15px;
+  padding-bottom: 2px;
+}
+
 #workspaces button.active {
     text-decoration: underline;
 }
