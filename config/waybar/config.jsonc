@@ -22,6 +22,9 @@
         "tooltip-format": "{time}",
         "format-time": "{H}h{M}m"
     },
+    "tray": {
+        "spacing": 10,
+    },
     "clock": {
         "format": " {:%H:%M}",
         "tooltip-format": "{:%a %d %b}",
