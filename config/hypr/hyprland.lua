@@ -162,7 +162,7 @@ hl.window_rule({
 })
 hl.window_rule({
     name  = "slack workspace",
-    match = { initial_title = "Slack" },
+    match = { class = "slack" },
     workspace = 4,
 })
 -- hl.window_rule({
