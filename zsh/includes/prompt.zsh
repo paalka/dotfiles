@@ -68,7 +68,7 @@ function parse_git_state() {
 # If inside a Git repository, print its branch and state
 function git_prompt_string() {
   local git_where="$(parse_git_branch)"
-  [ -n "$git_where" ] && echo "%{${PR_BOLD_BLACK}%}${git_where#(refs/heads/|tags/)}$(parse_git_state)%{$reset_color%}"
+  [ -n "$git_where" ] && echo "%{${PR_BOLD_WHITE}%}${git_where#(refs/heads/|tags/)}$(parse_git_state)%{$reset_color%}"
 }
 
 if [ -z "$USER_COLOR" ]; then
