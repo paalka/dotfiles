@@ -33,6 +33,8 @@ packages = [
   "gcc",
   "mako-notifier",
   "libnotify-bin",
+  "python3-pip",
+  "python3-venv",
   # Power / diagnostics (generic, all machines)
   "fwupd",
   "powertop",

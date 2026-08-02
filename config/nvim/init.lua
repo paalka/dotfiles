@@ -686,7 +686,17 @@ do
   local servers = {
     -- clangd = {},
     -- gopls = {},
-    -- pyright = {},
+    basedpyright = {
+      settings = {
+        basedpyright = {
+          analysis = {
+            -- basedpyright defaults to 'recommended', which is stricter than pyright's
+            -- 'standard' (reportAny, reportExplicitAny, reportUnusedCallResult, ...).
+            typeCheckingMode = 'standard',
+          },
+        },
+      },
+    },
     -- rust_analyzer = {},
     --
     -- Some languages (like typescript) have entire language plugins that can be useful:
