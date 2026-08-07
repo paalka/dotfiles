@@ -491,7 +491,20 @@ do
     --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
     --   },
     -- },
-    -- pickers = {}
+    defaults = {
+      -- Telescope's default ripgrep arguments plus `--no-require-git`, so
+      -- .gitignore is honored even outside of a git repository.
+      layout_strategy = "vertical",
+      wrap_results = true,
+      vimgrep_arguments = have_rg
+          and { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--no-require-git' }
+        or nil,
+    },
+    pickers = {
+      find_files = {
+        find_command = have_rg and { 'rg', '--files', '--color', 'never', '--no-require-git' } or nil,
+      },
+    },
     extensions = {
       ['ui-select'] = { require('telescope.themes').get_dropdown() },
     },
