@@ -10,6 +10,16 @@ hl.monitor({
     scale    = "1",
 })
 
+local primaryMonitor = "desc:Dell Inc. DELL U2515H"
+
+for i = 1, 10 do
+    hl.workspace_rule({
+        workspace = tostring(i),
+        monitor   = primaryMonitor,
+        default   = true,
+    })
+end
+
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -156,16 +166,29 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 -- uncomment all if you wish to use that.
 -- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
 -- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
-hl.window_rule({
-    name  = "firefox workspace",
-    match = { class = "firefox-esr" },
-    workspace = 1,
-})
-hl.window_rule({
-    name  = "slack workspace",
-    match = { class = "slack" },
-    workspace = 4,
-})
+local pinnedWorkspaces = {
+    ["firefox-esr"] = 10,
+    ["slack"]       = 9,
+}
+
+for class, workspace in pairs(pinnedWorkspaces) do
+    hl.window_rule({
+        name      = class .. " workspace",
+        match     = { class = class },
+        workspace = workspace,
+    })
+end
+
+hl.on("window.move_to_workspace", function(window, workspace)
+    local target = pinnedWorkspaces[window.class]
+    if target and workspace.id ~= target then
+        hl.dispatch(hl.dsp.window.move({
+            workspace = target,
+            window    = window,
+            follow    = false,
+        }))
+    end
+end)
 -- hl.window_rule({
 --     name  = "no-gaps-f1",
 --     match = { float = false, workspace = "f[1]" },
