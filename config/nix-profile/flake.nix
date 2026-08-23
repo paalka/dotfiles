@@ -3,9 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    hunk.url = "github:modem-dev/hunk";
+    hunk.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, hunk }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -39,7 +41,9 @@
           ripgrep
           fd
           fzf
-          opentofu
+          terraform
+        ] ++ [
+          hunk.packages.${system}.default
         ];
       };
     };
