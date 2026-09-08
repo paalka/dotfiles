@@ -75,7 +75,12 @@ if [ -z "$USER_COLOR" ]; then
   USER_COLOR=${PR_BOLD_BLACK}
 fi
 if [ -z "$HOST_COLOR" ]; then
-  HOST_COLOR=%F{147}
+  # Highlight the hostname in red when this shell is itself an SSH session.
+  if [ -n "$SSH_CONNECTION" ]; then
+    HOST_COLOR=%F{203}
+  else
+    HOST_COLOR=%F{147}
+  fi
 fi
 
 PROMPT='
