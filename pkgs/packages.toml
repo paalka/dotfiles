@@ -30,6 +30,7 @@ packages = [
   "plymouth",
   "tmux",
   "psmisc",
+  "jq",
   "gcc",
   "mako-notifier",
   "libnotify-bin",
