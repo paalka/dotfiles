@@ -289,6 +289,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("ghostty --class=obsidian.new -e ~/.local/bin/obsidian-new"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
@@ -373,6 +374,15 @@ hl.window_rule({
 --     no_anim = true,
 -- })
 -- overlayLayerRule:set_enabled(false)
+
+hl.window_rule({
+    name   = "obsidian-new-float",
+    match  = { class = "obsidian.new" },
+
+    float  = true,
+    size   = "700 400",
+    center = true,
+})
 
 -- Hyprland-run windowrule
 hl.window_rule({
