@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+vault="$HOME/Obsidian Vault"
+templates="$vault/Templates"
+
+template=$(find "$templates" -type f -name '*.md' -printf '%P\n' | sed 's/\.md$//' | sort | fzf --prompt='Template> ' --height=100% --reverse) || exit 0
+
+case "$template" in
+    Task)
+        folder=$( { echo "Tasks"; find "$vault/Projects" -maxdepth 1 -type d -printf 'Projects/%P\n' | sort; } | fzf --prompt='Folder> ' --height=100% --reverse) || exit 0
+        ;;
+    *)
+        folder="Inbox"
+        ;;
+esac
+
+title="Untitled"
+n=0
+while [ -e "$vault/$folder/$title.md" ]; do
+    n=$((n + 1))
+    title="Untitled $n"
+done
+
+note="$vault/$folder/$title.md"
+content=$(<"$templates/$template.md")
+content=${content//\{\{title\}\}/"$title"}
+content=${content//\{\{date\}\}/"$(date +%F)"}
+content=${content//\{\{time\}\}/"$(date +%H:%M)"}
+printf '%s\n' "$content" > "$note"
+
+setsid -f xdg-open "obsidian://open?path=$(jq -rn --arg path "$note" '$path | @uri')" >/dev/null 2>&1
+hyprctl dispatch 'hl.dsp.focus({ window = "class:md.Obsidian" })' >/dev/null

@@ -41,3 +41,6 @@ create_dotfile_symlink "gdb/gdbinit-gef.py" ".gdbinit-gef.py"
 create_dotfile_symlink "psql/psqlrc" ".psqlrc"
 
 create_dotfile_symlink "top/toprc" ".toprc"
+
+mkdir -p "$HOME/.local/bin"
+create_dotfile_symlink "bin/obsidian-new" ".local/bin/obsidian-new"
